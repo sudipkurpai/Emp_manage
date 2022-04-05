@@ -391,6 +391,7 @@ String cus;
     }
     private void jLabel28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel28MouseClicked
         // TODO add your handling code here:
+        
         String fName = firstname.getText();
         String lName = lastname.getText();
         String ph = phone3.getText();

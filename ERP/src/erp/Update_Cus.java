@@ -27,11 +27,11 @@ public class Update_Cus extends javax.swing.JPanel {
         initComponents();
         
         
-         fName.setVisible(false);
+        fName.setVisible(false);
         L_name.setVisible(false);
         Phone.setVisible(false);
         Email.setVisible(false);
-       aaaa.setVisible(false);
+        aaaa.setVisible(false);
        
         Emp_id.setEditable(false);
         
