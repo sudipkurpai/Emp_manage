@@ -16,9 +16,9 @@ import javax.swing.JOptionPane;
  * @author Sudip_Maiti
  */
 public class Update_Emp extends javax.swing.JPanel {
- String Epp="";
-    public void emp_id(String ee){
-        Epp=ee;
+ String Eppuepp="";
+    public void emp_uepp(String ee){
+        Eppuepp=ee;
     }
     /**
      * Creates new form Update_Emp
@@ -27,22 +27,21 @@ public class Update_Emp extends javax.swing.JPanel {
         initComponents();
         
         
-         fName.setVisible(false);
-        L_name.setVisible(false);
-        Phone.setVisible(false);
-        Email.setVisible(false);
-       aaaa.setVisible(false);
-        mng_name.setEditable(false);
-        mng_id.setEditable(false);
-        Emp_id.setEditable(false);
+         fNameuepp.setVisible(false);
+        L_nameuepp.setVisible(false);
+        Phoneuepp.setVisible(false);
+        Emailuepp.setVisible(false);
+       aaaauepp.setVisible(false);
+       
+        Emp_iduepp.setEditable(false);
         
         
         
         
-        fName1.setVisible(false);
+        fName1uepp.setVisible(false);
         //System.out.println("empp"+Epp);
-        if(Epp!=""){
-        update();
+        if(Eppuepp!=""){
+        updateuepp();
         }
     }
 
@@ -57,32 +56,30 @@ public class Update_Emp extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        fName = new javax.swing.JLabel();
-        Phone = new javax.swing.JLabel();
-        Email = new javax.swing.JLabel();
+        fNameuepp = new javax.swing.JLabel();
+        Phoneuepp = new javax.swing.JLabel();
+        Emailuepp = new javax.swing.JLabel();
         crt_emp = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
-        L_name = new javax.swing.JLabel();
+        L_nameuepp = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
-        aaaa = new javax.swing.JLabel();
-        firstname = new javax.swing.JTextField();
-        lastname = new javax.swing.JTextField();
-        email = new javax.swing.JTextField();
-        phone3 = new javax.swing.JTextField();
-        Emp_id = new javax.swing.JTextField();
+        aaaauepp = new javax.swing.JLabel();
+        firstnameuepp = new javax.swing.JTextField();
+        lastnameuepp = new javax.swing.JTextField();
+        emailuepp = new javax.swing.JTextField();
+        phone3uepp = new javax.swing.JTextField();
+        Emp_iduepp = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        address = new javax.swing.JTextArea();
+        addressuepp = new javax.swing.JTextArea();
         jLabel23 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
-        mng_id = new javax.swing.JTextField();
-        mng_name = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        serch = new javax.swing.JTextField();
-        fName1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        serchuepp = new javax.swing.JTextField();
+        fName1uepp = new javax.swing.JLabel();
+        jLabel2uepp = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -92,23 +89,23 @@ public class Update_Emp extends javax.swing.JPanel {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        fName.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        fName.setForeground(new java.awt.Color(128, 128, 128));
-        fName.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        fName.setText("First Name");
-        jPanel2.add(fName, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 140, 20));
+        fNameuepp.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        fNameuepp.setForeground(new java.awt.Color(128, 128, 128));
+        fNameuepp.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        fNameuepp.setText("First Name");
+        jPanel2.add(fNameuepp, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 140, 20));
 
-        Phone.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        Phone.setForeground(new java.awt.Color(128, 128, 128));
-        Phone.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Phone.setText("Phone");
-        jPanel2.add(Phone, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 260, 20));
+        Phoneuepp.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        Phoneuepp.setForeground(new java.awt.Color(128, 128, 128));
+        Phoneuepp.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Phoneuepp.setText("Phone");
+        jPanel2.add(Phoneuepp, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 260, 20));
 
-        Email.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        Email.setForeground(new java.awt.Color(128, 128, 128));
-        Email.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Email.setText("Email");
-        jPanel2.add(Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 280, 20));
+        Emailuepp.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        Emailuepp.setForeground(new java.awt.Color(128, 128, 128));
+        Emailuepp.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Emailuepp.setText("Email");
+        jPanel2.add(Emailuepp, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 280, 20));
 
         crt_emp.setBackground(new java.awt.Color(0, 102, 255));
         crt_emp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 255)));
@@ -136,11 +133,11 @@ public class Update_Emp extends javax.swing.JPanel {
 
         jPanel2.add(crt_emp, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 550, 50));
 
-        L_name.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        L_name.setForeground(new java.awt.Color(128, 128, 128));
-        L_name.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        L_name.setText("Last Name");
-        jPanel2.add(L_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 220, 20));
+        L_nameuepp.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        L_nameuepp.setForeground(new java.awt.Color(128, 128, 128));
+        L_nameuepp.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        L_nameuepp.setText("Last Name");
+        jPanel2.add(L_nameuepp, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 220, 20));
 
         jLabel26.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(128, 128, 128));
@@ -148,107 +145,107 @@ public class Update_Emp extends javax.swing.JPanel {
         jLabel26.setText("Employee ID");
         jPanel2.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 90, 20));
 
-        aaaa.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        aaaa.setForeground(new java.awt.Color(128, 128, 128));
-        aaaa.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        aaaa.setText("Address");
-        jPanel2.add(aaaa, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 70, 20));
+        aaaauepp.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        aaaauepp.setForeground(new java.awt.Color(128, 128, 128));
+        aaaauepp.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        aaaauepp.setText("Address");
+        jPanel2.add(aaaauepp, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 70, 20));
 
-        firstname.setBackground(new java.awt.Color(255, 255, 255));
-        firstname.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        firstname.setForeground(new java.awt.Color(128, 128, 128));
-        firstname.setText("First Name");
-        firstname.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 153, 204)));
-        firstname.addFocusListener(new java.awt.event.FocusAdapter() {
+        firstnameuepp.setBackground(new java.awt.Color(255, 255, 255));
+        firstnameuepp.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        firstnameuepp.setForeground(new java.awt.Color(128, 128, 128));
+        firstnameuepp.setText("First Name");
+        firstnameuepp.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 153, 204)));
+        firstnameuepp.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                firstnameFocusGained(evt);
+                firstnameueppFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                firstnameFocusLost(evt);
+                firstnameueppFocusLost(evt);
             }
         });
-        jPanel2.add(firstname, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 260, 30));
+        jPanel2.add(firstnameuepp, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 260, 30));
 
-        lastname.setBackground(new java.awt.Color(255, 255, 255));
-        lastname.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        lastname.setForeground(new java.awt.Color(128, 128, 128));
-        lastname.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        lastname.setText("Last Name");
-        lastname.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 153, 204)));
-        lastname.addFocusListener(new java.awt.event.FocusAdapter() {
+        lastnameuepp.setBackground(new java.awt.Color(255, 255, 255));
+        lastnameuepp.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        lastnameuepp.setForeground(new java.awt.Color(128, 128, 128));
+        lastnameuepp.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        lastnameuepp.setText("Last Name");
+        lastnameuepp.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 153, 204)));
+        lastnameuepp.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                lastnameFocusGained(evt);
+                lastnameueppFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                lastnameFocusLost(evt);
+                lastnameueppFocusLost(evt);
             }
         });
-        lastname.addActionListener(new java.awt.event.ActionListener() {
+        lastnameuepp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lastnameActionPerformed(evt);
+                lastnameueppActionPerformed(evt);
             }
         });
-        jPanel2.add(lastname, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, 280, 30));
+        jPanel2.add(lastnameuepp, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, 280, 30));
 
-        email.setBackground(new java.awt.Color(255, 255, 255));
-        email.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        email.setForeground(new java.awt.Color(128, 128, 128));
-        email.setText("Email");
-        email.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 153, 204)));
-        email.addFocusListener(new java.awt.event.FocusAdapter() {
+        emailuepp.setBackground(new java.awt.Color(255, 255, 255));
+        emailuepp.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        emailuepp.setForeground(new java.awt.Color(128, 128, 128));
+        emailuepp.setText("Email");
+        emailuepp.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 153, 204)));
+        emailuepp.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                emailFocusGained(evt);
+                emailueppFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                emailFocusLost(evt);
+                emailueppFocusLost(evt);
             }
         });
-        jPanel2.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 280, 30));
+        jPanel2.add(emailuepp, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 280, 30));
 
-        phone3.setBackground(new java.awt.Color(255, 255, 255));
-        phone3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        phone3.setForeground(new java.awt.Color(128, 128, 128));
-        phone3.setText("Phone");
-        phone3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 153, 204)));
-        phone3.addFocusListener(new java.awt.event.FocusAdapter() {
+        phone3uepp.setBackground(new java.awt.Color(255, 255, 255));
+        phone3uepp.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        phone3uepp.setForeground(new java.awt.Color(128, 128, 128));
+        phone3uepp.setText("Phone");
+        phone3uepp.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 153, 204)));
+        phone3uepp.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                phone3FocusGained(evt);
+                phone3ueppFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                phone3FocusLost(evt);
+                phone3ueppFocusLost(evt);
             }
         });
-        jPanel2.add(phone3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 260, 30));
+        jPanel2.add(phone3uepp, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 260, 30));
 
-        Emp_id.setBackground(new java.awt.Color(255, 255, 255));
-        Emp_id.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        Emp_id.setForeground(new java.awt.Color(0, 0, 0));
-        Emp_id.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        Emp_id.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 153, 204)));
-        Emp_id.addActionListener(new java.awt.event.ActionListener() {
+        Emp_iduepp.setBackground(new java.awt.Color(255, 255, 255));
+        Emp_iduepp.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        Emp_iduepp.setForeground(new java.awt.Color(0, 0, 0));
+        Emp_iduepp.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        Emp_iduepp.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 153, 204)));
+        Emp_iduepp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Emp_idActionPerformed(evt);
+                Emp_idueppActionPerformed(evt);
             }
         });
-        jPanel2.add(Emp_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 260, 30));
+        jPanel2.add(Emp_iduepp, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 260, 30));
 
-        address.setBackground(new java.awt.Color(255, 255, 255));
-        address.setColumns(10);
-        address.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        address.setForeground(new java.awt.Color(0, 0, 0));
-        address.setRows(5);
-        address.setText("Address");
-        address.setBorder(null);
-        address.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        address.addFocusListener(new java.awt.event.FocusAdapter() {
+        addressuepp.setBackground(new java.awt.Color(255, 255, 255));
+        addressuepp.setColumns(10);
+        addressuepp.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        addressuepp.setForeground(new java.awt.Color(0, 0, 0));
+        addressuepp.setRows(5);
+        addressuepp.setText("Address");
+        addressuepp.setBorder(null);
+        addressuepp.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        addressuepp.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                addressFocusGained(evt);
+                addressueppFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                addressFocusLost(evt);
+                addressueppFocusLost(evt);
             }
         });
-        jScrollPane1.setViewportView(address);
+        jScrollPane1.setViewportView(addressuepp);
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 550, -1));
 
@@ -273,22 +270,6 @@ public class Update_Emp extends javax.swing.JPanel {
         jLabel25.setText("EMPLOYEE");
         jPanel1.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 410, 50));
 
-        mng_id.setBackground(new java.awt.Color(14, 73, 181));
-        mng_id.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
-        mng_id.setForeground(new java.awt.Color(255, 255, 255));
-        mng_id.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        mng_id.setToolTipText("");
-        mng_id.setBorder(null);
-        jPanel1.add(mng_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 290, 30));
-
-        mng_name.setBackground(new java.awt.Color(14, 73, 181));
-        mng_name.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
-        mng_name.setForeground(new java.awt.Color(255, 255, 255));
-        mng_name.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        mng_name.setToolTipText("");
-        mng_name.setBorder(null);
-        jPanel1.add(mng_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 290, 40));
-
         jLabel27.setBackground(new java.awt.Color(255, 255, 255));
         jLabel27.setFont(new java.awt.Font("Georgia", 1, 30)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(255, 255, 255));
@@ -300,38 +281,39 @@ public class Update_Emp extends javax.swing.JPanel {
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Update Employee !");
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 400, -1));
 
-        serch.setBackground(new java.awt.Color(255, 255, 255));
-        serch.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
-        serch.setForeground(new java.awt.Color(128, 128, 128));
-        serch.setText("Serch Employee by Employee ID");
-        serch.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
-        serch.addFocusListener(new java.awt.event.FocusAdapter() {
+        serchuepp.setBackground(new java.awt.Color(255, 255, 255));
+        serchuepp.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        serchuepp.setForeground(new java.awt.Color(128, 128, 128));
+        serchuepp.setText("Serch Employee by Employee ID");
+        serchuepp.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
+        serchuepp.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                serchFocusGained(evt);
+                serchueppFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                serchFocusLost(evt);
+                serchueppFocusLost(evt);
             }
         });
-        jPanel3.add(serch, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 320, 30));
+        jPanel3.add(serchuepp, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 320, 30));
 
-        fName1.setFont(new java.awt.Font("Consolas", 1, 21)); // NOI18N
-        fName1.setForeground(new java.awt.Color(128, 128, 128));
-        fName1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        fName1.setText("Serch Employee by Employee ID");
-        jPanel3.add(fName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 390, 30));
+        fName1uepp.setFont(new java.awt.Font("Consolas", 1, 21)); // NOI18N
+        fName1uepp.setForeground(new java.awt.Color(128, 128, 128));
+        fName1uepp.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        fName1uepp.setText("Serch Employee by Employee ID");
+        jPanel3.add(fName1uepp, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 390, 30));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/magnifying-glass.png"))); // NOI18N
-        jLabel2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel2uepp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/magnifying-glass.png"))); // NOI18N
+        jLabel2uepp.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
+        jLabel2uepp.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                jLabel2ueppMouseClicked(evt);
             }
         });
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 80, 46, 40));
+        jPanel3.add(jLabel2uepp, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 80, 46, 40));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, 610, 140));
 
@@ -348,12 +330,12 @@ public class Update_Emp extends javax.swing.JPanel {
                 .addGap(0, 111, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-public void update(){
+public void updateuepp(){
        
        try {
         
              //Data fetch from database
-            String sql = "Select * From emp Where emp_id = '"+Epp+"'";
+            String sql = "Select * From emp Where emp_id = '"+Eppuepp+"'";
             Connection con=DATABASE_CONNECTION.getConnection();
             PreparedStatement ps=con.prepareStatement(sql);
           //  ps.setString(1,"ERP_E1002");
@@ -370,14 +352,14 @@ public void update(){
                // System.out.println("emlllll "+l_name);
                 String Address =rs.getString("emp_address");
                 
-                firstname.setText(f_name);
+                firstnameuepp.setText(f_name);
                 
-                lastname.setText(l_name);
+                lastnameuepp.setText(l_name);
                 
-                phone3.setText(Phone);
-                  Emp_id.setText(emp_id);
-                email.setText(Email);
-               address.setText(Address);
+                phone3uepp.setText(Phone);
+                  Emp_iduepp.setText(emp_id);
+                emailuepp.setText(Email);
+               addressuepp.setText(Address);
                 
                 
                // JOptionPane.showMessageDialog(this, "Product Found");
@@ -396,13 +378,13 @@ public void update(){
     }
     private void jLabel28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel28MouseClicked
         // TODO add your handling code here:
-        String fName = firstname.getText();
-        String lName = lastname.getText();
-        String ph = phone3.getText();
-        String mail = email.getText();
+        String fName = firstnameuepp.getText();
+        String lName = lastnameuepp.getText();
+        String ph = phone3uepp.getText();
+        String mail = emailuepp.getText();
 
-        String add = address.getText();
-        String empp= Emp_id.getText();
+        String add = addressuepp.getText();
+        String empp= Emp_iduepp.getText();
 
         if(fName.equals("First Name")||lName.equals("Last Name")||ph.equals("Phone")||mail.equals("Email")||add.equals("Address")||fName.equals("")||lName.equals("")||ph.equals("")||mail.equals("")||add.equals("")){
             // JOptionPane.showMessageDialog(this, "");
@@ -435,137 +417,137 @@ public void update(){
 
     }//GEN-LAST:event_jLabel28MouseClicked
 
-    private void firstnameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_firstnameFocusGained
+    private void firstnameueppFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_firstnameueppFocusGained
         // TODO add your handling code here:
-        if(firstname.getText().equals("First Name")){
-            fName.setVisible(true);
-            firstname.setText("");
-            firstname.setForeground(new Color(000,000,000));
+        if(firstnameuepp.getText().equals("First Name")){
+            fNameuepp.setVisible(true);
+            firstnameuepp.setText("");
+            firstnameuepp.setForeground(new Color(000,000,000));
         }
-    }//GEN-LAST:event_firstnameFocusGained
+    }//GEN-LAST:event_firstnameueppFocusGained
 
-    private void firstnameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_firstnameFocusLost
+    private void firstnameueppFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_firstnameueppFocusLost
         // TODO add your handling code here:
-        if(firstname.getText().equals("")){
-            fName.setVisible(false);
-            firstname.setText("First Name");
-            firstname.setForeground(new Color(128,128,128));
+        if(firstnameuepp.getText().equals("")){
+            fNameuepp.setVisible(false);
+            firstnameuepp.setText("First Name");
+            firstnameuepp.setForeground(new Color(128,128,128));
         }else{
-            fName.setVisible(true);
+            fNameuepp.setVisible(true);
         }
-    }//GEN-LAST:event_firstnameFocusLost
+    }//GEN-LAST:event_firstnameueppFocusLost
 
-    private void lastnameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_lastnameFocusGained
+    private void lastnameueppFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_lastnameueppFocusGained
         // TODO add your handling code here:
-        if(lastname.getText().equals("Last Name")){
-            L_name.setVisible(true);
-            lastname.setText("");
-            lastname.setForeground(new Color(000,000,000));
+        if(lastnameuepp.getText().equals("Last Name")){
+            L_nameuepp.setVisible(true);
+            lastnameuepp.setText("");
+            lastnameuepp.setForeground(new Color(000,000,000));
         }
-    }//GEN-LAST:event_lastnameFocusGained
+    }//GEN-LAST:event_lastnameueppFocusGained
 
-    private void lastnameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_lastnameFocusLost
+    private void lastnameueppFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_lastnameueppFocusLost
         // TODO add your handling code here:
-        if(lastname.getText().equals("")){
-            L_name.setVisible(false);
-            lastname.setText("Last Name");
-            lastname.setForeground(new Color(128,128,128));
+        if(lastnameuepp.getText().equals("")){
+            L_nameuepp.setVisible(false);
+            lastnameuepp.setText("Last Name");
+            lastnameuepp.setForeground(new Color(128,128,128));
         }else{
-            L_name.setVisible(true);
+            L_nameuepp.setVisible(true);
         }
-    }//GEN-LAST:event_lastnameFocusLost
+    }//GEN-LAST:event_lastnameueppFocusLost
 
-    private void lastnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastnameActionPerformed
+    private void lastnameueppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastnameueppActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_lastnameActionPerformed
+    }//GEN-LAST:event_lastnameueppActionPerformed
 
-    private void emailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFocusGained
+    private void emailueppFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailueppFocusGained
         // TODO add your handling code here:
-        if(email.getText().equals("Email")){
-            Email.setVisible(true);
-            email.setText("");
-            email.setForeground(new Color(000,000,000));
+        if(emailuepp.getText().equals("Email")){
+            Emailuepp.setVisible(true);
+            emailuepp.setText("");
+            emailuepp.setForeground(new Color(000,000,000));
         }
-    }//GEN-LAST:event_emailFocusGained
+    }//GEN-LAST:event_emailueppFocusGained
 
-    private void emailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFocusLost
+    private void emailueppFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailueppFocusLost
         // TODO add your handling code here:
-        if(email.getText().equals("")){
-            Email.setVisible(false);
-            email.setText("Email");
-            email.setForeground(new Color(128,128,128));
+        if(emailuepp.getText().equals("")){
+            Emailuepp.setVisible(false);
+            emailuepp.setText("Email");
+            emailuepp.setForeground(new Color(128,128,128));
         }else{
-            Email.setVisible(true);
+            Emailuepp.setVisible(true);
         }
-    }//GEN-LAST:event_emailFocusLost
+    }//GEN-LAST:event_emailueppFocusLost
 
-    private void phone3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phone3FocusGained
+    private void phone3ueppFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phone3ueppFocusGained
         // TODO add your handling code here:
-        if(phone3.getText().equals("Phone")){
-            Phone.setVisible(true);
-            phone3.setText("");
-            phone3.setForeground(new Color(000,000,000));
+        if(phone3uepp.getText().equals("Phone")){
+            Phoneuepp.setVisible(true);
+            phone3uepp.setText("");
+            phone3uepp.setForeground(new Color(000,000,000));
         }
-    }//GEN-LAST:event_phone3FocusGained
+    }//GEN-LAST:event_phone3ueppFocusGained
 
-    private void phone3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phone3FocusLost
+    private void phone3ueppFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phone3ueppFocusLost
         // TODO add your handling code here:
-        if(phone3.getText().equals("")){
-            Phone.setVisible(false);
-            phone3.setText("Phone");
-            phone3.setForeground(new Color(128,128,128));
+        if(phone3uepp.getText().equals("")){
+            Phoneuepp.setVisible(false);
+            phone3uepp.setText("Phone");
+            phone3uepp.setForeground(new Color(128,128,128));
         }else{
-            Phone.setVisible(true);
+            Phoneuepp.setVisible(true);
         }
-    }//GEN-LAST:event_phone3FocusLost
+    }//GEN-LAST:event_phone3ueppFocusLost
 
-    private void Emp_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Emp_idActionPerformed
+    private void Emp_idueppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Emp_idueppActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Emp_idActionPerformed
+    }//GEN-LAST:event_Emp_idueppActionPerformed
 
-    private void addressFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_addressFocusGained
+    private void addressueppFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_addressueppFocusGained
         // TODO add your handling code here:
-        if(address.getText().equals("Address")){
-            aaaa.setVisible(true);
-            address.setText("");
-            address.setForeground(new Color(000,000,000));
+        if(addressuepp.getText().equals("Address")){
+            aaaauepp.setVisible(true);
+            addressuepp.setText("");
+            addressuepp.setForeground(new Color(000,000,000));
         }
-    }//GEN-LAST:event_addressFocusGained
+    }//GEN-LAST:event_addressueppFocusGained
 
-    private void addressFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_addressFocusLost
+    private void addressueppFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_addressueppFocusLost
         // TODO add your handling code here:
-         if(address.getText().equals("")){
-            aaaa.setVisible(false);
-            address.setText("Phone");
-           address.setForeground(new Color(128,128,128));
+         if(addressuepp.getText().equals("")){
+            aaaauepp.setVisible(false);
+            addressuepp.setText("Phone");
+           addressuepp.setForeground(new Color(128,128,128));
         }else{
-            aaaa.setVisible(true);
+            aaaauepp.setVisible(true);
         }
-    }//GEN-LAST:event_addressFocusLost
+    }//GEN-LAST:event_addressueppFocusLost
 
-    private void serchFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serchFocusGained
-         if(serch.getText().equals("Serch Employee by Employee ID")){
-            fName1.setVisible(true);
-            serch.setText("");
-            serch.setForeground(new Color(000,000,000));
+    private void serchueppFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serchueppFocusGained
+         if(serchuepp.getText().equals("Serch Employee by Employee ID")){
+            fName1uepp.setVisible(true);
+            serchuepp.setText("");
+            serchuepp.setForeground(new Color(000,000,000));
         }
-    }//GEN-LAST:event_serchFocusGained
+    }//GEN-LAST:event_serchueppFocusGained
 
-    private void serchFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serchFocusLost
+    private void serchueppFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serchueppFocusLost
         // TODO add your handling code here:
-          if(serch.getText().equals("")){
-            fName1.setVisible(false);
-            serch.setText("Serch Employee by Employee ID");
-            serch.setForeground(new Color(128,128,128));
+          if(serchuepp.getText().equals("")){
+            fName1uepp.setVisible(false);
+            serchuepp.setText("Serch Employee by Employee ID");
+            serchuepp.setForeground(new Color(128,128,128));
         }else{
-            fName1.setVisible(true);
+            fName1uepp.setVisible(true);
         }
-    }//GEN-LAST:event_serchFocusLost
+    }//GEN-LAST:event_serchueppFocusLost
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+    private void jLabel2ueppMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2ueppMouseClicked
         // TODO add your handling code here:
         
-         String em_id = serch.getText();
+         String em_id = serchuepp.getText();
       try {
         
              //Data fetch from database
@@ -586,14 +568,14 @@ public void update(){
                // System.out.println("emlllll "+l_name);
                 String Address =rs.getString("emp_address");
                 
-                firstname.setText(f_name);
+                firstnameuepp.setText(f_name);
                 
-                lastname.setText(l_name);
+                lastnameuepp.setText(l_name);
                 
-                phone3.setText(Phone);
-                  Emp_id.setText(emp_id);
-                email.setText(Email);
-               address.setText(Address);
+                phone3uepp.setText(Phone);
+                  Emp_iduepp.setText(emp_id);
+                emailuepp.setText(Email);
+               addressuepp.setText(Address);
                 
                 
                // JOptionPane.showMessageDialog(this, "Product Found");
@@ -608,37 +590,35 @@ public void update(){
         }catch(Exception e){
             System.out.println("error"+e);
         }          
-    }//GEN-LAST:event_jLabel2MouseClicked
+    }//GEN-LAST:event_jLabel2ueppMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Email;
-    private javax.swing.JTextField Emp_id;
-    private javax.swing.JLabel L_name;
-    private javax.swing.JLabel Phone;
-    private javax.swing.JLabel aaaa;
-    private javax.swing.JTextArea address;
+    private javax.swing.JLabel Emailuepp;
+    private javax.swing.JTextField Emp_iduepp;
+    private javax.swing.JLabel L_nameuepp;
+    private javax.swing.JLabel Phoneuepp;
+    private javax.swing.JLabel aaaauepp;
+    private javax.swing.JTextArea addressuepp;
     private javax.swing.JPanel crt_emp;
-    private javax.swing.JTextField email;
-    private javax.swing.JLabel fName;
-    private javax.swing.JLabel fName1;
-    private javax.swing.JTextField firstname;
+    private javax.swing.JTextField emailuepp;
+    private javax.swing.JLabel fName1uepp;
+    private javax.swing.JLabel fNameuepp;
+    private javax.swing.JTextField firstnameuepp;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel2uepp;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField lastname;
-    private javax.swing.JTextField mng_id;
-    private javax.swing.JTextField mng_name;
-    private javax.swing.JTextField phone3;
-    private javax.swing.JTextField serch;
+    private javax.swing.JTextField lastnameuepp;
+    private javax.swing.JTextField phone3uepp;
+    private javax.swing.JTextField serchuepp;
     // End of variables declaration//GEN-END:variables
 }

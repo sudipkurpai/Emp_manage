@@ -15,6 +15,25 @@ import java.sql.SQLException;
  * @author Sudip Maiti
  */
 public class ID_STORE_FETCH {
+    
+     public static int serv_id (String EMP_ID){
+        int status=0;
+              try{
+                   Connection con=DATABASE_CONNECTION.getConnection();  
+                   PreparedStatement ps=con.prepareStatement("UPDATE id_store SET serv_id=?");
+                  
+                   ps.setString(1, EMP_ID); 
+                   
+                    
+                   status=ps.executeUpdate();
+                   con.close();
+              }catch(Exception e){
+                  System.out.println(e);
+              }
+           //   System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!"+status);
+              return status;
+    }
+    
     public static int insert_id (String EMP_ID){
         int status=0;
               try{

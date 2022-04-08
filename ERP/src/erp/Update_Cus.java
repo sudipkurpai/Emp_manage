@@ -628,19 +628,9 @@ public void update(){
         }       
     }//GEN-LAST:event_jLabel2MouseClicked
 
-    private void address1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_address1FocusGained
-        // TODO add your handling code here:
-         if(address1.getText().equals("Service Description")){
-            aaaa1.setVisible(true);
-            address1.setText("");
-            address1.setForeground(new Color(000,000,000));
-        }
-        
-    }//GEN-LAST:event_address1FocusGained
-
     private void address1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_address1FocusLost
         // TODO add your handling code here:
-         if(address1.getText().equals("")){
+        if(address1.getText().equals("")){
             aaaa1.setVisible(false);
             address1.setText("Service Description");
             address1.setForeground(new Color(128,128,128));
@@ -648,6 +638,16 @@ public void update(){
             aaaa1.setVisible(true);
         }
     }//GEN-LAST:event_address1FocusLost
+
+    private void address1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_address1FocusGained
+        // TODO add your handling code here:
+        if(address1.getText().equals("Service Description")){
+            aaaa1.setVisible(true);
+            address1.setText("");
+            address1.setForeground(new Color(000,000,000));
+        }
+
+    }//GEN-LAST:event_address1FocusGained
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

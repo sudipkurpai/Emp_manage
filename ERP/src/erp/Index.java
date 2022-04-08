@@ -2,19 +2,17 @@ package erp;
 
 
 import java.awt.Color;
-import java.awt.GradientPaint;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.math.BigInteger;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import javax.swing.table.DefaultTableModel;
@@ -30,9 +28,14 @@ import javax.swing.table.DefaultTableModel;
  * @author Sudip_Maiti
  */
 public class Index extends javax.swing.JFrame {
-    String cus_Id;
+    String gcusid;
+    String gserv;
+String cus_Id;
 String cus;
  BigInteger cus_id =null;
+ String emp_Idcee;
+String empcee;
+ BigInteger emp_idcee =null;
     
     String eml= "";
     String name= "";
@@ -51,6 +54,11 @@ String cus;
     public void emp_id(String ee){
         Epp=ee;
     }
+   
+    String Eppuepp="";
+    public void emp_uepp(String ee){
+        Eppuepp=ee;
+    }
 
     /**
      * Creates new form Index
@@ -59,12 +67,20 @@ String cus;
         initComponents();
          time();
         date();
-        
+         tpic.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("hii"+tpic.getSelectedTime());
+            td.setText(tpic.getSelectedTime());
+            
+            }
+             
+         });
          fName.setVisible(false);
         L_name.setVisible(false);
         Phone.setVisible(false);
         Email.setVisible(false);
-       adddddd.setVisible(false);
+      
         addrr.setVisible(false);
         mng_name.setEditable(false);
         mng_id.setEditable(false);
@@ -93,15 +109,18 @@ String cus;
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(false);
         body12.setVisible(false);
-        body13.setVisible(false);
-        body13.setVisible(false);
-        body14.setVisible(false);
-        body15.setVisible(false);
-        body16.setVisible(false);
-        body17.setVisible(false);
-        body18.setVisible(false);
-        body19.setVisible(false);
-        body20.setVisible(false);
+        Assign.setVisible(false);
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+        Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+        Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
+         body21.setVisible(false);
+         body22.setVisible(false);
+          body23.setVisible(false);
+        
         p1.setBackground(Color.decode("#03A9DD"));
         p2.setBackground(Color.decode("#333333"));
         p3.setBackground(Color.decode("#333333"));
@@ -230,6 +249,7 @@ String cus;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        tpic = new com.raven.swing.TimePicker();
         jPanel1 = new javax.swing.JPanel();
         menu = new javax.swing.JPanel();
         p1 = new javax.swing.JPanel();
@@ -403,9 +423,6 @@ String cus;
         Emp_id = new javax.swing.JTextField();
         jScrollPane7 = new javax.swing.JScrollPane();
         address = new javax.swing.JTextArea();
-        jScrollPane8 = new javax.swing.JScrollPane();
-        sddz = new javax.swing.JTextArea();
-        adddddd = new javax.swing.JLabel();
         jLabel56 = new javax.swing.JLabel();
         mng_name = new javax.swing.JTextField();
         jLabel57 = new javax.swing.JLabel();
@@ -429,9 +446,6 @@ String cus;
         Emp_id1 = new javax.swing.JTextField();
         jScrollPane9 = new javax.swing.JScrollPane();
         address1 = new javax.swing.JTextArea();
-        jScrollPane10 = new javax.swing.JScrollPane();
-        address2 = new javax.swing.JTextArea();
-        aaaa1 = new javax.swing.JLabel();
         jLabel61 = new javax.swing.JLabel();
         jLabel62 = new javax.swing.JLabel();
         jLabel63 = new javax.swing.JLabel();
@@ -461,15 +475,205 @@ String cus;
         jLabel73 = new javax.swing.JLabel();
         eid11 = new javax.swing.JLabel();
         enn = new javax.swing.JLabel();
-        body14 = new javax.swing.JPanel();
-        body15 = new javax.swing.JPanel();
-        body18 = new javax.swing.JPanel();
-        body19 = new javax.swing.JPanel();
-        body17 = new javax.swing.JPanel();
-        body20 = new javax.swing.JPanel();
-        body13 = new javax.swing.JPanel();
-        body16 = new javax.swing.JPanel();
+        Emp_List = new javax.swing.JPanel();
+        jPanel39 = new javax.swing.JPanel();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        tableell = new javax.swing.JTable();
+        jPanel40 = new javax.swing.JPanel();
+        jLabel74 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel75 = new javax.swing.JLabel();
+        jPanel41 = new javax.swing.JPanel();
+        jLabel76 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel77 = new javax.swing.JLabel();
+        serchell = new javax.swing.JTextField();
+        jLabel78 = new javax.swing.JLabel();
+        fName1344 = new javax.swing.JLabel();
+        Search_Emp = new javax.swing.JPanel();
+        jPanel53 = new javax.swing.JPanel();
+        jScrollPane16 = new javax.swing.JScrollPane();
+        table1see = new javax.swing.JTable();
+        jScrollPane17 = new javax.swing.JScrollPane();
+        tablesee = new javax.swing.JTable();
+        jPanel54 = new javax.swing.JPanel();
+        serchsee = new javax.swing.JTextField();
+        jLabel82 = new javax.swing.JLabel();
+        fNamesepp = new javax.swing.JLabel();
+        jLabel99 = new javax.swing.JLabel();
+        jScrollPane18 = new javax.swing.JScrollPane();
+        ttfsee = new javax.swing.JTextPane();
+        fName9 = new javax.swing.JLabel();
+        jPanel55 = new javax.swing.JPanel();
+        jLabel100 = new javax.swing.JLabel();
+        Create_Emp = new javax.swing.JPanel();
+        jPanel42 = new javax.swing.JPanel();
+        jPanel51 = new javax.swing.JPanel();
+        jLabel79 = new javax.swing.JLabel();
+        fNamecee = new javax.swing.JLabel();
+        Phonecee = new javax.swing.JLabel();
+        Emailcee = new javax.swing.JLabel();
+        crt_emp3 = new javax.swing.JPanel();
+        jLabel80 = new javax.swing.JLabel();
+        L_namecee = new javax.swing.JLabel();
+        jLabel81 = new javax.swing.JLabel();
+        aaaacee = new javax.swing.JLabel();
+        firstnamecee = new javax.swing.JTextField();
+        lastnamecee = new javax.swing.JTextField();
+        emailcee = new javax.swing.JTextField();
+        phone3cee = new javax.swing.JTextField();
+        Emp_idcee = new javax.swing.JTextField();
+        jScrollPane13 = new javax.swing.JScrollPane();
+        addresscee = new javax.swing.JTextArea();
+        jLabel101 = new javax.swing.JLabel();
+        jLabel102 = new javax.swing.JLabel();
+        jLabel103 = new javax.swing.JLabel();
+        mng_id2 = new javax.swing.JTextField();
+        mng_name2 = new javax.swing.JTextField();
+        Update_Emp = new javax.swing.JPanel();
+        jPanel52 = new javax.swing.JPanel();
+        jPanel56 = new javax.swing.JPanel();
+        fNameuepp = new javax.swing.JLabel();
+        Phoneuepp = new javax.swing.JLabel();
+        Emailuepp = new javax.swing.JLabel();
+        crt_emp4 = new javax.swing.JPanel();
+        jLabel104 = new javax.swing.JLabel();
+        L_nameuepp = new javax.swing.JLabel();
+        jLabel105 = new javax.swing.JLabel();
+        aaaauepp = new javax.swing.JLabel();
+        firstnameuepp = new javax.swing.JTextField();
+        lastnameuepp = new javax.swing.JTextField();
+        emailuepp = new javax.swing.JTextField();
+        phone3uepp = new javax.swing.JTextField();
+        Emp_iduepp = new javax.swing.JTextField();
+        jScrollPane14 = new javax.swing.JScrollPane();
+        addressuepp = new javax.swing.JTextArea();
+        jLabel106 = new javax.swing.JLabel();
+        jLabel107 = new javax.swing.JLabel();
+        jLabel108 = new javax.swing.JLabel();
+        mng_id3 = new javax.swing.JTextField();
+        mng_name3 = new javax.swing.JTextField();
+        jLabel109 = new javax.swing.JLabel();
+        jPanel57 = new javax.swing.JPanel();
+        jLabel110 = new javax.swing.JLabel();
+        serchuepp = new javax.swing.JTextField();
+        fName1uepp = new javax.swing.JLabel();
+        jLabel2uepp = new javax.swing.JLabel();
+        Delete_Emp = new javax.swing.JPanel();
+        jPanel58 = new javax.swing.JPanel();
+        jPanel59 = new javax.swing.JPanel();
+        crt_emp5 = new javax.swing.JPanel();
+        jLabel111 = new javax.swing.JLabel();
+        jScrollPane15 = new javax.swing.JScrollPane();
+        tabledepp = new javax.swing.JTable();
+        jLabel112 = new javax.swing.JLabel();
+        jLabel113 = new javax.swing.JLabel();
+        jLabel114 = new javax.swing.JLabel();
+        mng_id4 = new javax.swing.JTextField();
+        mng_name4 = new javax.swing.JTextField();
+        jLabel115 = new javax.swing.JLabel();
+        jPanel60 = new javax.swing.JPanel();
+        jLabel116 = new javax.swing.JLabel();
+        serchdepp = new javax.swing.JTextField();
+        fName1depp = new javax.swing.JLabel();
+        jLabel117 = new javax.swing.JLabel();
+        eiddepp = new javax.swing.JLabel();
+        enndepp = new javax.swing.JLabel();
+        Working_list = new javax.swing.JPanel();
+        jPanel61 = new javax.swing.JPanel();
+        jScrollPane19 = new javax.swing.JScrollPane();
+        tablewll = new javax.swing.JTable();
+        jPanel62 = new javax.swing.JPanel();
+        jLabel118 = new javax.swing.JLabel();
+        jPanel63 = new javax.swing.JPanel();
+        jLabel119 = new javax.swing.JLabel();
+        jPanel64 = new javax.swing.JPanel();
+        jLabel120 = new javax.swing.JLabel();
+        stawll = new javax.swing.JComboBox<>();
+        jPanel65 = new javax.swing.JPanel();
+        jLabel121 = new javax.swing.JLabel();
+        jPanel66 = new javax.swing.JPanel();
+        jLabel122 = new javax.swing.JLabel();
+        serchell1 = new javax.swing.JTextField();
+        jLabel123 = new javax.swing.JLabel();
+        fName1345 = new javax.swing.JLabel();
+        jPanel68 = new javax.swing.JPanel();
+        jLabel125 = new javax.swing.JLabel();
+        button1 = new java.awt.Button();
+        hidetext = new java.awt.Label();
+        Assign = new javax.swing.JPanel();
+        jPanel67 = new javax.swing.JPanel();
+        jLabel124 = new javax.swing.JLabel();
+        jLabel126 = new javax.swing.JLabel();
+        jPanel69 = new javax.swing.JPanel();
+        jLabel127 = new javax.swing.JLabel();
+        t2 = new javax.swing.JComboBox<>();
+        jLabel128 = new javax.swing.JLabel();
+        jPanel70 = new javax.swing.JPanel();
+        td = new javax.swing.JTextField();
+        jLabel129 = new javax.swing.JLabel();
+        jLabel130 = new javax.swing.JLabel();
+        ascn = new javax.swing.JLabel();
+        ascph = new javax.swing.JLabel();
+        jLabel133 = new javax.swing.JLabel();
+        jLabel134 = new javax.swing.JLabel();
+        asceml = new javax.swing.JLabel();
+        jLabel136 = new javax.swing.JLabel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        ascad = new javax.swing.JTextPane();
+        jLabel137 = new javax.swing.JLabel();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        ascsd = new javax.swing.JTextPane();
+        jPanel71 = new javax.swing.JPanel();
+        jLabel138 = new javax.swing.JLabel();
+        jPanel72 = new javax.swing.JPanel();
+        jLabel139 = new javax.swing.JLabel();
+        ddt = new com.toedter.calendar.JDateChooser();
+        t3 = new javax.swing.JComboBox<>();
+        jLabel131 = new javax.swing.JLabel();
+        Complete = new javax.swing.JPanel();
+        jPanel73 = new javax.swing.JPanel();
+        csdd = new com.toedter.calendar.JDateChooser();
+        jLabel132 = new javax.swing.JLabel();
+        jLabel135 = new javax.swing.JLabel();
+        jPanel74 = new javax.swing.JPanel();
+        jLabel140 = new javax.swing.JLabel();
+        jPanel75 = new javax.swing.JPanel();
+        cstt = new javax.swing.JTextField();
+        jLabel141 = new javax.swing.JLabel();
+        jLabel142 = new javax.swing.JLabel();
+        cscn = new javax.swing.JLabel();
+        cscp = new javax.swing.JLabel();
+        jLabel145 = new javax.swing.JLabel();
+        jLabel146 = new javax.swing.JLabel();
+        cseml = new javax.swing.JLabel();
+        jLabel148 = new javax.swing.JLabel();
+        jScrollPane20 = new javax.swing.JScrollPane();
+        csad = new javax.swing.JTextPane();
+        jLabel149 = new javax.swing.JLabel();
+        jScrollPane21 = new javax.swing.JScrollPane();
+        csmet = new javax.swing.JTextPane();
+        jPanel76 = new javax.swing.JPanel();
+        jLabel150 = new javax.swing.JLabel();
+        Co = new javax.swing.JPanel();
+        jLabel151 = new javax.swing.JLabel();
+        csei = new javax.swing.JLabel();
+        jLabel153 = new javax.swing.JLabel();
+        jScrollPane22 = new javax.swing.JScrollPane();
+        cssd = new javax.swing.JTextPane();
+        jLabel154 = new javax.swing.JLabel();
+        csen = new javax.swing.JLabel();
+        jLabel156 = new javax.swing.JLabel();
+        jLabel157 = new javax.swing.JLabel();
+        jLabel158 = new javax.swing.JLabel();
+        csci = new javax.swing.JLabel();
+        cscost = new javax.swing.JTextField();
         body12 = new javax.swing.JPanel();
+        body23 = new javax.swing.JPanel();
+        body22 = new javax.swing.JPanel();
+        body21 = new javax.swing.JPanel();
+
+        tpic.setForeground(new java.awt.Color(0, 125, 254));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -1162,6 +1366,11 @@ String cus;
 
         jPanel43.setBackground(new java.awt.Color(255, 255, 255));
         jPanel43.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 3, new java.awt.Color(104, 104, 104)));
+        jPanel43.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel43MouseClicked(evt);
+            }
+        });
 
         jLabel83.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel83.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/add user.png"))); // NOI18N
@@ -1200,6 +1409,11 @@ String cus;
 
         jPanel19.setBackground(new java.awt.Color(255, 255, 255));
         jPanel19.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 3, new java.awt.Color(104, 104, 104)));
+        jPanel19.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel19MouseClicked(evt);
+            }
+        });
 
         jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/add user.png"))); // NOI18N
@@ -1233,6 +1447,11 @@ String cus;
 
         jPanel20.setBackground(new java.awt.Color(255, 255, 255));
         jPanel20.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 3, new java.awt.Color(104, 104, 104)));
+        jPanel20.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel20MouseClicked(evt);
+            }
+        });
 
         jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/add user.png"))); // NOI18N
@@ -1266,6 +1485,11 @@ String cus;
 
         jPanel21.setBackground(new java.awt.Color(255, 255, 255));
         jPanel21.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 3, new java.awt.Color(104, 104, 104)));
+        jPanel21.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel21MouseClicked(evt);
+            }
+        });
 
         jLabel39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/add user.png"))); // NOI18N
@@ -1299,6 +1523,11 @@ String cus;
 
         jPanel22.setBackground(new java.awt.Color(255, 255, 255));
         jPanel22.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 3, new java.awt.Color(104, 104, 104)));
+        jPanel22.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel22MouseClicked(evt);
+            }
+        });
 
         jLabel41.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/add user.png"))); // NOI18N
@@ -1332,6 +1561,11 @@ String cus;
 
         jPanel23.setBackground(new java.awt.Color(255, 255, 255));
         jPanel23.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 3, 3, new java.awt.Color(104, 104, 104)));
+        jPanel23.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel23MouseClicked(evt);
+            }
+        });
 
         jLabel43.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/add user.png"))); // NOI18N
@@ -2103,7 +2337,7 @@ String cus;
             .addComponent(jLabel54, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        jPanel32.add(crt_emp, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 610, 560, 50));
+        jPanel32.add(crt_emp, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, 560, 50));
 
         L_name.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         L_name.setForeground(new java.awt.Color(128, 128, 128));
@@ -2221,32 +2455,6 @@ String cus;
         jScrollPane7.setViewportView(address);
 
         jPanel32.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 560, -1));
-
-        sddz.setBackground(new java.awt.Color(255, 255, 255));
-        sddz.setColumns(10);
-        sddz.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        sddz.setForeground(new java.awt.Color(0, 0, 0));
-        sddz.setRows(5);
-        sddz.setText("Service Description");
-        sddz.setBorder(null);
-        sddz.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        sddz.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                sddzFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                sddzFocusLost(evt);
-            }
-        });
-        jScrollPane8.setViewportView(sddz);
-
-        jPanel32.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 560, -1));
-
-        adddddd.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        adddddd.setForeground(new java.awt.Color(128, 128, 128));
-        adddddd.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        adddddd.setText("Service Description");
-        jPanel32.add(adddddd, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, 190, 20));
 
         jLabel56.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel56.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/add-group (3).png"))); // NOI18N
@@ -2399,7 +2607,7 @@ String cus;
             .addComponent(jLabel59, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
-        jPanel34.add(crt_emp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, 550, 50));
+        jPanel34.add(crt_emp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 550, 50));
 
         L_name1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         L_name1.setForeground(new java.awt.Color(128, 128, 128));
@@ -2518,34 +2726,6 @@ String cus;
         jScrollPane9.setViewportView(address1);
 
         jPanel34.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 244, 550, -1));
-
-        jScrollPane10.setBorder(null);
-
-        address2.setBackground(new java.awt.Color(255, 255, 255));
-        address2.setColumns(10);
-        address2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        address2.setForeground(new java.awt.Color(0, 0, 0));
-        address2.setRows(5);
-        address2.setText("Service Description");
-        address2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 102, 255)));
-        address2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        address2.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                address2FocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                address2FocusLost(evt);
-            }
-        });
-        jScrollPane10.setViewportView(address2);
-
-        jPanel34.add(jScrollPane10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 550, 90));
-
-        aaaa1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        aaaa1.setForeground(new java.awt.Color(128, 128, 128));
-        aaaa1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        aaaa1.setText("Service Description");
-        jPanel34.add(aaaa1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 150, 20));
 
         jPanel33.add(jPanel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 180, 610, 540));
 
@@ -2801,125 +2981,1894 @@ String cus;
 
         body.add(Delete_Cus, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
 
-        body14.setBackground(new java.awt.Color(0, 0, 255));
+        Emp_List.setBackground(new java.awt.Color(0, 0, 255));
 
-        javax.swing.GroupLayout body14Layout = new javax.swing.GroupLayout(body14);
-        body14.setLayout(body14Layout);
-        body14Layout.setHorizontalGroup(
-            body14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanel39.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel39.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tableell.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        tableell.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Emp_id", "Emp_name", "Emp_phone", "Emp_email", "emp_addr"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane12.setViewportView(tableell);
+
+        jPanel39.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 96, 1070, 634));
+
+        jPanel40.setBackground(new java.awt.Color(0, 153, 0));
+
+        jLabel74.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel74.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel74.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel74.setText("Update");
+
+        javax.swing.GroupLayout jPanel40Layout = new javax.swing.GroupLayout(jPanel40);
+        jPanel40.setLayout(jPanel40Layout);
+        jPanel40Layout.setHorizontalGroup(
+            jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel74, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+        );
+        jPanel40Layout.setVerticalGroup(
+            jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel74, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+        );
+
+        jPanel39.add(jPanel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(394, 748, -1, -1));
+
+        jPanel5.setBackground(new java.awt.Color(255, 0, 51));
+
+        jLabel75.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel75.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel75.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel75.setText("Delete");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel75, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel75, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+        );
+
+        jPanel39.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(498, 748, -1, -1));
+
+        jPanel41.setBackground(new java.awt.Color(0, 125, 254));
+
+        jLabel76.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel76.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel76.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel76.setText("Print");
+
+        javax.swing.GroupLayout jPanel41Layout = new javax.swing.GroupLayout(jPanel41);
+        jPanel41.setLayout(jPanel41Layout);
+        jPanel41Layout.setHorizontalGroup(
+            jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel76, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+        );
+        jPanel41Layout.setVerticalGroup(
+            jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel76, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+        );
+
+        jPanel39.add(jPanel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(602, 748, -1, -1));
+
+        jPanel7.setBackground(new java.awt.Color(0, 153, 51));
+
+        jLabel77.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel77.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel77.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel77.setText("Add Emp");
+        jLabel77.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel77MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel77, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel77, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+        );
+
+        jPanel39.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 46, -1, -1));
+
+        serchell.setBackground(new java.awt.Color(255, 255, 255));
+        serchell.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        serchell.setForeground(new java.awt.Color(47, 68, 187));
+        serchell.setText("Serch Employee by Employee ID");
+        serchell.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
+        serchell.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                serchellFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                serchellFocusLost(evt);
+            }
+        });
+        serchell.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                serchellKeyReleased(evt);
+            }
+        });
+        jPanel39.add(serchell, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 54, 320, 30));
+
+        jLabel78.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/magnifying-glass.png"))); // NOI18N
+        jLabel78.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
+        jLabel78.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel78MouseClicked(evt);
+            }
+        });
+        jPanel39.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 44, 46, 40));
+
+        fName1344.setFont(new java.awt.Font("Consolas", 1, 21)); // NOI18N
+        fName1344.setForeground(new java.awt.Color(47, 68, 187));
+        fName1344.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        fName1344.setText("Serch Employee by Employee ID");
+        jPanel39.add(fName1344, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, 390, 30));
+
+        javax.swing.GroupLayout Emp_ListLayout = new javax.swing.GroupLayout(Emp_List);
+        Emp_List.setLayout(Emp_ListLayout);
+        Emp_ListLayout.setHorizontalGroup(
+            Emp_ListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel39, javax.swing.GroupLayout.DEFAULT_SIZE, 1100, Short.MAX_VALUE)
+        );
+        Emp_ListLayout.setVerticalGroup(
+            Emp_ListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        body.add(Emp_List, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+
+        Search_Emp.setBackground(new java.awt.Color(204, 0, 51));
+
+        jPanel53.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel53.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        table1see.setBackground(new java.awt.Color(255, 255, 255));
+        table1see.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        table1see.setForeground(new java.awt.Color(0, 0, 0));
+        table1see.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Emp Id", "Emp Name", "Cus Id", "Cus Name", "Date", "Time", "Service Details"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        table1see.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                table1seeMouseClicked(evt);
+            }
+        });
+        jScrollPane16.setViewportView(table1see);
+
+        jPanel53.add(jScrollPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 182, 770, 170));
+
+        tablesee.setBackground(new java.awt.Color(255, 255, 255));
+        tablesee.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tablesee.setForeground(new java.awt.Color(0, 0, 0));
+        tablesee.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Emp Name", "Emp Id"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablesee.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableseeMouseClicked(evt);
+            }
+        });
+        jScrollPane17.setViewportView(tablesee);
+
+        jPanel53.add(jScrollPane17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 182, 360, 500));
+
+        jPanel54.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel54.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(47, 68, 187)));
+
+        serchsee.setBackground(new java.awt.Color(255, 255, 255));
+        serchsee.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        serchsee.setForeground(new java.awt.Color(128, 128, 128));
+        serchsee.setText("Serch Employee by Employee ID");
+        serchsee.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
+        serchsee.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                serchseeFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                serchseeFocusLost(evt);
+            }
+        });
+        serchsee.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                serchseeKeyReleased(evt);
+            }
+        });
+
+        jLabel82.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/magnifying-glass.png"))); // NOI18N
+        jLabel82.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
+        jLabel82.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel82MouseClicked(evt);
+            }
+        });
+
+        fNamesepp.setFont(new java.awt.Font("Consolas", 1, 21)); // NOI18N
+        fNamesepp.setForeground(new java.awt.Color(128, 128, 128));
+        fNamesepp.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        fNamesepp.setText("Serch Employee by Employee ID");
+
+        jLabel99.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
+        jLabel99.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel99.setText("Search Employee !");
+
+        javax.swing.GroupLayout jPanel54Layout = new javax.swing.GroupLayout(jPanel54);
+        jPanel54.setLayout(jPanel54Layout);
+        jPanel54Layout.setHorizontalGroup(
+            jPanel54Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel54Layout.createSequentialGroup()
+                .addGroup(jPanel54Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel54Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addGroup(jPanel54Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(fNamesepp, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel54Layout.createSequentialGroup()
+                                .addComponent(serchsee, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, 0)
+                                .addComponent(jLabel82, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel54Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel99, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel54Layout.setVerticalGroup(
+            jPanel54Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel54Layout.createSequentialGroup()
+                .addComponent(jLabel99)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addComponent(fNamesepp, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel54Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel54Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(serchsee, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel82, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24))
+        );
+
+        jPanel53.add(jPanel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 12, 1150, 150));
+
+        ttfsee.setBackground(new java.awt.Color(255, 255, 255));
+        ttfsee.setBorder(null);
+        ttfsee.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        ttfsee.setForeground(new java.awt.Color(0, 0, 0));
+        jScrollPane18.setViewportView(ttfsee);
+
+        jPanel53.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 400, 770, 220));
+
+        fName9.setFont(new java.awt.Font("Consolas", 1, 21)); // NOI18N
+        fName9.setForeground(new java.awt.Color(255, 255, 255));
+        fName9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        fName9.setText(" Service Details");
+        jPanel53.add(fName9, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 360, 390, 30));
+
+        jPanel55.setBackground(new java.awt.Color(0, 125, 254));
+
+        jLabel100.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel100.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel100.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel100.setText("Print");
+
+        javax.swing.GroupLayout jPanel55Layout = new javax.swing.GroupLayout(jPanel55);
+        jPanel55.setLayout(jPanel55Layout);
+        jPanel55Layout.setHorizontalGroup(
+            jPanel55Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel100, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 770, Short.MAX_VALUE)
+        );
+        jPanel55Layout.setVerticalGroup(
+            jPanel55Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel100, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+        );
+
+        jPanel53.add(jPanel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 640, 770, -1));
+
+        javax.swing.GroupLayout Search_EmpLayout = new javax.swing.GroupLayout(Search_Emp);
+        Search_Emp.setLayout(Search_EmpLayout);
+        Search_EmpLayout.setHorizontalGroup(
+            Search_EmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1190, Short.MAX_VALUE)
+            .addGroup(Search_EmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel53, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        body14Layout.setVerticalGroup(
-            body14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        Search_EmpLayout.setVerticalGroup(
+            Search_EmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 809, Short.MAX_VALUE)
+            .addGroup(Search_EmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel53, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        body.add(body14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+        body.add(Search_Emp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
 
-        body15.setBackground(new java.awt.Color(204, 0, 51));
+        Create_Emp.setBackground(new java.awt.Color(0, 0, 255));
 
-        javax.swing.GroupLayout body15Layout = new javax.swing.GroupLayout(body15);
-        body15.setLayout(body15Layout);
-        body15Layout.setHorizontalGroup(
-            body15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanel42.setBackground(new java.awt.Color(14, 73, 181));
+        jPanel42.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(255, 255, 255)));
+        jPanel42.setMaximumSize(new java.awt.Dimension(1122, 765));
+        jPanel42.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel51.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel51.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel79.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
+        jLabel79.setForeground(new java.awt.Color(14, 73, 181));
+        jLabel79.setText("Create New Employee !");
+        jPanel51.add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 30, 400, -1));
+
+        fNamecee.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        fNamecee.setForeground(new java.awt.Color(128, 128, 128));
+        fNamecee.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        fNamecee.setText("First Name");
+        jPanel51.add(fNamecee, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 140, 20));
+
+        Phonecee.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        Phonecee.setForeground(new java.awt.Color(128, 128, 128));
+        Phonecee.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Phonecee.setText("Phone");
+        jPanel51.add(Phonecee, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 260, 20));
+
+        Emailcee.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        Emailcee.setForeground(new java.awt.Color(128, 128, 128));
+        Emailcee.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Emailcee.setText("Email");
+        jPanel51.add(Emailcee, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, 280, 20));
+
+        crt_emp3.setBackground(new java.awt.Color(0, 102, 255));
+        crt_emp3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 255)));
+
+        jLabel80.setFont(new java.awt.Font("Dialog", 1, 22)); // NOI18N
+        jLabel80.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel80.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel80.setText("Create Employee");
+        jLabel80.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel80MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout crt_emp3Layout = new javax.swing.GroupLayout(crt_emp3);
+        crt_emp3.setLayout(crt_emp3Layout);
+        crt_emp3Layout.setHorizontalGroup(
+            crt_emp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel80, javax.swing.GroupLayout.DEFAULT_SIZE, 558, Short.MAX_VALUE)
+        );
+        crt_emp3Layout.setVerticalGroup(
+            crt_emp3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel80, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+        );
+
+        jPanel51.add(crt_emp3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, 560, 50));
+
+        L_namecee.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        L_namecee.setForeground(new java.awt.Color(128, 128, 128));
+        L_namecee.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        L_namecee.setText("Last Name");
+        jPanel51.add(L_namecee, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 220, 20));
+
+        jLabel81.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel81.setForeground(new java.awt.Color(128, 128, 128));
+        jLabel81.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel81.setText("Employee ID");
+        jPanel51.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 90, 20));
+
+        aaaacee.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        aaaacee.setForeground(new java.awt.Color(128, 128, 128));
+        aaaacee.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        aaaacee.setText("Address");
+        jPanel51.add(aaaacee, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 70, 20));
+
+        firstnamecee.setBackground(new java.awt.Color(255, 255, 255));
+        firstnamecee.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        firstnamecee.setForeground(new java.awt.Color(128, 128, 128));
+        firstnamecee.setText("First Name");
+        firstnamecee.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 153, 204)));
+        firstnamecee.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                firstnameceeFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                firstnameceeFocusLost(evt);
+            }
+        });
+        firstnamecee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                firstnameceeActionPerformed(evt);
+            }
+        });
+        jPanel51.add(firstnamecee, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 260, 30));
+
+        lastnamecee.setBackground(new java.awt.Color(255, 255, 255));
+        lastnamecee.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        lastnamecee.setForeground(new java.awt.Color(128, 128, 128));
+        lastnamecee.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        lastnamecee.setText("Last Name");
+        lastnamecee.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 153, 204)));
+        lastnamecee.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                lastnameceeFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                lastnameceeFocusLost(evt);
+            }
+        });
+        lastnamecee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lastnameceeActionPerformed(evt);
+            }
+        });
+        jPanel51.add(lastnamecee, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 280, 30));
+
+        emailcee.setBackground(new java.awt.Color(255, 255, 255));
+        emailcee.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        emailcee.setForeground(new java.awt.Color(128, 128, 128));
+        emailcee.setText("Email");
+        emailcee.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 153, 204)));
+        emailcee.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                emailceeFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                emailceeFocusLost(evt);
+            }
+        });
+        jPanel51.add(emailcee, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 180, 280, 30));
+
+        phone3cee.setBackground(new java.awt.Color(255, 255, 255));
+        phone3cee.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        phone3cee.setForeground(new java.awt.Color(128, 128, 128));
+        phone3cee.setText("Phone");
+        phone3cee.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 153, 204)));
+        phone3cee.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                phone3ceeFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                phone3ceeFocusLost(evt);
+            }
+        });
+        jPanel51.add(phone3cee, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 260, 30));
+
+        Emp_idcee.setBackground(new java.awt.Color(255, 255, 255));
+        Emp_idcee.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        Emp_idcee.setForeground(new java.awt.Color(0, 0, 0));
+        Emp_idcee.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        Emp_idcee.setText("123456798");
+        Emp_idcee.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 153, 204)));
+        Emp_idcee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Emp_idceeActionPerformed(evt);
+            }
+        });
+        jPanel51.add(Emp_idcee, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 260, 30));
+
+        addresscee.setBackground(new java.awt.Color(255, 255, 255));
+        addresscee.setColumns(10);
+        addresscee.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        addresscee.setForeground(new java.awt.Color(0, 0, 0));
+        addresscee.setRows(5);
+        addresscee.setText("Address");
+        addresscee.setBorder(null);
+        addresscee.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        addresscee.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                addressceeFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                addressceeFocusLost(evt);
+            }
+        });
+        jScrollPane13.setViewportView(addresscee);
+
+        jPanel51.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 560, -1));
+
+        jPanel42.add(jPanel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 30, 600, 750));
+
+        jLabel101.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel101.setFont(new java.awt.Font("Georgia", 0, 48)); // NOI18N
+        jLabel101.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel101.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel101.setText("Welcome !");
+        jLabel101.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        jPanel42.add(jLabel101, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 260, 70));
+
+        jLabel102.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel102.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/add-group (3).png"))); // NOI18N
+        jPanel42.add(jLabel102, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 440, 310));
+
+        jLabel103.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel103.setFont(new java.awt.Font("Georgia", 1, 30)); // NOI18N
+        jLabel103.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel103.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel103.setText("<Html> <p align = center>  CREATE  <br>   EMPLOYEE</p></Html>");
+        jPanel42.add(jLabel103, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 440, 110));
+
+        mng_id2.setBackground(new java.awt.Color(14, 73, 181));
+        mng_id2.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
+        mng_id2.setForeground(new java.awt.Color(255, 255, 255));
+        mng_id2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        mng_id2.setToolTipText("");
+        mng_id2.setBorder(null);
+        jPanel42.add(mng_id2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 290, 30));
+
+        mng_name2.setBackground(new java.awt.Color(14, 73, 181));
+        mng_name2.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
+        mng_name2.setForeground(new java.awt.Color(255, 255, 255));
+        mng_name2.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        mng_name2.setToolTipText("");
+        mng_name2.setBorder(null);
+        jPanel42.add(mng_name2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 290, 40));
+
+        javax.swing.GroupLayout Create_EmpLayout = new javax.swing.GroupLayout(Create_Emp);
+        Create_Emp.setLayout(Create_EmpLayout);
+        Create_EmpLayout.setHorizontalGroup(
+            Create_EmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel42, javax.swing.GroupLayout.DEFAULT_SIZE, 1101, Short.MAX_VALUE)
+        );
+        Create_EmpLayout.setVerticalGroup(
+            Create_EmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel42, javax.swing.GroupLayout.DEFAULT_SIZE, 809, Short.MAX_VALUE)
+        );
+
+        body.add(Create_Emp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+
+        Update_Emp.setBackground(new java.awt.Color(204, 0, 51));
+
+        jPanel52.setBackground(new java.awt.Color(14, 73, 181));
+        jPanel52.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel56.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel56.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        fNameuepp.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        fNameuepp.setForeground(new java.awt.Color(128, 128, 128));
+        fNameuepp.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        fNameuepp.setText("First Name");
+        jPanel56.add(fNameuepp, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 140, 20));
+
+        Phoneuepp.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        Phoneuepp.setForeground(new java.awt.Color(128, 128, 128));
+        Phoneuepp.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Phoneuepp.setText("Phone");
+        jPanel56.add(Phoneuepp, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 260, 20));
+
+        Emailuepp.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        Emailuepp.setForeground(new java.awt.Color(128, 128, 128));
+        Emailuepp.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Emailuepp.setText("Email");
+        jPanel56.add(Emailuepp, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 280, 20));
+
+        crt_emp4.setBackground(new java.awt.Color(0, 102, 255));
+        crt_emp4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 255)));
+
+        jLabel104.setFont(new java.awt.Font("Dialog", 1, 22)); // NOI18N
+        jLabel104.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel104.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel104.setText("Update");
+        jLabel104.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel104MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout crt_emp4Layout = new javax.swing.GroupLayout(crt_emp4);
+        crt_emp4.setLayout(crt_emp4Layout);
+        crt_emp4Layout.setHorizontalGroup(
+            crt_emp4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel104, javax.swing.GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE)
+        );
+        crt_emp4Layout.setVerticalGroup(
+            crt_emp4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel104, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+        );
+
+        jPanel56.add(crt_emp4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 550, 50));
+
+        L_nameuepp.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        L_nameuepp.setForeground(new java.awt.Color(128, 128, 128));
+        L_nameuepp.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        L_nameuepp.setText("Last Name");
+        jPanel56.add(L_nameuepp, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 220, 20));
+
+        jLabel105.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel105.setForeground(new java.awt.Color(128, 128, 128));
+        jLabel105.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel105.setText("Employee ID");
+        jPanel56.add(jLabel105, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 90, 20));
+
+        aaaauepp.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        aaaauepp.setForeground(new java.awt.Color(128, 128, 128));
+        aaaauepp.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        aaaauepp.setText("Address");
+        jPanel56.add(aaaauepp, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 70, 20));
+
+        firstnameuepp.setBackground(new java.awt.Color(255, 255, 255));
+        firstnameuepp.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        firstnameuepp.setForeground(new java.awt.Color(128, 128, 128));
+        firstnameuepp.setText("First Name");
+        firstnameuepp.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 153, 204)));
+        firstnameuepp.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                firstnameueppFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                firstnameueppFocusLost(evt);
+            }
+        });
+        jPanel56.add(firstnameuepp, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 260, 30));
+
+        lastnameuepp.setBackground(new java.awt.Color(255, 255, 255));
+        lastnameuepp.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        lastnameuepp.setForeground(new java.awt.Color(128, 128, 128));
+        lastnameuepp.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        lastnameuepp.setText("Last Name");
+        lastnameuepp.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 153, 204)));
+        lastnameuepp.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                lastnameueppFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                lastnameueppFocusLost(evt);
+            }
+        });
+        lastnameuepp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lastnameueppActionPerformed(evt);
+            }
+        });
+        jPanel56.add(lastnameuepp, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 30, 280, 30));
+
+        emailuepp.setBackground(new java.awt.Color(255, 255, 255));
+        emailuepp.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        emailuepp.setForeground(new java.awt.Color(128, 128, 128));
+        emailuepp.setText("Email");
+        emailuepp.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 153, 204)));
+        emailuepp.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                emailueppFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                emailueppFocusLost(evt);
+            }
+        });
+        jPanel56.add(emailuepp, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 100, 280, 30));
+
+        phone3uepp.setBackground(new java.awt.Color(255, 255, 255));
+        phone3uepp.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        phone3uepp.setForeground(new java.awt.Color(128, 128, 128));
+        phone3uepp.setText("Phone");
+        phone3uepp.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 153, 204)));
+        phone3uepp.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                phone3ueppFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                phone3ueppFocusLost(evt);
+            }
+        });
+        jPanel56.add(phone3uepp, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 260, 30));
+
+        Emp_iduepp.setBackground(new java.awt.Color(255, 255, 255));
+        Emp_iduepp.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        Emp_iduepp.setForeground(new java.awt.Color(0, 0, 0));
+        Emp_iduepp.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        Emp_iduepp.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 153, 204)));
+        Emp_iduepp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Emp_idueppActionPerformed(evt);
+            }
+        });
+        jPanel56.add(Emp_iduepp, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 260, 30));
+
+        addressuepp.setBackground(new java.awt.Color(255, 255, 255));
+        addressuepp.setColumns(10);
+        addressuepp.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        addressuepp.setForeground(new java.awt.Color(0, 0, 0));
+        addressuepp.setRows(5);
+        addressuepp.setText("Address");
+        addressuepp.setBorder(null);
+        addressuepp.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        addressuepp.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                addressueppFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                addressueppFocusLost(evt);
+            }
+        });
+        jScrollPane14.setViewportView(addressuepp);
+
+        jPanel56.add(jScrollPane14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 550, -1));
+
+        jPanel52.add(jPanel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 180, 610, 450));
+
+        jLabel106.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel106.setFont(new java.awt.Font("Georgia", 0, 48)); // NOI18N
+        jLabel106.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel106.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel106.setText("Welcome !");
+        jLabel106.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        jPanel52.add(jLabel106, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 290, 70));
+
+        jLabel107.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel107.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/update-business-user.png"))); // NOI18N
+        jPanel52.add(jLabel107, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 420, 310));
+
+        jLabel108.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel108.setFont(new java.awt.Font("Georgia", 1, 30)); // NOI18N
+        jLabel108.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel108.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel108.setText("EMPLOYEE");
+        jPanel52.add(jLabel108, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 410, 50));
+
+        mng_id3.setBackground(new java.awt.Color(14, 73, 181));
+        mng_id3.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
+        mng_id3.setForeground(new java.awt.Color(255, 255, 255));
+        mng_id3.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        mng_id3.setToolTipText("");
+        mng_id3.setBorder(null);
+        jPanel52.add(mng_id3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 290, 30));
+
+        mng_name3.setBackground(new java.awt.Color(14, 73, 181));
+        mng_name3.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
+        mng_name3.setForeground(new java.awt.Color(255, 255, 255));
+        mng_name3.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        mng_name3.setToolTipText("");
+        mng_name3.setBorder(null);
+        jPanel52.add(mng_name3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 290, 40));
+
+        jLabel109.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel109.setFont(new java.awt.Font("Georgia", 1, 30)); // NOI18N
+        jLabel109.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel109.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel109.setText("UPDATE");
+        jPanel52.add(jLabel109, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, 410, 50));
+
+        jPanel57.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel57.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel110.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
+        jLabel110.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel110.setText("Update Employee !");
+        jPanel57.add(jLabel110, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 400, -1));
+
+        serchuepp.setBackground(new java.awt.Color(255, 255, 255));
+        serchuepp.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        serchuepp.setForeground(new java.awt.Color(128, 128, 128));
+        serchuepp.setText("Serch Employee by Employee ID");
+        serchuepp.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
+        serchuepp.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                serchueppFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                serchueppFocusLost(evt);
+            }
+        });
+        jPanel57.add(serchuepp, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 320, 30));
+
+        fName1uepp.setFont(new java.awt.Font("Consolas", 1, 21)); // NOI18N
+        fName1uepp.setForeground(new java.awt.Color(128, 128, 128));
+        fName1uepp.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        fName1uepp.setText("Serch Employee by Employee ID");
+        jPanel57.add(fName1uepp, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 390, 30));
+
+        jLabel2uepp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/magnifying-glass.png"))); // NOI18N
+        jLabel2uepp.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
+        jLabel2uepp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2ueppMouseClicked(evt);
+            }
+        });
+        jPanel57.add(jLabel2uepp, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 80, 46, 40));
+
+        jPanel52.add(jPanel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, 610, 140));
+
+        javax.swing.GroupLayout Update_EmpLayout = new javax.swing.GroupLayout(Update_Emp);
+        Update_Emp.setLayout(Update_EmpLayout);
+        Update_EmpLayout.setHorizontalGroup(
+            Update_EmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel52, javax.swing.GroupLayout.DEFAULT_SIZE, 1190, Short.MAX_VALUE)
+        );
+        Update_EmpLayout.setVerticalGroup(
+            Update_EmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel52, javax.swing.GroupLayout.DEFAULT_SIZE, 809, Short.MAX_VALUE)
+        );
+
+        body.add(Update_Emp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+
+        Delete_Emp.setBackground(new java.awt.Color(0, 0, 255));
+
+        jPanel58.setBackground(new java.awt.Color(14, 73, 181));
+        jPanel58.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel59.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel59.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        crt_emp5.setBackground(new java.awt.Color(0, 102, 255));
+        crt_emp5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 255)));
+
+        jLabel111.setFont(new java.awt.Font("Dialog", 1, 22)); // NOI18N
+        jLabel111.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel111.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel111.setText("Delete Employee");
+        jLabel111.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel111MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout crt_emp5Layout = new javax.swing.GroupLayout(crt_emp5);
+        crt_emp5.setLayout(crt_emp5Layout);
+        crt_emp5Layout.setHorizontalGroup(
+            crt_emp5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel111, javax.swing.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE)
+        );
+        crt_emp5Layout.setVerticalGroup(
+            crt_emp5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel111, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+        );
+
+        jPanel59.add(crt_emp5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 570, 50));
+
+        tabledepp.setBackground(new java.awt.Color(255, 255, 255));
+        tabledepp.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        tabledepp.setForeground(new java.awt.Color(47, 68, 187));
+        tabledepp.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Emp ID", "Emp Name", "Emp Address"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tabledepp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabledeppMouseClicked(evt);
+            }
+        });
+        jScrollPane15.setViewportView(tabledepp);
+
+        jPanel59.add(jScrollPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 570, 340));
+
+        jPanel58.add(jPanel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 180, 610, 450));
+
+        jLabel112.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel112.setFont(new java.awt.Font("Georgia", 0, 48)); // NOI18N
+        jLabel112.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel112.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel112.setText("Welcome !");
+        jLabel112.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        jPanel58.add(jLabel112, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 290, 70));
+
+        jLabel113.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel113.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/delete-user.png"))); // NOI18N
+        jPanel58.add(jLabel113, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 420, 310));
+
+        jLabel114.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel114.setFont(new java.awt.Font("Georgia", 1, 30)); // NOI18N
+        jLabel114.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel114.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel114.setText("EMPLOYEE");
+        jPanel58.add(jLabel114, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 410, 50));
+
+        mng_id4.setBackground(new java.awt.Color(14, 73, 181));
+        mng_id4.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
+        mng_id4.setForeground(new java.awt.Color(255, 255, 255));
+        mng_id4.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        mng_id4.setToolTipText("");
+        mng_id4.setBorder(null);
+        jPanel58.add(mng_id4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 290, 30));
+
+        mng_name4.setBackground(new java.awt.Color(14, 73, 181));
+        mng_name4.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
+        mng_name4.setForeground(new java.awt.Color(255, 255, 255));
+        mng_name4.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        mng_name4.setToolTipText("");
+        mng_name4.setBorder(null);
+        jPanel58.add(mng_name4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 290, 40));
+
+        jLabel115.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel115.setFont(new java.awt.Font("Georgia", 1, 30)); // NOI18N
+        jLabel115.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel115.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel115.setText("DELETE");
+        jPanel58.add(jLabel115, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, 410, 50));
+
+        jPanel60.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel60.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel116.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel116.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
+        jLabel116.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel116.setText("Delete Employee !");
+        jPanel60.add(jLabel116, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 400, -1));
+
+        serchdepp.setBackground(new java.awt.Color(255, 255, 255));
+        serchdepp.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        serchdepp.setForeground(new java.awt.Color(128, 128, 128));
+        serchdepp.setText("Serch Employee by Employee ID");
+        serchdepp.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
+        serchdepp.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                serchdeppFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                serchdeppFocusLost(evt);
+            }
+        });
+        serchdepp.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                serchdeppKeyReleased(evt);
+            }
+        });
+        jPanel60.add(serchdepp, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 320, 30));
+
+        fName1depp.setFont(new java.awt.Font("Consolas", 1, 21)); // NOI18N
+        fName1depp.setForeground(new java.awt.Color(128, 128, 128));
+        fName1depp.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        fName1depp.setText("Serch Employee by Employee ID");
+        jPanel60.add(fName1depp, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 390, 30));
+
+        jLabel117.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/magnifying-glass.png"))); // NOI18N
+        jLabel117.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
+        jLabel117.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel117MouseClicked(evt);
+            }
+        });
+        jPanel60.add(jLabel117, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 80, 46, 40));
+
+        jPanel58.add(jPanel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, 610, 140));
+        jPanel58.add(eiddepp, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 620, -1, -1));
+        jPanel58.add(enndepp, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 630, -1, -1));
+
+        javax.swing.GroupLayout Delete_EmpLayout = new javax.swing.GroupLayout(Delete_Emp);
+        Delete_Emp.setLayout(Delete_EmpLayout);
+        Delete_EmpLayout.setHorizontalGroup(
+            Delete_EmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel58, javax.swing.GroupLayout.DEFAULT_SIZE, 1190, Short.MAX_VALUE)
+        );
+        Delete_EmpLayout.setVerticalGroup(
+            Delete_EmpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel58, javax.swing.GroupLayout.DEFAULT_SIZE, 809, Short.MAX_VALUE)
+        );
+
+        body.add(Delete_Emp, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+
+        Working_list.setBackground(new java.awt.Color(204, 0, 51));
+
+        jPanel61.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel61.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        tablewll.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        tablewll.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Service_Id", "Cust_Id", "Cust_Name", "Emp Id", "Emp Name", "Service ", "Date", "Time", "Status"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablewll.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablewllMouseClicked(evt);
+            }
+        });
+        jScrollPane19.setViewportView(tablewll);
+
+        jPanel61.add(jScrollPane19, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 100, 1130, 590));
+
+        jPanel62.setBackground(new java.awt.Color(0, 153, 0));
+        jPanel62.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel62MouseClicked(evt);
+            }
+        });
+
+        jLabel118.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel118.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel118.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel118.setText("New");
+
+        javax.swing.GroupLayout jPanel62Layout = new javax.swing.GroupLayout(jPanel62);
+        jPanel62.setLayout(jPanel62Layout);
+        jPanel62Layout.setHorizontalGroup(
+            jPanel62Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel118, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+        );
+        jPanel62Layout.setVerticalGroup(
+            jPanel62Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel118, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+        );
+
+        jPanel61.add(jPanel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 720, -1, -1));
+
+        jPanel63.setBackground(new java.awt.Color(255, 0, 51));
+        jPanel63.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel63MouseClicked(evt);
+            }
+        });
+
+        jLabel119.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel119.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel119.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel119.setText("Delete");
+
+        javax.swing.GroupLayout jPanel63Layout = new javax.swing.GroupLayout(jPanel63);
+        jPanel63.setLayout(jPanel63Layout);
+        jPanel63Layout.setHorizontalGroup(
+            jPanel63Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel119, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+        );
+        jPanel63Layout.setVerticalGroup(
+            jPanel63Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel119, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+        );
+
+        jPanel61.add(jPanel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 720, -1, -1));
+
+        jPanel64.setBackground(new java.awt.Color(0, 125, 254));
+
+        jLabel120.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel120.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel120.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel120.setText("Print");
+
+        javax.swing.GroupLayout jPanel64Layout = new javax.swing.GroupLayout(jPanel64);
+        jPanel64.setLayout(jPanel64Layout);
+        jPanel64Layout.setHorizontalGroup(
+            jPanel64Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel120, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+        );
+        jPanel64Layout.setVerticalGroup(
+            jPanel64Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel120, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+        );
+
+        jPanel61.add(jPanel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 720, -1, -1));
+
+        stawll.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select --", "Pending", "Active", "Complete" }));
+        stawll.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 125, 254)));
+        jPanel61.add(stawll, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 50, 210, 38));
+
+        jPanel65.setBackground(new java.awt.Color(0, 0, 255));
+        jPanel65.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel65MouseClicked(evt);
+            }
+        });
+
+        jLabel121.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel121.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel121.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel121.setText("Assign");
+
+        javax.swing.GroupLayout jPanel65Layout = new javax.swing.GroupLayout(jPanel65);
+        jPanel65.setLayout(jPanel65Layout);
+        jPanel65Layout.setHorizontalGroup(
+            jPanel65Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel121, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+        );
+        jPanel65Layout.setVerticalGroup(
+            jPanel65Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel121, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+        );
+
+        jPanel61.add(jPanel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 720, -1, -1));
+
+        jPanel66.setBackground(new java.awt.Color(153, 0, 204));
+        jPanel66.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel66MouseClicked(evt);
+            }
+        });
+
+        jLabel122.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel122.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel122.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel122.setText("Compleate");
+
+        javax.swing.GroupLayout jPanel66Layout = new javax.swing.GroupLayout(jPanel66);
+        jPanel66.setLayout(jPanel66Layout);
+        jPanel66Layout.setHorizontalGroup(
+            jPanel66Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel122, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+        );
+        jPanel66Layout.setVerticalGroup(
+            jPanel66Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel122, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+        );
+
+        jPanel61.add(jPanel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 720, -1, -1));
+
+        serchell1.setBackground(new java.awt.Color(255, 255, 255));
+        serchell1.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        serchell1.setForeground(new java.awt.Color(47, 68, 187));
+        serchell1.setText("Serch Customer by Customer ID");
+        serchell1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
+        serchell1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                serchell1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                serchell1FocusLost(evt);
+            }
+        });
+        serchell1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                serchell1KeyReleased(evt);
+            }
+        });
+        jPanel61.add(serchell1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 58, 320, 30));
+
+        jLabel123.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/magnifying-glass.png"))); // NOI18N
+        jLabel123.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
+        jLabel123.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel123MouseClicked(evt);
+            }
+        });
+        jPanel61.add(jLabel123, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 48, 46, 40));
+
+        fName1345.setFont(new java.awt.Font("Consolas", 1, 21)); // NOI18N
+        fName1345.setForeground(new java.awt.Color(47, 68, 187));
+        fName1345.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        fName1345.setText("Serch Customer by Customer ID");
+        jPanel61.add(fName1345, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, 390, 30));
+
+        jPanel68.setBackground(new java.awt.Color(0, 153, 0));
+        jPanel68.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel68MouseClicked(evt);
+            }
+        });
+
+        jLabel125.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jLabel125.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel125.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel125.setText("Update");
+
+        javax.swing.GroupLayout jPanel68Layout = new javax.swing.GroupLayout(jPanel68);
+        jPanel68.setLayout(jPanel68Layout);
+        jPanel68Layout.setHorizontalGroup(
+            jPanel68Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel125, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+        );
+        jPanel68Layout.setVerticalGroup(
+            jPanel68Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel125, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+        );
+
+        jPanel61.add(jPanel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 720, -1, -1));
+
+        button1.setLabel("button1");
+        button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button1ActionPerformed(evt);
+            }
+        });
+        jPanel61.add(button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 740, -1, -1));
+        jPanel61.add(hidetext, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 30, 70, -1));
+
+        javax.swing.GroupLayout Working_listLayout = new javax.swing.GroupLayout(Working_list);
+        Working_list.setLayout(Working_listLayout);
+        Working_listLayout.setHorizontalGroup(
+            Working_listLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1178, Short.MAX_VALUE)
+            .addGroup(Working_listLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel61, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        Working_listLayout.setVerticalGroup(
+            Working_listLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 803, Short.MAX_VALUE)
+            .addGroup(Working_listLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel61, javax.swing.GroupLayout.DEFAULT_SIZE, 803, Short.MAX_VALUE))
+        );
+
+        body.add(Working_list, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+
+        Assign.setBackground(new java.awt.Color(0, 0, 255));
+
+        jPanel67.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel124.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        jLabel124.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel124.setText("Date");
+
+        jLabel126.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        jLabel126.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel126.setText("Time");
+
+        jPanel69.setBackground(new java.awt.Color(0, 125, 254));
+
+        jLabel127.setBackground(new java.awt.Color(0, 125, 254));
+        jLabel127.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel127.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel127.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel127.setText("Assign For Service");
+
+        javax.swing.GroupLayout jPanel69Layout = new javax.swing.GroupLayout(jPanel69);
+        jPanel69.setLayout(jPanel69Layout);
+        jPanel69Layout.setHorizontalGroup(
+            jPanel69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jLabel127, javax.swing.GroupLayout.DEFAULT_SIZE, 1190, Short.MAX_VALUE))
+        );
+        jPanel69Layout.setVerticalGroup(
+            jPanel69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 71, Short.MAX_VALUE)
+            .addGroup(jPanel69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel69Layout.createSequentialGroup()
+                    .addComponent(jLabel127, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+
+        t2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        t2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Emp Name --", " " }));
+        t2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                t2ActionPerformed(evt);
+            }
+        });
+
+        jLabel128.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        jLabel128.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel128.setText("Select Employee Name");
+
+        jPanel70.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel70.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 125, 254)));
+
+        td.setBackground(new java.awt.Color(255, 255, 255));
+        td.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        td.setForeground(new java.awt.Color(0, 125, 254));
+        td.setBorder(null);
+        td.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tdActionPerformed(evt);
+            }
+        });
+
+        jLabel129.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user (1).png"))); // NOI18N
+        jLabel129.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel129MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel70Layout = new javax.swing.GroupLayout(jPanel70);
+        jPanel70.setLayout(jPanel70Layout);
+        jPanel70Layout.setHorizontalGroup(
+            jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel70Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(td, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
+                .addComponent(jLabel129, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel70Layout.setVerticalGroup(
+            jPanel70Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(td)
+            .addComponent(jLabel129, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        jLabel130.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        jLabel130.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel130.setText("Coustomer Name");
+
+        ascn.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
+        ascn.setForeground(new java.awt.Color(0, 0, 0));
+        ascn.setText("xyz xyz");
+
+        ascph.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
+        ascph.setForeground(new java.awt.Color(0, 0, 0));
+        ascph.setText("xyz xyz");
+
+        jLabel133.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        jLabel133.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel133.setText("Coustomer Mobile No");
+
+        jLabel134.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        jLabel134.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel134.setText("Coustomer Email ID");
+
+        asceml.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
+        asceml.setForeground(new java.awt.Color(0, 0, 0));
+        asceml.setText("xyz xyz");
+
+        jLabel136.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        jLabel136.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel136.setText("Coustomer Address");
+
+        ascad.setBackground(new java.awt.Color(255, 255, 255));
+        ascad.setBorder(null);
+        ascad.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        ascad.setForeground(new java.awt.Color(0, 0, 0));
+        ascad.setText("xyz xyz xyz");
+        jScrollPane8.setViewportView(ascad);
+
+        jLabel137.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        jLabel137.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel137.setText("Service Description");
+
+        ascsd.setBackground(new java.awt.Color(255, 255, 255));
+        ascsd.setBorder(null);
+        ascsd.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        ascsd.setForeground(new java.awt.Color(0, 0, 0));
+        ascsd.setText("xyz xyz xyz");
+        jScrollPane10.setViewportView(ascsd);
+
+        jPanel71.setBackground(new java.awt.Color(0, 102, 51));
+        jPanel71.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel71MouseClicked(evt);
+            }
+        });
+
+        jLabel138.setFont(new java.awt.Font("Consolas", 1, 20)); // NOI18N
+        jLabel138.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel138.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel138.setText("Save");
+
+        javax.swing.GroupLayout jPanel71Layout = new javax.swing.GroupLayout(jPanel71);
+        jPanel71.setLayout(jPanel71Layout);
+        jPanel71Layout.setHorizontalGroup(
+            jPanel71Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel138, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel71Layout.setVerticalGroup(
+            jPanel71Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel138, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+        );
+
+        jPanel72.setBackground(new java.awt.Color(0, 125, 254));
+
+        jLabel139.setFont(new java.awt.Font("Consolas", 1, 20)); // NOI18N
+        jLabel139.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel139.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel139.setText("Print");
+
+        javax.swing.GroupLayout jPanel72Layout = new javax.swing.GroupLayout(jPanel72);
+        jPanel72.setLayout(jPanel72Layout);
+        jPanel72Layout.setHorizontalGroup(
+            jPanel72Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel139, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel72Layout.setVerticalGroup(
+            jPanel72Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel139, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+        );
+
+        ddt.setDateFormatString("dd-MM-yyyy");
+
+        t3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        t3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Emp Name --", " " }));
+
+        jLabel131.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        jLabel131.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel131.setText("Select Employee Id");
+
+        javax.swing.GroupLayout jPanel67Layout = new javax.swing.GroupLayout(jPanel67);
+        jPanel67.setLayout(jPanel67Layout);
+        jPanel67Layout.setHorizontalGroup(
+            jPanel67Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel69, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel67Layout.createSequentialGroup()
+                .addGap(134, 134, 134)
+                .addGroup(jPanel67Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel67Layout.createSequentialGroup()
+                        .addComponent(jLabel130, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(127, 127, 127)
+                        .addComponent(jLabel133, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(91, 91, 91)
+                        .addComponent(jLabel134))
+                    .addGroup(jPanel67Layout.createSequentialGroup()
+                        .addComponent(ascn, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(ascph, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(133, 133, 133)
+                        .addComponent(asceml, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel136, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane8)
+                    .addComponent(jLabel137, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel71, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane10)
+                    .addComponent(jPanel72, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel67Layout.createSequentialGroup()
+                        .addGroup(jPanel67Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel67Layout.createSequentialGroup()
+                                .addComponent(ddt, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jPanel70, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(24, 24, 24)
+                                .addComponent(t2, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel67Layout.createSequentialGroup()
+                                .addComponent(jLabel124)
+                                .addGap(106, 106, 106)
+                                .addComponent(jLabel126)
+                                .addGap(130, 130, 130)
+                                .addComponent(jLabel128)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                        .addGroup(jPanel67Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel131)
+                            .addComponent(t3, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(226, Short.MAX_VALUE))
+        );
+        jPanel67Layout.setVerticalGroup(
+            jPanel67Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel67Layout.createSequentialGroup()
+                .addComponent(jPanel69, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel67Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel67Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel67Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel124)
+                            .addGroup(jPanel67Layout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addGroup(jPanel67Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel126)
+                                    .addComponent(jLabel128))))
+                        .addGap(4, 4, 4)
+                        .addGroup(jPanel67Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ddt, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel70, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(t2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel67Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel131)
+                        .addGap(4, 4, 4)
+                        .addComponent(t3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addGroup(jPanel67Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel130)
+                    .addComponent(jLabel133)
+                    .addComponent(jLabel134))
+                .addGap(6, 6, 6)
+                .addGroup(jPanel67Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ascn)
+                    .addComponent(ascph)
+                    .addComponent(asceml))
+                .addGap(34, 34, 34)
+                .addComponent(jLabel136)
+                .addGap(12, 12, 12)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel137)
+                .addGap(12, 12, 12)
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(jPanel71, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel72, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        javax.swing.GroupLayout AssignLayout = new javax.swing.GroupLayout(Assign);
+        Assign.setLayout(AssignLayout);
+        AssignLayout.setHorizontalGroup(
+            AssignLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel67, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        AssignLayout.setVerticalGroup(
+            AssignLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel67, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        body.add(Assign, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+
+        Complete.setBackground(new java.awt.Color(204, 0, 51));
+
+        jPanel73.setBackground(new java.awt.Color(255, 255, 255));
+
+        csdd.setForeground(new java.awt.Color(0, 125, 254));
+        csdd.setDateFormatString("dd-MM-yyyy");
+        csdd.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+
+        jLabel132.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        jLabel132.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel132.setText("Date");
+
+        jLabel135.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        jLabel135.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel135.setText("Time");
+
+        jPanel74.setBackground(new java.awt.Color(0, 125, 254));
+
+        jLabel140.setBackground(new java.awt.Color(0, 125, 254));
+        jLabel140.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel140.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel140.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel140.setText("Complete Service");
+
+        javax.swing.GroupLayout jPanel74Layout = new javax.swing.GroupLayout(jPanel74);
+        jPanel74.setLayout(jPanel74Layout);
+        jPanel74Layout.setHorizontalGroup(
+            jPanel74Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1190, Short.MAX_VALUE)
+            .addGroup(jPanel74Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jLabel140, javax.swing.GroupLayout.DEFAULT_SIZE, 1190, Short.MAX_VALUE))
         );
-        body15Layout.setVerticalGroup(
-            body15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 809, Short.MAX_VALUE)
-        );
-
-        body.add(body15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
-
-        body18.setBackground(new java.awt.Color(0, 0, 255));
-
-        javax.swing.GroupLayout body18Layout = new javax.swing.GroupLayout(body18);
-        body18.setLayout(body18Layout);
-        body18Layout.setHorizontalGroup(
-            body18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1190, Short.MAX_VALUE)
-        );
-        body18Layout.setVerticalGroup(
-            body18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 809, Short.MAX_VALUE)
+        jPanel74Layout.setVerticalGroup(
+            jPanel74Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 71, Short.MAX_VALUE)
+            .addGroup(jPanel74Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jLabel140, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE))
         );
 
-        body.add(body18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+        jPanel75.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel75.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 125, 254)));
 
-        body19.setBackground(new java.awt.Color(204, 0, 51));
+        cstt.setBackground(new java.awt.Color(255, 255, 255));
+        cstt.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        cstt.setForeground(new java.awt.Color(0, 125, 254));
+        cstt.setBorder(null);
+        cstt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                csttActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout body19Layout = new javax.swing.GroupLayout(body19);
-        body19.setLayout(body19Layout);
-        body19Layout.setHorizontalGroup(
-            body19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1190, Short.MAX_VALUE)
+        jLabel141.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user (1).png"))); // NOI18N
+        jLabel141.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel141MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel75Layout = new javax.swing.GroupLayout(jPanel75);
+        jPanel75.setLayout(jPanel75Layout);
+        jPanel75Layout.setHorizontalGroup(
+            jPanel75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel75Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cstt, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(7, 7, 7)
+                .addComponent(jLabel141, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-        body19Layout.setVerticalGroup(
-            body19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 809, Short.MAX_VALUE)
-        );
-
-        body.add(body19, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
-
-        body17.setBackground(new java.awt.Color(0, 0, 255));
-
-        javax.swing.GroupLayout body17Layout = new javax.swing.GroupLayout(body17);
-        body17.setLayout(body17Layout);
-        body17Layout.setHorizontalGroup(
-            body17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1190, Short.MAX_VALUE)
-        );
-        body17Layout.setVerticalGroup(
-            body17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 809, Short.MAX_VALUE)
-        );
-
-        body.add(body17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
-
-        body20.setBackground(new java.awt.Color(204, 0, 51));
-
-        javax.swing.GroupLayout body20Layout = new javax.swing.GroupLayout(body20);
-        body20.setLayout(body20Layout);
-        body20Layout.setHorizontalGroup(
-            body20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1190, Short.MAX_VALUE)
-        );
-        body20Layout.setVerticalGroup(
-            body20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 809, Short.MAX_VALUE)
+        jPanel75Layout.setVerticalGroup(
+            jPanel75Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel141, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel75Layout.createSequentialGroup()
+                .addComponent(cstt, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 5, Short.MAX_VALUE))
         );
 
-        body.add(body20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+        jLabel142.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        jLabel142.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel142.setText("Coustomer Name");
 
-        body13.setBackground(new java.awt.Color(0, 0, 255));
+        cscn.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
+        cscn.setForeground(new java.awt.Color(0, 0, 0));
+        cscn.setText("xyz xyz");
 
-        javax.swing.GroupLayout body13Layout = new javax.swing.GroupLayout(body13);
-        body13.setLayout(body13Layout);
-        body13Layout.setHorizontalGroup(
-            body13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1190, Short.MAX_VALUE)
+        cscp.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
+        cscp.setForeground(new java.awt.Color(0, 0, 0));
+        cscp.setText("xyz xyz");
+
+        jLabel145.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        jLabel145.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel145.setText("Coustomer Mobile No");
+
+        jLabel146.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        jLabel146.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel146.setText("Coustomer Email ID");
+
+        cseml.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
+        cseml.setForeground(new java.awt.Color(0, 0, 0));
+        cseml.setText("xyz xyz");
+
+        jLabel148.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        jLabel148.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel148.setText("Coustomer Address");
+
+        csad.setBackground(new java.awt.Color(255, 255, 255));
+        csad.setBorder(null);
+        csad.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        csad.setForeground(new java.awt.Color(0, 0, 0));
+        csad.setText("xyz xyz xyz");
+        jScrollPane20.setViewportView(csad);
+
+        jLabel149.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        jLabel149.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel149.setText("Meterials");
+
+        csmet.setBackground(new java.awt.Color(255, 255, 255));
+        csmet.setBorder(null);
+        csmet.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        csmet.setForeground(new java.awt.Color(0, 0, 0));
+        csmet.setText("xyz xyz xyz");
+        jScrollPane21.setViewportView(csmet);
+
+        jPanel76.setBackground(new java.awt.Color(0, 102, 51));
+        jPanel76.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel76MouseClicked(evt);
+            }
+        });
+
+        jLabel150.setFont(new java.awt.Font("Consolas", 1, 20)); // NOI18N
+        jLabel150.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel150.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel150.setText("Save");
+
+        javax.swing.GroupLayout jPanel76Layout = new javax.swing.GroupLayout(jPanel76);
+        jPanel76.setLayout(jPanel76Layout);
+        jPanel76Layout.setHorizontalGroup(
+            jPanel76Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel150, javax.swing.GroupLayout.DEFAULT_SIZE, 880, Short.MAX_VALUE)
         );
-        body13Layout.setVerticalGroup(
-            body13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 809, Short.MAX_VALUE)
+        jPanel76Layout.setVerticalGroup(
+            jPanel76Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel150, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
         );
 
-        body.add(body13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+        Co.setBackground(new java.awt.Color(0, 125, 254));
 
-        body16.setBackground(new java.awt.Color(204, 0, 51));
+        jLabel151.setFont(new java.awt.Font("Consolas", 1, 20)); // NOI18N
+        jLabel151.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel151.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel151.setText("Print");
 
-        javax.swing.GroupLayout body16Layout = new javax.swing.GroupLayout(body16);
-        body16.setLayout(body16Layout);
-        body16Layout.setHorizontalGroup(
-            body16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1190, Short.MAX_VALUE)
+        javax.swing.GroupLayout CoLayout = new javax.swing.GroupLayout(Co);
+        Co.setLayout(CoLayout);
+        CoLayout.setHorizontalGroup(
+            CoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel151, javax.swing.GroupLayout.DEFAULT_SIZE, 881, Short.MAX_VALUE)
         );
-        body16Layout.setVerticalGroup(
-            body16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 809, Short.MAX_VALUE)
+        CoLayout.setVerticalGroup(
+            CoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel151, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
         );
 
-        body.add(body16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+        csei.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
+        csei.setForeground(new java.awt.Color(0, 0, 0));
+        csei.setText("xyz xyz");
+
+        jLabel153.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        jLabel153.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel153.setText("Employee Id");
+
+        cssd.setBackground(new java.awt.Color(255, 255, 255));
+        cssd.setBorder(null);
+        cssd.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        cssd.setForeground(new java.awt.Color(0, 0, 0));
+        cssd.setText("xyz xyz xyz");
+        jScrollPane22.setViewportView(cssd);
+
+        jLabel154.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        jLabel154.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel154.setText("Service Description");
+
+        csen.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
+        csen.setForeground(new java.awt.Color(0, 0, 0));
+        csen.setText("xyz xyz");
+
+        jLabel156.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        jLabel156.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel156.setText("Employee Name");
+
+        jLabel157.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        jLabel157.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel157.setText("Cost");
+
+        jLabel158.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        jLabel158.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel158.setText("Coustomer Id");
+
+        csci.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
+        csci.setForeground(new java.awt.Color(0, 0, 0));
+        csci.setText("xyz xyz");
+
+        cscost.setBackground(new java.awt.Color(255, 255, 255));
+        cscost.setForeground(new java.awt.Color(0, 0, 0));
+        cscost.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        javax.swing.GroupLayout jPanel73Layout = new javax.swing.GroupLayout(jPanel73);
+        jPanel73.setLayout(jPanel73Layout);
+        jPanel73Layout.setHorizontalGroup(
+            jPanel73Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel74, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel73Layout.createSequentialGroup()
+                .addGap(300, 300, 300)
+                .addComponent(jLabel132)
+                .addGap(280, 280, 280)
+                .addComponent(jLabel135))
+            .addGroup(jPanel73Layout.createSequentialGroup()
+                .addGap(300, 300, 300)
+                .addComponent(csdd, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(109, 109, 109)
+                .addComponent(jPanel75, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel73Layout.createSequentialGroup()
+                .addGap(155, 155, 155)
+                .addComponent(jLabel153)
+                .addGap(213, 213, 213)
+                .addComponent(jLabel156)
+                .addGap(148, 148, 148)
+                .addComponent(jLabel157, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel73Layout.createSequentialGroup()
+                .addGap(155, 155, 155)
+                .addComponent(csei, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(63, 63, 63)
+                .addComponent(csen, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(cscost, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel73Layout.createSequentialGroup()
+                .addGap(155, 155, 155)
+                .addComponent(jLabel149, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(230, 230, 230)
+                .addComponent(jLabel154, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel73Layout.createSequentialGroup()
+                .addGap(155, 155, 155)
+                .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(55, 55, 55)
+                .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel73Layout.createSequentialGroup()
+                .addGap(155, 155, 155)
+                .addComponent(jLabel142, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(80, 80, 80)
+                .addComponent(jLabel158, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(jLabel145, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65)
+                .addComponent(jLabel146))
+            .addGroup(jPanel73Layout.createSequentialGroup()
+                .addGap(155, 155, 155)
+                .addComponent(cscn, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22)
+                .addComponent(csci, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
+                .addComponent(cscp, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(108, 108, 108)
+                .addComponent(cseml, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel73Layout.createSequentialGroup()
+                .addGap(155, 155, 155)
+                .addComponent(jLabel148, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel73Layout.createSequentialGroup()
+                .addGap(155, 155, 155)
+                .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 880, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel73Layout.createSequentialGroup()
+                .addGap(154, 154, 154)
+                .addGroup(jPanel73Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Co, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel76, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+        jPanel73Layout.setVerticalGroup(
+            jPanel73Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel73Layout.createSequentialGroup()
+                .addComponent(jPanel74, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(9, 9, 9)
+                .addGroup(jPanel73Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel132)
+                    .addComponent(jLabel135))
+                .addGap(8, 8, 8)
+                .addGroup(jPanel73Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(csdd, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel75, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(45, 45, 45)
+                .addGroup(jPanel73Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel73Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel153))
+                    .addComponent(jLabel156, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel157))
+                .addGap(2, 2, 2)
+                .addGroup(jPanel73Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel73Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(csei, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(csen, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel73Layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addComponent(cscost, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(33, 33, 33)
+                .addGroup(jPanel73Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel149)
+                    .addComponent(jLabel154))
+                .addGap(8, 8, 8)
+                .addGroup(jPanel73Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addGroup(jPanel73Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel142)
+                    .addComponent(jLabel158)
+                    .addComponent(jLabel145)
+                    .addComponent(jLabel146))
+                .addGap(6, 6, 6)
+                .addGroup(jPanel73Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cscn)
+                    .addComponent(csci)
+                    .addGroup(jPanel73Layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addGroup(jPanel73Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cscp)
+                            .addComponent(cseml))))
+                .addGap(30, 30, 30)
+                .addComponent(jLabel148)
+                .addGap(0, 0, 0)
+                .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23)
+                .addComponent(jPanel76, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Co, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        javax.swing.GroupLayout CompleteLayout = new javax.swing.GroupLayout(Complete);
+        Complete.setLayout(CompleteLayout);
+        CompleteLayout.setHorizontalGroup(
+            CompleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel73, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        CompleteLayout.setVerticalGroup(
+            CompleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel73, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        body.add(Complete, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
 
         body12.setBackground(new java.awt.Color(204, 0, 51));
 
@@ -2935,6 +4884,51 @@ String cus;
         );
 
         body.add(body12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+
+        body23.setBackground(new java.awt.Color(204, 0, 51));
+
+        javax.swing.GroupLayout body23Layout = new javax.swing.GroupLayout(body23);
+        body23.setLayout(body23Layout);
+        body23Layout.setHorizontalGroup(
+            body23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1190, Short.MAX_VALUE)
+        );
+        body23Layout.setVerticalGroup(
+            body23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 809, Short.MAX_VALUE)
+        );
+
+        body.add(body23, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+
+        body22.setBackground(new java.awt.Color(204, 0, 51));
+
+        javax.swing.GroupLayout body22Layout = new javax.swing.GroupLayout(body22);
+        body22.setLayout(body22Layout);
+        body22Layout.setHorizontalGroup(
+            body22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1190, Short.MAX_VALUE)
+        );
+        body22Layout.setVerticalGroup(
+            body22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 809, Short.MAX_VALUE)
+        );
+
+        body.add(body22, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+
+        body21.setBackground(new java.awt.Color(204, 0, 51));
+
+        javax.swing.GroupLayout body21Layout = new javax.swing.GroupLayout(body21);
+        body21.setLayout(body21Layout);
+        body21Layout.setHorizontalGroup(
+            body21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1190, Short.MAX_VALUE)
+        );
+        body21Layout.setVerticalGroup(
+            body21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 809, Short.MAX_VALUE)
+        );
+
+        body.add(body21, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -2994,15 +4988,14 @@ String cus;
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(false);
         body12.setVisible(false);
-        body13.setVisible(false);
-        body13.setVisible(false);
-        body14.setVisible(false);
-        body15.setVisible(false);
-        body16.setVisible(false);
-        body17.setVisible(false);
-        body18.setVisible(false);
-        body19.setVisible(false);
-        body20.setVisible(false);
+        Assign.setVisible(false);
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+        Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+        Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
         p1.setBackground(Color.decode("#03A9DD"));
         p2.setBackground(Color.decode("#333333"));
         p3.setBackground(Color.decode("#333333"));
@@ -3042,15 +5035,14 @@ String cus;
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(false);
         body12.setVisible(false);
-        body13.setVisible(false);
-        body13.setVisible(false);
-        body14.setVisible(false);
-        body15.setVisible(false);
-       body16.setVisible(false);
-        body17.setVisible(false);
-        body18.setVisible(false);
-       body19.setVisible(false);
-        body20.setVisible(false);
+        Assign.setVisible(false);
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
     }//GEN-LAST:event_p2MouseClicked
 
     private void p3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p3MouseClicked
@@ -3082,15 +5074,14 @@ String cus;
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(false);
         body12.setVisible(false);
-        body13.setVisible(false);
-        body13.setVisible(false);
-        body14.setVisible(false);
-        body15.setVisible(false);
-       body16.setVisible(false);
-        body17.setVisible(false);
-        body18.setVisible(false);
-       body19.setVisible(false);
-        body20.setVisible(false);
+        Assign.setVisible(false);
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
     }//GEN-LAST:event_p3MouseClicked
 
     private void p4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p4MouseClicked
@@ -3121,15 +5112,14 @@ String cus;
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(false);
         body12.setVisible(false);
-        body13.setVisible(false);
-        body13.setVisible(false);
-        body14.setVisible(false);
-        body15.setVisible(false);
-       body16.setVisible(false);
-        body17.setVisible(false);
-        body18.setVisible(false);
-       body19.setVisible(false);
-        body20.setVisible(false);
+        Assign.setVisible(false);
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
     }//GEN-LAST:event_p4MouseClicked
 
     private void p5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p5MouseClicked
@@ -3160,15 +5150,14 @@ String cus;
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(false);
         body12.setVisible(false);
-        body13.setVisible(false);
-        body13.setVisible(false);
-        body14.setVisible(false);
-        body15.setVisible(false);
-       body16.setVisible(false);
-        body17.setVisible(false);
-        body18.setVisible(false);
-       body19.setVisible(false);
-        body20.setVisible(false);
+        Assign.setVisible(false);
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
     }//GEN-LAST:event_p5MouseClicked
 
     private void p6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p6MouseClicked
@@ -3198,15 +5187,14 @@ String cus;
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(false);
         body12.setVisible(false);
-        body13.setVisible(false);
-        body13.setVisible(false);
-        body14.setVisible(false);
-        body15.setVisible(false);
-       body16.setVisible(false);
-        body17.setVisible(false);
-        body18.setVisible(false);
-       body19.setVisible(false);
-        body20.setVisible(false);
+        Assign.setVisible(false);
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
     }//GEN-LAST:event_p6MouseClicked
 
     private void p7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p7MouseClicked
@@ -3237,15 +5225,15 @@ String cus;
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(false);
         body12.setVisible(false);
-        body13.setVisible(false);
-        body13.setVisible(false);
-        body14.setVisible(false);
-        body15.setVisible(false);
-       body16.setVisible(false);
-        body17.setVisible(false);
-        body18.setVisible(false);
-       body19.setVisible(false);
-        body20.setVisible(false);
+        Assign.setVisible(false);
+        
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
         this.dispose();
     }//GEN-LAST:event_p7MouseClicked
 
@@ -3375,15 +5363,15 @@ String cus;
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(false);
         body12.setVisible(false);
-        body13.setVisible(false);
-        body13.setVisible(false);
-        body14.setVisible(false);
-        body15.setVisible(false);
-       body16.setVisible(false);
-        body17.setVisible(false);
-        body18.setVisible(false);
-       body19.setVisible(false);
-        body20.setVisible(false);
+        Assign.setVisible(false);
+    
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
 
               
                 Cus_List.setVisible(true);
@@ -3586,15 +5574,15 @@ String cus;
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(false);
         body12.setVisible(false);
-        body13.setVisible(false);
-        body13.setVisible(false);
-        body14.setVisible(false);
-        body15.setVisible(false);
-       body16.setVisible(false);
-        body17.setVisible(false);
-        body18.setVisible(false);
-       body19.setVisible(false);
-        body20.setVisible(false);
+        Assign.setVisible(false);
+     
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
 
               
                 Cus_List.setVisible(false);
@@ -3629,15 +5617,15 @@ String cus;
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(false);
         body12.setVisible(false);
-        body13.setVisible(false);
-        body13.setVisible(false);
-        body14.setVisible(false);
-        body15.setVisible(false);
-       body16.setVisible(false);
-        body17.setVisible(false);
-        body18.setVisible(false);
-       body19.setVisible(false);
-        body20.setVisible(false);
+        Assign.setVisible(false);
+       
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
         Cus_List.setVisible(false);
     }//GEN-LAST:event_jPanel15MouseClicked
 
@@ -3651,13 +5639,13 @@ String cus;
 
         String add = address.getText();
         String empp=Emp_id.getText();
-        String sd = sddz.getText();
+       
 
-        if(fName.equals("First Name")||lName.equals("Last Name")||ph.equals("Phone")||mail.equals("Email")||add.equals("Address")||sd.equals("Service Description")||fName.equals("")||lName.equals("")||ph.equals("")||mail.equals("")||add.equals("")||sd.equals("")){
+        if(fName.equals("First Name")||lName.equals("Last Name")||ph.equals("Phone")||mail.equals("Email")||add.equals("Address")||fName.equals("")||lName.equals("")||ph.equals("")||mail.equals("")||add.equals("")){
             // JOptionPane.showMessageDialog(this, "");
             new Warning("Fill up all field first").setVisible(true);
         }else{
-            int i = ADD_NEW_EMP_DATAOBEJECT.create_cus (fName, lName, mail, ph,empp, add,sd);
+            int i = ADD_NEW_EMP_DATAOBEJECT.create_cus (fName, lName, mail, ph,empp, add);
 
             int j = ID_STORE_FETCH.cus_id(cus_id.toString());
             if(i>0 || j>0){
@@ -3789,26 +5777,6 @@ String cus;
         }
     }//GEN-LAST:event_addressFocusLost
 
-    private void sddzFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_sddzFocusGained
-        // TODO add your handling code here:
-        if(sddz.getText().equals("Service Description")){
-            adddddd.setVisible(true);
-            sddz.setText("");
-            sddz.setForeground(new Color(000,000,000));
-        }
-    }//GEN-LAST:event_sddzFocusGained
-
-    private void sddzFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_sddzFocusLost
-        // TODO add your handling code here:
-        if(sddz.getText().equals("")){
-            adddddd.setVisible(false);
-            sddz.setText("Service Description");
-            sddz.setForeground(new Color(128,128,128));
-        }else{
-            adddddd.setVisible(true);
-        }
-    }//GEN-LAST:event_sddzFocusLost
-
     private void jLabel59MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel59MouseClicked
         // TODO add your handling code here:
         String fName = firstname1.getText();
@@ -3818,9 +5786,9 @@ String cus;
 
         String add = address1.getText();
         String empp= Emp_id1.getText();
-        String servv= address2.getText();
+      
 
-        if(fName.equals("First Name")||lName.equals("Last Name")||ph.equals("Phone")||mail.equals("Email")||add.equals("Address")||servv.equals("Service Description")||servv.equals("")||fName.equals("")||lName.equals("")||ph.equals("")||mail.equals("")||add.equals("")){
+        if(fName.equals("First Name")||lName.equals("Last Name")||ph.equals("Phone")||mail.equals("Email")||add.equals("Address")||fName.equals("")||lName.equals("")||ph.equals("")||mail.equals("")||add.equals("")){
             // JOptionPane.showMessageDialog(this, "");
             new Warning("Fill up all field first").setVisible(true);
         }else{
@@ -3828,7 +5796,7 @@ String cus;
             int i=0;
             try{
                 Connection con=DATABASE_CONNECTION.getConnection();
-                PreparedStatement ps=con.prepareStatement("UPDATE `cus` SET `cus_fname`='"+fName+"',`cus_lname`='"+lName+"',`cus_ph`='"+ph+"',`cus_eml`='"+mail+"',`cus_adde`='"+add+"',`cus_servic`='"+servv+"' where cus_id ='"+empp+"'");
+                PreparedStatement ps=con.prepareStatement("UPDATE `cus` SET `cus_fname`='"+fName+"',`cus_lname`='"+lName+"',`cus_ph`='"+ph+"',`cus_eml`='"+mail+"',`cus_adde`='"+add+"' where cus_id ='"+empp+"'");
                 i=ps.executeUpdate();
                 con.close();
             }catch(Exception e){
@@ -3958,27 +5926,6 @@ String cus;
         }
     }//GEN-LAST:event_address1FocusLost
 
-    private void address2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_address2FocusGained
-        // TODO add your handling code here:
-        if(address2.getText().equals("Service Description")){
-            aaaa1.setVisible(true);
-            address2.setText("");
-            address2.setForeground(new Color(000,000,000));
-        }
-
-    }//GEN-LAST:event_address2FocusGained
-
-    private void address2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_address2FocusLost
-        // TODO add your handling code here:
-        if(address2.getText().equals("")){
-            aaaa1.setVisible(false);
-            address2.setText("Service Description");
-            address2.setForeground(new Color(128,128,128));
-        }else{
-            aaaa1.setVisible(true);
-        }
-    }//GEN-LAST:event_address2FocusLost
-
     private void serch2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serch2FocusGained
         if(serch2.getText().equals("Serch Customer by Customer ID")){
             fName5.setVisible(true);
@@ -4030,7 +5977,7 @@ String cus;
                 Emp_id1.setText(emp_id);
                 email1.setText(Email);
                 address1.setText(Address);
-                address2.setText(sev);
+              
 
                 // JOptionPane.showMessageDialog(this, "Product Found");
 
@@ -4053,7 +6000,7 @@ String cus;
         L_name1.setVisible(false);
         Phone1.setVisible(false);
         Email1.setVisible(false);
-        aaaa1.setVisible(false);
+       
                aaaa.setVisible(false);
 
         Emp_id1.setEditable(false);
@@ -4081,15 +6028,15 @@ String cus;
         Update_Cus.setVisible(true);
         Delete_Cus.setVisible(false);
         body12.setVisible(false);
-        body13.setVisible(false);
-        body13.setVisible(false);
-        body14.setVisible(false);
-        body15.setVisible(false);
-       body16.setVisible(false);
-        body17.setVisible(false);
-        body18.setVisible(false);
-       body19.setVisible(false);
-        body20.setVisible(false);
+        Assign.setVisible(false);
+      
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
         Cus_List.setVisible(false);
         
         
@@ -4255,9 +6202,10 @@ String cus;
         table3();
          eid11.setVisible(false);
         enn.setVisible(false);
+       fName6.setVisible(false);
        
-        fName6.setVisible(false);
-        a1.setVisible(false);
+       
+       a1.setVisible(false);
         a2.setVisible(false);
         a3.setVisible(false);
         a4.setVisible(false);
@@ -4276,18 +6224,1763 @@ String cus;
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(true);
         body12.setVisible(false);
-        body13.setVisible(false);
-        body13.setVisible(false);
-        body14.setVisible(false);
-        body15.setVisible(false);
-       body16.setVisible(false);
-        body17.setVisible(false);
-        body18.setVisible(false);
-       body19.setVisible(false);
-        body20.setVisible(false);
+        Assign.setVisible(false);
+     
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
         Cus_List.setVisible(false);
     }//GEN-LAST:event_jPanel17MouseClicked
-public void table3() {
+
+    private void jLabel77MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel77MouseClicked
+        // TODO add your handling code here:
+        //  this.showForm(new Add_Employee());
+
+    }//GEN-LAST:event_jLabel77MouseClicked
+
+    private void serchellFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serchellFocusGained
+        if(serchell.getText().equals("Serch Employee by Employee ID")){
+            fName1344.setVisible(true);
+            serchell.setText("");
+            serchell.setForeground(new Color(000,000,000));
+        }
+    }//GEN-LAST:event_serchellFocusGained
+
+    private void serchellFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serchellFocusLost
+        // TODO add your handling code here:
+        if(serchell.getText().equals("")){
+            fName1344.setVisible(false);
+            serchell.setText("Serch Employee by Employee ID");
+            serchell.setForeground( Color.decode("#2f44bb"));
+        }else{
+            fName1344.setVisible(true);
+        }
+    }//GEN-LAST:event_serchellFocusLost
+
+    private void serchellKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_serchellKeyReleased
+        // TODO add your handling code here:
+        String product_idee = serchell.getText();
+        try {
+
+            //Data fetch from database
+            String sql = "Select * From emp where emp_id like '%"+product_idee+"%' or emp_fname like '%"+product_idee+"%' or emp_lname like '%"+product_idee+"%' or emp_email like '%"+product_idee+"%'";
+            Connection con=DATABASE_CONNECTION.getConnection();
+            PreparedStatement ps=con.prepareStatement(sql);
+            // ps.setString(1,product_idee);
+            ResultSet rs=ps.executeQuery();
+            DefaultTableModel model =(DefaultTableModel)tableell.getModel();
+            model.setRowCount(0);
+            if(rs.next()){
+                do
+                {
+                    String name = rs.getString("emp_fname")+" "+rs.getString("emp_lname");
+                    Object o []={
+                        rs.getString("emp_id"),name,rs.getString("emp_phone"),rs.getString("emp_email"),rs.getString("emp_address") };
+                    //   JOptionPane.showMessageDialog(this, "Product Found");
+                    model.addRow(o);
+                }while (rs.next());
+            }else{
+                new Error("Employee Not Found").setVisible(true);
+                //   JOptionPane.showMessageDialog(this, "Product Not Found");
+            }
+
+        }catch(Exception e){
+            System.out.println("error"+e);
+        }
+    }//GEN-LAST:event_serchellKeyReleased
+
+    private void jLabel78MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel78MouseClicked
+        // TODO add your handling code here:
+
+        String em_id = serchell.getText();
+        try {
+
+            //Data fetch from database
+            String sql = "Select * From emp Where emp_id = '"+em_id+"'";
+            Connection con=DATABASE_CONNECTION.getConnection();
+            PreparedStatement ps=con.prepareStatement(sql);
+            //  ps.setString(1,"ERP_E1002");
+            ResultSet rs=ps.executeQuery();
+            if(rs.next()){
+                //                String emp_id =rs.getString("emp_id");
+                //                String f_name =rs.getString("emp_fname");
+                //                // System.out.println("EMpppppp "+f_name);
+                //                String l_name =rs.getString("emp_lname");
+                //                // System.out.println("pppnnn "+l_name);
+                //                String Phone =rs.getString("emp_phone");
+                //
+                //                String Email =rs.getString("emp_email");
+                //                // System.out.println("emlllll "+l_name);
+                //                String Address =rs.getString("emp_address");
+
+                // JOptionPane.showMessageDialog(this, "Product Found");
+
+                rs.close();
+                ps.close();
+            }else{
+                new Warning("Enter Correct Employee Id").setVisible(true);
+                // System.out.println("Enter Correct Employee Id");
+            }
+        }catch(Exception e){
+            System.out.println("error"+e);
+        }
+    }//GEN-LAST:event_jLabel78MouseClicked
+
+    private void jPanel19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel19MouseClicked
+        // TODO add your handling code here:
+        fName1344.setVisible(false);
+        tableell();
+        
+           a1.setVisible(false);
+        a2.setVisible(false);
+        a3.setVisible(false);
+        a4.setVisible(false);
+        a5.setVisible(false);
+        a6.setVisible(false);
+        
+         home.setVisible(false);
+        ES.setVisible(false);
+        CS.setVisible(false);
+        Ws.setVisible(false);
+        SM.setVisible(false);
+        MP.setVisible(false);
+        
+        Search_Cus.setVisible(false);
+        Create_Cus.setVisible(false);
+        Update_Cus.setVisible(false);
+        Delete_Cus.setVisible(false);
+        body12.setVisible(false);
+        Assign.setVisible(false);
+       
+        Emp_List.setVisible(true);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
+        Cus_List.setVisible(false);
+        
+    }//GEN-LAST:event_jPanel19MouseClicked
+
+    private void table1seeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table1seeMouseClicked
+        // TODO add your handling code here:
+
+        int i = table1see.getSelectedRow();
+        DefaultTableModel model=(DefaultTableModel)table1see.getModel();
+        // String aa=model.getValueAt(i,0).toString();
+        String bb=model.getValueAt(i,0).toString();
+        // System.out.println("id"+bb +" name"+aa);
+        try {
+
+            //Data fetch from database
+            String sql = "Select * From emp_works where emp_id='"+bb+"' ";
+            Connection con=DATABASE_CONNECTION.getConnection();
+            PreparedStatement ps=con.prepareStatement(sql);
+            ResultSet rs=ps.executeQuery();
+
+            while (rs.next())
+            {
+                // String name = rs.getString("emp_id")+" "+rs.getString("emp_lname");
+
+                String ttf1= rs.getString("service_dtl");
+                ttfsee.setText(ttf1);
+
+            }
+        }catch(Exception e){
+            System.out.println("error"+e);
+        }
+
+    }//GEN-LAST:event_table1seeMouseClicked
+
+    private void tableseeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableseeMouseClicked
+        // TODO add your handling code here:
+
+        int i = tablesee.getSelectedRow();
+        DefaultTableModel model=(DefaultTableModel)tablesee.getModel();
+        // String aa=model.getValueAt(i,0).toString();
+        String bb=model.getValueAt(i,1).toString();
+        // System.out.println("id"+bb +" name"+aa);
+        try {
+
+            //Data fetch from database
+            String sql = "Select * From emp_works where emp_id='"+bb+"' ";
+            Connection con=DATABASE_CONNECTION.getConnection();
+            PreparedStatement ps=con.prepareStatement(sql);
+            ResultSet rs=ps.executeQuery();
+            DefaultTableModel model1 =(DefaultTableModel)table1see.getModel();
+            model1.setRowCount(0);
+            if (rs.next()){
+                do{
+
+                    // String name = rs.getString("emp_id")+" "+rs.getString("emp_lname");
+                    Object o []={
+                        rs.getString("emp_id"),rs.getString("emp_name"),rs.getString("cous_id"),rs.getString("cous_name"),rs.getString("date"),rs.getString("time"),rs.getString("service_dtl") };
+                    model1.addRow(o);
+
+                }while (rs.next());
+            }else{
+                new Warning("No record Found").setVisible(true);
+
+            }
+        }catch(Exception e){
+            System.out.println("error"+e);
+        }
+
+    }//GEN-LAST:event_tableseeMouseClicked
+
+    private void serchseeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serchseeFocusGained
+        if(serchsee.getText().equals("Serch Employee by Employee ID")){
+            fNamesepp.setVisible(true);
+            serchsee.setText("");
+            serchsee.setForeground(new Color(000,000,000));
+        }
+    }//GEN-LAST:event_serchseeFocusGained
+
+    private void serchseeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serchseeFocusLost
+        // TODO add your handling code here:
+        if(serchsee.getText().equals("")){
+            fNamesepp.setVisible(false);
+            serchsee.setText("Serch Employee by Employee ID");
+            serchsee.setForeground(new Color(128,128,128));
+        }else{
+            fNamesepp.setVisible(true);
+        }
+    }//GEN-LAST:event_serchseeFocusLost
+
+    private void serchseeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_serchseeKeyReleased
+        // TODO add your handling code here:
+
+        String product_idee = serchsee.getText();
+        try {
+
+            //Data fetch from database
+            String sql = "Select * From emp where emp_id like '%"+product_idee+"%' or emp_fname like '%"+product_idee+"%' or emp_lname like '%"+product_idee+"%' or emp_email like '%"+product_idee+"%'";
+            Connection con=DATABASE_CONNECTION.getConnection();
+            PreparedStatement ps=con.prepareStatement(sql);
+            // ps.setString(1,product_idee);
+            ResultSet rs=ps.executeQuery();
+            DefaultTableModel model =(DefaultTableModel)tablesee.getModel();
+            model.setRowCount(0);
+            if(rs.next()){
+                do
+                {
+                    String name = rs.getString("emp_fname")+" "+rs.getString("emp_lname");
+                    Object o []={
+                        name,rs.getString("emp_id") };
+                    //   JOptionPane.showMessageDialog(this, "Product Found");
+                    model.addRow(o);
+                }while (rs.next());
+            }else{
+                new Error("Employee Not Found").setVisible(true);
+                //   JOptionPane.showMessageDialog(this, "Product Not Found");
+            }
+
+        }catch(Exception e){
+            System.out.println("error"+e);
+        }
+    }//GEN-LAST:event_serchseeKeyReleased
+
+    private void jLabel82MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel82MouseClicked
+        // TODO add your handling code here:
+
+        //        String em_id = serch.getText();
+        //        try {
+            //
+            //            //Data fetch from database
+            //            String sql = "Select * From emp Where emp_id = '"+em_id+"'";
+            //            Connection con=DATABASE_CONNECTION.getConnection();
+            //            PreparedStatement ps=con.prepareStatement(sql);
+            //            //  ps.setString(1,"ERP_E1002");
+            //            ResultSet rs=ps.executeQuery();
+            //            if(rs.next()){
+                //                String emp_id =rs.getString("emp_id");
+                //                String f_name =rs.getString("emp_fname");
+                //                // System.out.println("EMpppppp "+f_name);
+                //                String l_name =rs.getString("emp_lname");
+                //                // System.out.println("pppnnn "+l_name);
+                //                String Phone =rs.getString("emp_phone");
+                //
+                //                String Email =rs.getString("emp_email");
+                //                // System.out.println("emlllll "+l_name);
+                //                String Address =rs.getString("emp_address");
+                //
+                ////                firstname.setText(f_name);
+                ////
+                ////                lastname.setText(l_name);
+                ////
+                ////                phone3.setText(Phone);
+                ////                Emp_id.setText(emp_id);
+                ////                email.setText(Email);
+                ////                address.setText(Address);
+                //
+                //                // JOptionPane.showMessageDialog(this, "Product Found");
+                //
+                //                rs.close();
+                //                ps.close();
+                //            }else{
+                //                new Warning("Enter Correct Employee Id").setVisible(true);
+                //                // System.out.println("Enter Correct Employee Id");
+                //            }
+            //        }catch(Exception e){
+            //            System.out.println("error"+e);
+            //        }
+    }//GEN-LAST:event_jLabel82MouseClicked
+
+    private void jPanel20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel20MouseClicked
+        // TODO add your handling code here:
+          ttfsee.setEditable(false);
+        tablesepp();
+        fNamesepp.setVisible(false);
+        
+        a1.setVisible(false);
+        a2.setVisible(false);
+        a3.setVisible(false);
+        a4.setVisible(false);
+        a5.setVisible(false);
+        a6.setVisible(false);
+        
+         home.setVisible(false);
+        ES.setVisible(false);
+        CS.setVisible(false);
+        Ws.setVisible(false);
+        SM.setVisible(false);
+        MP.setVisible(false);
+        
+        Search_Cus.setVisible(false);
+        Create_Cus.setVisible(false);
+        Update_Cus.setVisible(false);
+        Delete_Cus.setVisible(false);
+        body12.setVisible(false);
+        
+        Assign.setVisible(false);
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(true);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
+        Cus_List.setVisible(false);
+    }//GEN-LAST:event_jPanel20MouseClicked
+
+    private void jLabel80MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel80MouseClicked
+        // TODO add your handling code here:
+        String fName = firstnamecee.getText();
+        String lName = lastnamecee.getText();
+        String ph = phone3cee.getText();
+        String mail = emailcee.getText();
+
+        String add = addresscee.getText();
+        String empp=Emp_idcee.getText();
+
+        if(fName.equals("First Name")||lName.equals("Last Name")||ph.equals("Phone")||mail.equals("Email")||add.equals("Address")||fName.equals("")||lName.equals("")||ph.equals("")||mail.equals("")||add.equals("")){
+            // JOptionPane.showMessageDialog(this, "");
+            new Warning("Fill up all field first").setVisible(true);
+        }else{
+            int i = ADD_NEW_EMP_DATAOBEJECT.create_emp(fName, lName, mail, ph,empp, add);
+
+            int j = ID_STORE_FETCH.insert_id(emp_idcee.toString());
+            if(i>0 || j>0){
+                System.out.println("Data inserted");
+                Succes su= new Succes();
+                su.ot("Employee Created Succesfully");
+                su.setVisible(true);
+
+                firstnamecee.setText("");
+                lastnamecee.setText("");
+                phone3cee.setText("");
+                emailcee.setText("");
+
+                addresscee.setText("");
+
+            }else{
+                //  System.out.println("Data NOT inserted");
+                new Error("Please Try Again!").setVisible(true);
+            }
+
+        }
+    }//GEN-LAST:event_jLabel80MouseClicked
+
+    private void firstnameceeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_firstnameceeFocusGained
+        // TODO add your handling code here:
+        if(firstnamecee.getText().equals("First Name")){
+            fNamecee.setVisible(true);
+            firstnamecee.setText("");
+            firstnamecee.setForeground(new Color(000,000,000));
+        }
+    }//GEN-LAST:event_firstnameceeFocusGained
+
+    private void firstnameceeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_firstnameceeFocusLost
+        // TODO add your handling code here:
+        if(firstnamecee.getText().equals("")){
+            fNamecee.setVisible(false);
+            firstnamecee.setText("First Name");
+            firstnamecee.setForeground(new Color(128,128,128));
+        }else{
+            fNamecee.setVisible(true);
+        }
+    }//GEN-LAST:event_firstnameceeFocusLost
+
+    private void firstnameceeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstnameceeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_firstnameceeActionPerformed
+
+    private void lastnameceeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_lastnameceeFocusGained
+        // TODO add your handling code here:
+        if(lastnamecee.getText().equals("Last Name")){
+            L_namecee.setVisible(true);
+            lastnamecee.setText("");
+            lastnamecee.setForeground(new Color(000,000,000));
+        }
+    }//GEN-LAST:event_lastnameceeFocusGained
+
+    private void lastnameceeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_lastnameceeFocusLost
+        // TODO add your handling code here:
+        if(lastnamecee.getText().equals("")){
+            L_namecee.setVisible(false);
+            lastnamecee.setText("Last Name");
+            lastnamecee.setForeground(new Color(128,128,128));
+        }else{
+            L_namecee.setVisible(true);
+        }
+    }//GEN-LAST:event_lastnameceeFocusLost
+
+    private void lastnameceeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastnameceeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lastnameceeActionPerformed
+
+    private void emailceeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailceeFocusGained
+        // TODO add your handling code here:
+        if(emailcee.getText().equals("Email")){
+            Emailcee.setVisible(true);
+            emailcee.setText("");
+            emailcee.setForeground(new Color(000,000,000));
+        }
+    }//GEN-LAST:event_emailceeFocusGained
+
+    private void emailceeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailceeFocusLost
+        // TODO add your handling code here:
+        if(emailcee.getText().equals("")){
+            Emailcee.setVisible(false);
+            emailcee.setText("Email");
+            emailcee.setForeground(new Color(128,128,128));
+        }else{
+            Emailcee.setVisible(true);
+        }
+    }//GEN-LAST:event_emailceeFocusLost
+
+    private void phone3ceeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phone3ceeFocusGained
+        // TODO add your handling code here:
+        if(phone3cee.getText().equals("Phone")){
+            Phonecee.setVisible(true);
+            phone3cee.setText("");
+            phone3cee.setForeground(new Color(000,000,000));
+        }
+    }//GEN-LAST:event_phone3ceeFocusGained
+
+    private void phone3ceeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phone3ceeFocusLost
+        // TODO add your handling code here:
+        if(phone3cee.getText().equals("")){
+            Phonecee.setVisible(false);
+            phone3cee.setText("Phone");
+            phone3cee.setForeground(new Color(128,128,128));
+        }else{
+            Phonecee.setVisible(true);
+        }
+    }//GEN-LAST:event_phone3ceeFocusLost
+
+    private void Emp_idceeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Emp_idceeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Emp_idceeActionPerformed
+
+    private void addressceeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_addressceeFocusGained
+        // TODO add your handling code here:
+        if(addresscee.getText().equals("Address")){
+            aaaacee.setVisible(true);
+            addresscee.setText("");
+            addresscee.setForeground(new Color(000,000,000));
+        }
+    }//GEN-LAST:event_addressceeFocusGained
+
+    private void addressceeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_addressceeFocusLost
+        // TODO add your handling code here:
+        if(addresscee.getText().equals("")){
+            aaaacee.setVisible(false);
+            addresscee.setText("Address");
+            addresscee.setForeground(new Color(128,128,128));
+        }else{
+            aaaacee.setVisible(true);
+        }
+    }//GEN-LAST:event_addressceeFocusLost
+
+    private void jPanel21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel21MouseClicked
+        // TODO add your handling code here:
+        
+         a1.setVisible(false);
+        a2.setVisible(false);
+        a3.setVisible(false);
+        a4.setVisible(false);
+        a5.setVisible(false);
+        a6.setVisible(false);
+        
+         home.setVisible(false);
+        ES.setVisible(false);
+        CS.setVisible(false);
+        Ws.setVisible(false);
+        SM.setVisible(false);
+        MP.setVisible(false);
+        
+        Search_Cus.setVisible(false);
+        Create_Cus.setVisible(false);
+        Update_Cus.setVisible(false);
+        Delete_Cus.setVisible(false);
+        body12.setVisible(false);
+        
+        Assign.setVisible(false);
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(true);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
+        Cus_List.setVisible(false);
+        
+        
+        id_createcee();
+        
+          fNamecee.setVisible(false);
+        L_namecee.setVisible(false);
+        Phonecee.setVisible(false);
+        Emailcee.setVisible(false);
+      
+        mng_name.setEditable(false);
+        mng_id.setEditable(false);
+        Emp_idcee.setEditable(false);
+         aaaacee.setVisible(false);
+    }//GEN-LAST:event_jPanel21MouseClicked
+
+    private void jLabel104MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel104MouseClicked
+        // TODO add your handling code here:
+        String fName = firstnameuepp.getText();
+        String lName = lastnameuepp.getText();
+        String ph = phone3uepp.getText();
+        String mail = emailuepp.getText();
+
+        String add = addressuepp.getText();
+        String empp= Emp_iduepp.getText();
+
+        if(fName.equals("First Name")||lName.equals("Last Name")||ph.equals("Phone")||mail.equals("Email")||add.equals("Address")||fName.equals("")||lName.equals("")||ph.equals("")||mail.equals("")||add.equals("")){
+            // JOptionPane.showMessageDialog(this, "");
+            new Warning("Fill up all field first").setVisible(true);
+        }else{
+
+            int i=0;
+            try{
+                Connection con=DATABASE_CONNECTION.getConnection();
+                PreparedStatement ps=con.prepareStatement("UPDATE `emp` SET `emp_fname`='"+fName+"',`emp_lname`='"+lName+"',`emp_phone`='"+ph+"',`emp_email`='"+mail+"',`emp_address`='"+add+"' where emp_id ='"+empp+"'");
+                i=ps.executeUpdate();
+                con.close();
+            }catch(Exception e){
+                System.out.println(e);
+            }
+            // System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!"+i);
+
+            if(i>0){
+                Succes su=new Succes();
+                su.ot("Employee Profile Update Sucessfully ");
+                su.setVisible(true);
+
+                // JOptionPane.showMessageDialog(this, "Employee Profile Update Sucessfully ");
+
+            }else{
+                new Error("Please Try Again").setVisible(true);
+                // JOptionPane.showMessageDialog(this, "Employee Profile Not Update Sucessfully");
+            }
+        }
+    }//GEN-LAST:event_jLabel104MouseClicked
+
+    private void firstnameueppFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_firstnameueppFocusGained
+        // TODO add your handling code here:
+        if(firstnameuepp.getText().equals("First Name")){
+            fNameuepp.setVisible(true);
+            firstnameuepp.setText("");
+            firstnameuepp.setForeground(new Color(000,000,000));
+        }
+    }//GEN-LAST:event_firstnameueppFocusGained
+
+    private void firstnameueppFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_firstnameueppFocusLost
+        // TODO add your handling code here:
+        if(firstnameuepp.getText().equals("")){
+            fNameuepp.setVisible(false);
+            firstnameuepp.setText("First Name");
+            firstnameuepp.setForeground(new Color(128,128,128));
+        }else{
+            fNameuepp.setVisible(true);
+        }
+    }//GEN-LAST:event_firstnameueppFocusLost
+
+    private void lastnameueppFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_lastnameueppFocusGained
+        // TODO add your handling code here:
+        if(lastnameuepp.getText().equals("Last Name")){
+            L_nameuepp.setVisible(true);
+            lastnameuepp.setText("");
+            lastnameuepp.setForeground(new Color(000,000,000));
+        }
+    }//GEN-LAST:event_lastnameueppFocusGained
+
+    private void lastnameueppFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_lastnameueppFocusLost
+        // TODO add your handling code here:
+        if(lastnameuepp.getText().equals("")){
+            L_nameuepp.setVisible(false);
+            lastnameuepp.setText("Last Name");
+            lastnameuepp.setForeground(new Color(128,128,128));
+        }else{
+            L_nameuepp.setVisible(true);
+        }
+    }//GEN-LAST:event_lastnameueppFocusLost
+
+    private void lastnameueppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastnameueppActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lastnameueppActionPerformed
+
+    private void emailueppFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailueppFocusGained
+        // TODO add your handling code here:
+        if(emailuepp.getText().equals("Email")){
+            Emailuepp.setVisible(true);
+            emailuepp.setText("");
+            emailuepp.setForeground(new Color(000,000,000));
+        }
+    }//GEN-LAST:event_emailueppFocusGained
+
+    private void emailueppFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailueppFocusLost
+        // TODO add your handling code here:
+        if(emailuepp.getText().equals("")){
+            Emailuepp.setVisible(false);
+            emailuepp.setText("Email");
+            emailuepp.setForeground(new Color(128,128,128));
+        }else{
+            Emailuepp.setVisible(true);
+        }
+    }//GEN-LAST:event_emailueppFocusLost
+
+    private void phone3ueppFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phone3ueppFocusGained
+        // TODO add your handling code here:
+        if(phone3uepp.getText().equals("Phone")){
+            Phoneuepp.setVisible(true);
+            phone3uepp.setText("");
+            phone3uepp.setForeground(new Color(000,000,000));
+        }
+    }//GEN-LAST:event_phone3ueppFocusGained
+
+    private void phone3ueppFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phone3ueppFocusLost
+        // TODO add your handling code here:
+        if(phone3uepp.getText().equals("")){
+            Phoneuepp.setVisible(false);
+            phone3uepp.setText("Phone");
+            phone3uepp.setForeground(new Color(128,128,128));
+        }else{
+            Phoneuepp.setVisible(true);
+        }
+    }//GEN-LAST:event_phone3ueppFocusLost
+
+    private void Emp_idueppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Emp_idueppActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Emp_idueppActionPerformed
+
+    private void addressueppFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_addressueppFocusGained
+        // TODO add your handling code here:
+        if(addressuepp.getText().equals("Address")){
+            aaaauepp.setVisible(true);
+            addressuepp.setText("");
+            addressuepp.setForeground(new Color(000,000,000));
+        }
+    }//GEN-LAST:event_addressueppFocusGained
+
+    private void addressueppFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_addressueppFocusLost
+        // TODO add your handling code here:
+        if(addressuepp.getText().equals("")){
+            aaaauepp.setVisible(false);
+            addressuepp.setText("Phone");
+            addressuepp.setForeground(new Color(128,128,128));
+        }else{
+            aaaauepp.setVisible(true);
+        }
+    }//GEN-LAST:event_addressueppFocusLost
+
+    private void serchueppFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serchueppFocusGained
+        if(serchuepp.getText().equals("Serch Employee by Employee ID")){
+            fName1uepp.setVisible(true);
+            serchuepp.setText("");
+            serchuepp.setForeground(new Color(000,000,000));
+        }
+    }//GEN-LAST:event_serchueppFocusGained
+
+    private void serchueppFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serchueppFocusLost
+        // TODO add your handling code here:
+        if(serchuepp.getText().equals("")){
+            fName1uepp.setVisible(false);
+            serchuepp.setText("Serch Employee by Employee ID");
+            serchuepp.setForeground(new Color(128,128,128));
+        }else{
+            fName1uepp.setVisible(true);
+        }
+    }//GEN-LAST:event_serchueppFocusLost
+
+    private void jLabel2ueppMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2ueppMouseClicked
+        // TODO add your handling code here:
+
+        String em_id = serchuepp.getText();
+        try {
+
+            //Data fetch from database
+            String sql = "Select * From emp Where emp_id = '"+em_id+"'";
+            Connection con=DATABASE_CONNECTION.getConnection();
+            PreparedStatement ps=con.prepareStatement(sql);
+            //  ps.setString(1,"ERP_E1002");
+            ResultSet rs=ps.executeQuery();
+            if(rs.next()){
+                String emp_id =rs.getString("emp_id");
+                String f_name =rs.getString("emp_fname");
+                // System.out.println("EMpppppp "+f_name);
+                String l_name =rs.getString("emp_lname");
+                // System.out.println("pppnnn "+l_name);
+                String Phone =rs.getString("emp_phone");
+
+                String Email =rs.getString("emp_email");
+                // System.out.println("emlllll "+l_name);
+                String Address =rs.getString("emp_address");
+
+                firstnameuepp.setText(f_name);
+
+                lastnameuepp.setText(l_name);
+
+                phone3uepp.setText(Phone);
+                Emp_iduepp.setText(emp_id);
+                emailuepp.setText(Email);
+                addressuepp.setText(Address);
+
+                // JOptionPane.showMessageDialog(this, "Product Found");
+
+                rs.close();
+                ps.close();
+            }else{
+                new Warning("Enter Correct Employee Id").setVisible(true);
+                // System.out.println("Enter Correct Employee Id");
+            }
+        }catch(Exception e){
+            System.out.println("error"+e);
+        }
+    }//GEN-LAST:event_jLabel2ueppMouseClicked
+
+    private void jPanel22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel22MouseClicked
+        // TODO add your handling code here:
+          a1.setVisible(false);
+        a2.setVisible(false);
+        a3.setVisible(false);
+        a4.setVisible(false);
+        a5.setVisible(false);
+        a6.setVisible(false);
+        
+         home.setVisible(false);
+        ES.setVisible(false);
+        CS.setVisible(false);
+        Ws.setVisible(false);
+        SM.setVisible(false);
+        MP.setVisible(false);
+        
+        Search_Cus.setVisible(false);
+        Create_Cus.setVisible(false);
+        Update_Cus.setVisible(false);
+        Delete_Cus.setVisible(false);
+        body12.setVisible(false);
+        
+        Assign.setVisible(false);
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(true);
+        Working_list.setVisible(false);
+        Cus_List.setVisible(false);
+        
+        fNameuepp.setVisible(false);
+        L_nameuepp.setVisible(false);
+        Phoneuepp.setVisible(false);
+        Emailuepp.setVisible(false);
+       aaaauepp.setVisible(false);
+       
+        Emp_iduepp.setEditable(false);
+        
+        
+        
+        
+        fName1uepp.setVisible(false);
+        //System.out.println("empp"+Epp);
+        if(Eppuepp!=""){
+        updateuepp();
+        }
+    }//GEN-LAST:event_jPanel22MouseClicked
+
+    private void jLabel111MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel111MouseClicked
+        // TODO add your handling code here:
+        String pnn=enndepp.getText();
+        String rea=eiddepp.getText();
+        if (rea.equals("")){
+
+            new Warning("Click Table row To Delete").setVisible(true);
+            // JOptionPane.showMessageDialog(this, "Click Table row To Delete");
+        }else {
+            eiddepp.setText("");
+            int Yes = JOptionPane.showConfirmDialog(null, "Are Your Sure Want to Remove Employee "+pnn+" ?");
+            if(Yes == 0){
+
+                try{
+
+                    String sql="delete from emp where emp_id = '"+rea+"'";
+                    Connection con=DATABASE_CONNECTION.getConnection();
+                    PreparedStatement ps=con.prepareStatement(sql);
+                    ps.execute();
+                    // ResultSet rs=ps.executeQuery();
+                    // ps.setString(1,idd);
+
+                    ps.close();
+                    con.close();
+
+                    tabledepp();
+                    Succes su = new Succes();
+                    su.ot("Delete Employee Succesfully");
+                    su.setVisible(true);
+                    //  JOptionPane.showMessageDialog(this, "Delete Product Succesfully");
+
+                }catch(Exception exe){
+                    System.out.println("exxxx"+exe);
+
+                }
+            }else{
+                int No = 0;
+                if(No==0){
+
+                }
+            }
+        }
+
+    }//GEN-LAST:event_jLabel111MouseClicked
+
+    private void tabledeppMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabledeppMouseClicked
+        // TODO add your handling code here:
+        int i = tabledepp.getSelectedRow();
+        DefaultTableModel model=(DefaultTableModel)tabledepp.getModel();
+        String bb=model.getValueAt(i,0).toString();
+        String aa= model.getValueAt(i,1).toString();
+        System.out.println("id"+bb +" name"+aa);
+        enndepp.setText(aa);
+        eiddepp.setText(bb);
+    }//GEN-LAST:event_tabledeppMouseClicked
+
+    private void serchdeppFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serchdeppFocusGained
+        if(serchdepp.getText().equals("Serch Employee by Employee ID")){
+            fName1depp.setVisible(true);
+            serchdepp.setText("");
+            serchdepp.setForeground(new Color(000,000,000));
+        }
+    }//GEN-LAST:event_serchdeppFocusGained
+
+    private void serchdeppFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serchdeppFocusLost
+        // TODO add your handling code here:
+        if(serchdepp.getText().equals("")){
+            fName1depp.setVisible(false);
+            serchdepp.setText("Serch Employee by Employee ID");
+            serchdepp.setForeground(new Color(128,128,128));
+        }else{
+            fName1depp.setVisible(true);
+        }
+    }//GEN-LAST:event_serchdeppFocusLost
+
+    private void serchdeppKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_serchdeppKeyReleased
+        // TODO add your handling code here:
+        String product_idee = serchdepp.getText();
+        try {
+
+            //Data fetch from database
+            String sql = "Select * From emp where emp_id like '%"+product_idee+"%' or emp_fname like '%"+product_idee+"%' or emp_lname like '%"+product_idee+"%' or emp_email like '%"+product_idee+"%'";
+            Connection con=DATABASE_CONNECTION.getConnection();
+            PreparedStatement ps=con.prepareStatement(sql);
+            // ps.setString(1,product_idee);
+            ResultSet rs=ps.executeQuery();
+            DefaultTableModel model =(DefaultTableModel)tabledepp.getModel();
+            model.setRowCount(0);
+            if(rs.next()){
+                do
+                {
+                    String name = rs.getString("emp_fname")+" "+rs.getString("emp_lname");
+                    Object o []={
+                        rs.getString("emp_id"),name,rs.getString("emp_address") };
+                    //   JOptionPane.showMessageDialog(this, "Product Found");
+                    model.addRow(o);
+                }while (rs.next());
+            }else{
+                new Error("Employee Not Found").setVisible(true);
+
+                // JOptionPane.showMessageDialog(this, "Product Not Found");
+            }
+
+        }catch(Exception e){
+            System.out.println("error"+e);
+        }
+    }//GEN-LAST:event_serchdeppKeyReleased
+
+    private void jLabel117MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel117MouseClicked
+        // TODO add your handling code here:
+
+        String em_id = serchdepp.getText();
+        try {
+
+            //Data fetch from database
+            String sql = "Select * From emp Where emp_id = '"+em_id+"'";
+            Connection con=DATABASE_CONNECTION.getConnection();
+            PreparedStatement ps=con.prepareStatement(sql);
+            //  ps.setString(1,"ERP_E1002");
+            ResultSet rs=ps.executeQuery();
+            if(rs.next()){
+                //                String emp_id =rs.getString("emp_id");
+                //                String f_name =rs.getString("emp_fname");
+                //                // System.out.println("EMpppppp "+f_name);
+                //                String l_name =rs.getString("emp_lname");
+                //                // System.out.println("pppnnn "+l_name);
+                //                String Phone =rs.getString("emp_phone");
+                //
+                //                String Email =rs.getString("emp_email");
+                //                // System.out.println("emlllll "+l_name);
+                //                String Address =rs.getString("emp_address");
+
+                // JOptionPane.showMessageDialog(this, "Product Found");
+
+                rs.close();
+                ps.close();
+            }else{
+                new Warning("Enter Correct Employee Id").setVisible(true);
+                // System.out.println("Enter Correct Employee Id");
+            }
+        }catch(Exception e){
+            System.out.println("error"+e);
+        }
+    }//GEN-LAST:event_jLabel117MouseClicked
+
+    private void jPanel23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel23MouseClicked
+        // TODO add your handling code here:
+          a1.setVisible(false);
+        a2.setVisible(false);
+        a3.setVisible(false);
+        a4.setVisible(false);
+        a5.setVisible(false);
+        a6.setVisible(false);
+        
+         home.setVisible(false);
+        ES.setVisible(false);
+        CS.setVisible(false);
+        Ws.setVisible(false);
+        SM.setVisible(false);
+        MP.setVisible(false);
+        
+        Search_Cus.setVisible(false);
+        Create_Cus.setVisible(false);
+        Update_Cus.setVisible(false);
+        Delete_Cus.setVisible(false);
+        body12.setVisible(false);
+        
+        Assign.setVisible(false);
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(true);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
+        Cus_List.setVisible(false);
+        
+        
+        
+         eiddepp.setVisible(false);
+        enndepp.setVisible(false);
+        tabledepp();
+        fName1depp.setVisible(false);
+        
+        
+        
+        
+    }//GEN-LAST:event_jPanel23MouseClicked
+
+    private void serchell1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serchell1FocusGained
+        if(serchell.getText().equals("Serch Customer by Customer ID")){
+            fName1344.setVisible(true);
+            serchell.setText("");
+            serchell.setForeground(new Color(000,000,000));
+        }
+    }//GEN-LAST:event_serchell1FocusGained
+
+    private void serchell1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serchell1FocusLost
+        // TODO add your handling code here:
+        if(serchell.getText().equals("")){
+            fName1344.setVisible(false);
+            serchell.setText("Serch Customer by Customer ID");
+            serchell.setForeground( Color.decode("#2f44bb"));
+        }else{
+            fName1344.setVisible(true);
+        }
+    }//GEN-LAST:event_serchell1FocusLost
+
+    private void serchell1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_serchell1KeyReleased
+        // TODO add your handling code here:
+        String product_idee = serchell.getText();
+        try {
+
+            //Data fetch from database
+            String sql = "Select * From emp_works where cous_id like '%"+product_idee+"%' or cous_name like '%"+product_idee+"%' ";
+            Connection con=DATABASE_CONNECTION.getConnection();
+            PreparedStatement ps=con.prepareStatement(sql);
+            // ps.setString(1,product_idee);
+            ResultSet rs=ps.executeQuery();
+            DefaultTableModel model =(DefaultTableModel)tablewll.getModel();
+            model.setRowCount(0);
+            if(rs.next()){
+                do
+                {
+                   
+                    Object o []={
+                      rs.getString("serv_id"), rs.getString("cous_id"),rs.getString("cous_name"),rs.getString("emp_id"),rs.getString("emp_name"),rs.getString("service_dtl"),rs.getString("date"),rs.getString("time"),rs.getString("status") };
+                    //   JOptionPane.showMessageDialog(this, "Product Found");
+                    model.addRow(o);
+                }while (rs.next());
+            }else{
+                new Error("Employee Not Found").setVisible(true);
+                //   JOptionPane.showMessageDialog(this, "Product Not Found");
+            }
+
+        }catch(Exception e){
+            System.out.println("error"+e);
+        }
+    }//GEN-LAST:event_serchell1KeyReleased
+public void serlist(){
+          try {
+
+            //Data fetch from database
+            String sql = "Select * From emp_works  ";
+            Connection con=DATABASE_CONNECTION.getConnection();
+            PreparedStatement ps=con.prepareStatement(sql);
+            // ps.setString(1,product_idee);
+            ResultSet rs=ps.executeQuery();
+            DefaultTableModel model =(DefaultTableModel)tablewll.getModel();
+            model.setRowCount(0);
+            if(rs.next()){
+                do
+                {
+                   
+                    Object o []={
+                      rs.getString("serv_id"), rs.getString("cous_id"),rs.getString("cous_name"),rs.getString("emp_id"),rs.getString("emp_name"),rs.getString("service_dtl"),rs.getString("date"),rs.getString("time"),rs.getString("status") };
+                    //   JOptionPane.showMessageDialog(this, "Product Found");
+                    model.addRow(o);
+                }while (rs.next());
+            }else{
+                new Error("Service Not Found").setVisible(true);
+                //   JOptionPane.showMessageDialog(this, "Product Not Found");
+            }
+
+        }catch(Exception e){
+            System.out.println("error"+e);
+        }
+}
+    
+    private void jLabel123MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel123MouseClicked
+        // TODO add your handling code here:
+
+        String em_id = serchell.getText();
+        try {
+
+            //Data fetch from database
+            String sql = "Select * From emp Where emp_id = '"+em_id+"'";
+            Connection con=DATABASE_CONNECTION.getConnection();
+            PreparedStatement ps=con.prepareStatement(sql);
+            //  ps.setString(1,"ERP_E1002");
+            ResultSet rs=ps.executeQuery();
+            if(rs.next()){
+                //                String emp_id =rs.getString("emp_id");
+                //                String f_name =rs.getString("emp_fname");
+                //                // System.out.println("EMpppppp "+f_name);
+                //                String l_name =rs.getString("emp_lname");
+                //                // System.out.println("pppnnn "+l_name);
+                //                String Phone =rs.getString("emp_phone");
+                //
+                //                String Email =rs.getString("emp_email");
+                //                // System.out.println("emlllll "+l_name);
+                //                String Address =rs.getString("emp_address");
+
+                // JOptionPane.showMessageDialog(this, "Product Found");
+
+                rs.close();
+                ps.close();
+            }else{
+                new Warning("Enter Correct Employee Id").setVisible(true);
+                // System.out.println("Enter Correct Employee Id");
+            }
+        }catch(Exception e){
+            System.out.println("error"+e);
+        }
+    }//GEN-LAST:event_jLabel123MouseClicked
+
+    private void jPanel43MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel43MouseClicked
+        // TODO add your handling code here:
+        hidetext.setVisible(false);
+        hidetext.setText("");
+        serlist();
+         a1.setVisible(false);
+        a2.setVisible(false);
+        a3.setVisible(false);
+        a4.setVisible(false);
+        a5.setVisible(false);
+        a6.setVisible(false);
+        
+         home.setVisible(false);
+        ES.setVisible(false);
+        CS.setVisible(false);
+        Ws.setVisible(false);
+        SM.setVisible(false);
+        MP.setVisible(false);
+        
+        Search_Cus.setVisible(false);
+        Create_Cus.setVisible(false);
+        Update_Cus.setVisible(false);
+        Delete_Cus.setVisible(false);
+        body12.setVisible(false);
+        
+        Assign.setVisible(false);
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(true);
+        Cus_List.setVisible(false);
+        
+        
+    }//GEN-LAST:event_jPanel43MouseClicked
+
+    private void jPanel62MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel62MouseClicked
+        // TODO add your handling code here:
+        new Add_service_popup().setVisible(true);
+    }//GEN-LAST:event_jPanel62MouseClicked
+
+    private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
+        // TODO add your handling code here:
+        serlist();
+    }//GEN-LAST:event_button1ActionPerformed
+
+    private void tablewllMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablewllMouseClicked
+        // TODO add your handling code here:
+        int i = tablewll.getSelectedRow();
+        DefaultTableModel model=(DefaultTableModel) tablewll.getModel();
+        String bb=model.getValueAt(i,0).toString();
+        String aa=model.getValueAt(i,1).toString();
+      //  System.out.println("id"+bb +" name"+aa);
+        hidetext.setText(bb);
+        gserv=bb;
+        gcusid=aa;
+       
+        
+    }//GEN-LAST:event_tablewllMouseClicked
+
+    private void jPanel68MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel68MouseClicked
+        // TODO add your handling code here:
+        
+       
+        String rea=hidetext.getText();
+        if (rea.equals("")){
+          
+            new Warning("Click Table row To Update Service").setVisible(true);
+           // JOptionPane.showMessageDialog(this, "Click Table row To Delete");
+        }else {
+            Update_popup up = new Update_popup();
+            up.getstr(rea);
+            up.setVisible(true);
+              hidetext.setText("");
+              
+              
+        }
+    }//GEN-LAST:event_jPanel68MouseClicked
+
+    private void jPanel63MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel63MouseClicked
+        // TODO add your handling code here:
+        String rea=hidetext.getText();
+        if (rea.equals("")){
+          
+            new Warning("Click Table row To Delete Service Details").setVisible(true);
+           // JOptionPane.showMessageDialog(this, "Click Table row To Delete");
+        }else {
+           
+           int Yes = JOptionPane.showConfirmDialog(null, "Are Your Sure Want to Remove this Service Detail "+rea+" ?");
+        if(Yes == 0){
+               
+     
+        try{
+           String sql1 = "Select * From emp_works where serv_id = '"+rea+"'";
+          
+            Connection con=DATABASE_CONNECTION.getConnection();
+            PreparedStatement ps3=con.prepareStatement(sql1);
+            // ps.setString(1,product_idee);
+            ResultSet rs0=ps3.executeQuery();
+           
+             if(rs0.next()){
+                 
+                 
+                  String sid=rs0.getString("serv_id");
+                
+                 String cid= rs0.getString("cous_id");
+                 
+                 String cn=rs0.getString("cous_name");
+              
+                 String eid=rs0.getString("emp_id");
+                 String en=rs0.getString("emp_name");
+                 String sd = rs0.getString("service_dtl");
+                 String dd=rs0.getString("date");
+                 String tt=rs0.getString("time");
+                String ddd= dd1.getText();
+                    //   JOptionPane.showMessageDialog(this, "Product Found");
+                 
+                 rs0.close();
+                 ps3.close();
+            
+            
+            Connection con1=DATABASE_CONNECTION.getConnection();
+            
+             PreparedStatement ps1=con1.prepareStatement("INSERT INTO `cancil_service`(`serv_id`, `cous_id`, `cous_name`, `emp_id`, `emp_name`, `date`, `time`, `srv_dtl`, `delete_date`) VALUES('"+sid+"','"+cid+"','"+cn+"','"+eid+"','"+en+"','"+dd+"','"+tt+"','"+sd+"','"+ddd+"')");
+          //  System.out.println("INSERT INTO `cancil_service`(`serv_id`, `cous_id`, `cous_name`, `emp_id`, `emp_name`, `date`, `time`, `srv_dtl`, `delete_date`) VALUES('"+sid+"','"+cid+"','"+cn+"','"+eid+"','"+en+"','"+dd+"','"+tt+"','"+sd+"','"+ddd+"')");
+           int x= ps1.executeUpdate();
+            ps1.close();
+            con1.close();
+            
+            
+            
+            String sql="delete from emp_works where serv_id ='"+rea+"'";
+             Connection con2=DATABASE_CONNECTION.getConnection();
+                    PreparedStatement ps=con2.prepareStatement(sql);
+                  int y = ps.executeUpdate();
+                    // ResultSet rs=ps.executeQuery();
+                   // ps.setString(1,idd);
+                   
+                    
+                   if(x>0&&y>0){
+                  
+                    Succes su = new Succes();
+                    su.ot("Delete Service Detail Succesfully");
+                    su.setVisible(true);
+                  //  JOptionPane.showMessageDialog(this, "Delete Product Succesfully");
+                   }
+                   ps.close();
+                    con2.close();
+                    }else{
+                
+             }
+               
+        }catch(Exception exe){
+                System.out.println("exxxx"+exe);
+                
+             }
+        }else{
+                int No = 0;
+                if(No==0){
+                    
+                
+            }
+        }
+        
+           hidetext.setText("");
+              
+        }
+        
+    }//GEN-LAST:event_jPanel63MouseClicked
+
+    private void tdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tdActionPerformed
+
+    private void jLabel129MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel129MouseClicked
+        // TODO add your handling code here:
+        tpic.showPopup(this, 100, 100);
+    }//GEN-LAST:event_jLabel129MouseClicked
+
+    private void jPanel65MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel65MouseClicked
+        // TODO add your handling code here:
+        
+        String rea=hidetext.getText();
+        if (rea.equals("")){
+          
+            new Warning("Click Table row To Assign Service").setVisible(true);
+           // JOptionPane.showMessageDialog(this, "Click Table row To Delete");
+        }else {
+            a1.setVisible(false);
+        a2.setVisible(false);
+        a3.setVisible(false);
+        a4.setVisible(false);
+        a5.setVisible(false);
+        a6.setVisible(false);
+        
+         home.setVisible(false);
+        ES.setVisible(false);
+        CS.setVisible(false);
+        Ws.setVisible(false);
+        SM.setVisible(false);
+        MP.setVisible(false);
+        
+        Search_Cus.setVisible(false);
+        Create_Cus.setVisible(false);
+        Update_Cus.setVisible(false);
+        Delete_Cus.setVisible(false);
+        body12.setVisible(false);
+        
+        Assign.setVisible(true);
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
+        Cus_List.setVisible(false);
+        ascad.setEditable(false);
+        ascsd.setEditable(false);
+        drop_down();
+        
+        
+        try {
+        
+             //Data fetch from database
+           
+             //Data fetch from database
+            String sql1 = "Select * From cus where cus_id='"+gcusid+"'";
+            Connection con1=DATABASE_CONNECTION.getConnection();
+            PreparedStatement ps1=con1.prepareStatement(sql1);
+            ResultSet rs1=ps1.executeQuery();
+           
+          
+           if(rs1.next())
+           {
+              
+              ascn.setText(rs1.getString("cus_fname")+" "+rs1.getString("cus_lname"));
+              ascph.setText(rs1.getString("cus_ph")); 
+              asceml.setText(rs1.getString("cus_eml"));
+        ascad.setText(rs1.getString("cus_adde"));
+
+           }
+            String sql = "Select * From emp_works where serv_id='"+gserv+"'";
+            Connection con=DATABASE_CONNECTION.getConnection();
+            PreparedStatement ps=con.prepareStatement(sql);
+            ResultSet rs=ps.executeQuery();
+           
+          
+           if(rs.next())
+           {
+              
+              ascsd.setText(rs.getString("service_dtl"));
+               
+           }
+           
+           
+           
+            }catch(Exception e){
+            System.out.println("error"+e);
+        }
+              
+              
+        }
+        
+       
+        
+        
+        
+    }//GEN-LAST:event_jPanel65MouseClicked
+
+    private void t2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t2ActionPerformed
+        // TODO add your handling code here:
+        if(t2.getItemCount()!=0){
+            String enn =t2.getSelectedItem().toString();
+           // System.out.println("enn"+enn);
+            try {
+
+                //Data fetch from database
+                String sql = "Select * From emp where emp_fname like '"+enn+"' and emp_lname like '"+enn+"' ";
+ //System.out.println("Select * From emp where emp_fname like '"+enn+"' and emp_lname like '"+enn+"'");
+                Connection con=DATABASE_CONNECTION.getConnection();
+                PreparedStatement ps=con.prepareStatement(sql);
+               
+                ResultSet rs=ps.executeQuery();
+
+                t3.removeAllItems();
+                t3.addItem("-- Select --");
+                while(rs.next()){
+
+                    String[] aa={
+                        rs.getString("emp_id")};
+
+                    //  System.out.println("aaa"+Arrays.toString(aa).replace("[","").replace("]",""));
+
+                    t3.addItem(Arrays.toString(aa).replace("[","").replace("]",""));
+                    // t3.setSelectedItem(null);
+                }
+            }catch(Exception e){
+                System.out.println("error2"+e);
+            }
+        }
+    }//GEN-LAST:event_t2ActionPerformed
+
+    private void jPanel71MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel71MouseClicked
+        // TODO add your handling code here:
+       SimpleDateFormat s = new SimpleDateFormat("dd-MM-yyyy");
+        String Ddt =  s.format(ddt.getDate());
+        String tta =td.getText();
+        String adr= t2.getSelectedItem().toString();
+        String adr2= t3.getSelectedItem().toString();
+        String cnm =ascn.getText();
+        String cnph =ascph.getText();
+        String cneml =asceml.getText();
+        String cnad =ascad.getText();
+        String cnsd =ascsd.getText();
+
+
+
+        //System.out.println("ddatt"+ddt.getDate());
+        
+        if(tta.equals("")){
+            System.out.println("ddat");
+        }else{
+                 int i=0;
+            try{
+                Connection con=DATABASE_CONNECTION.getConnection();
+                PreparedStatement ps=con.prepareStatement("UPDATE `emp_works` SET `emp_id`='"+adr2+"',`emp_name`='"+adr+"',`date`='"+Ddt+"',`time`='"+tta+"',`status`='assign' where serv_id ='"+gserv+"'");
+                i=ps.executeUpdate();
+                con.close();
+            }catch(Exception e){
+                System.out.println(e);
+            }
+
+        }
+        
+    }//GEN-LAST:event_jPanel71MouseClicked
+
+    private void csttActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_csttActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_csttActionPerformed
+
+    private void jLabel141MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel141MouseClicked
+        // TODO add your handling code here:
+        tpic.showPopup(this, 100, 100);
+    }//GEN-LAST:event_jLabel141MouseClicked
+
+    private void jPanel76MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel76MouseClicked
+        // TODO add your handling code here:
+     SimpleDateFormat s = new SimpleDateFormat("dd-MM-yyyy");
+        String Ddt =  s.format(csdd.getDate());
+        String cst= cstt.getText();
+        
+        if(cst.equals("")){
+            System.out.println("ddat");
+        }else{
+                 int i=0;
+            try{
+                Connection con=DATABASE_CONNECTION.getConnection();
+                PreparedStatement ps=con.prepareStatement("UPDATE `emp_works` SET `date`='"+Ddt+"',`time`='"+cst+"',`status`='Complete' where serv_id ='"+gserv+"'");
+                i=ps.executeUpdate();
+                con.close();
+            }catch(Exception e){
+                System.out.println(e);
+            }
+
+        }
+    }//GEN-LAST:event_jPanel76MouseClicked
+
+    private void jPanel66MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel66MouseClicked
+        // TODO add your handling code here:
+        String rea=hidetext.getText();
+        if (rea.equals("")){
+          
+            new Warning("Click Table row To Complete Service").setVisible(true);
+           // JOptionPane.showMessageDialog(this, "Click Table row To Delete");
+        }else {
+            try {
+        String sql = "Select * From emp_works where serv_id='"+gserv+"'";
+            Connection con=DATABASE_CONNECTION.getConnection();
+            PreparedStatement ps=con.prepareStatement(sql);
+            ResultSet rs=ps.executeQuery();
+           
+          
+           if(rs.next())
+           {
+               String sta =rs.getString("status");
+              if(sta.equals("assign")){
+        
+        a1.setVisible(false);
+        a2.setVisible(false);
+        a3.setVisible(false);
+        a4.setVisible(false);
+        a5.setVisible(false);
+        a6.setVisible(false);
+        
+         home.setVisible(false);
+        ES.setVisible(false);
+        CS.setVisible(false);
+        Ws.setVisible(false);
+        SM.setVisible(false);
+        MP.setVisible(false);
+        
+        Search_Cus.setVisible(false);
+        Create_Cus.setVisible(false);
+        Update_Cus.setVisible(false);
+        Delete_Cus.setVisible(false);
+        body12.setVisible(false);
+        
+        Assign.setVisible(false);
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(true);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
+        Cus_List.setVisible(false);
+        
+        
+        
+         
+               
+              cssd.setText(rs.getString("service_dtl"));
+               csen.setText(rs.getString("emp_name"));
+                csei.setText(rs.getString("emp_id"));
+               
+           
+            
+            String sql1 = "Select * From cus where cus_id='"+gcusid+"'";
+            Connection con1=DATABASE_CONNECTION.getConnection();
+            PreparedStatement ps1=con1.prepareStatement(sql1);
+            ResultSet rs1=ps1.executeQuery();
+           
+          
+           if(rs1.next())
+           {
+              
+              cscn.setText(rs1.getString("cus_fname")+" "+rs1.getString("cus_lname"));
+               csci.setText(rs1.getString("cus_id")); 
+              cscp.setText(rs1.getString("cus_ph")); 
+              cseml.setText(rs1.getString("cus_eml"));
+        csad.setText(rs1.getString("cus_adde"));
+
+           
+            
+           }
+              }
+           else{
+               new Warning("Assign Your Service first").setVisible(true);
+              }
+           }
+            }catch(Exception e){
+            System.out.println("error"+e);
+        }
+            
+        
+        }     
+        
+        
+    }//GEN-LAST:event_jPanel66MouseClicked
+  public void drop_down(){
+       try {
+
+                String sql = "Select * From emp ";
+                Connection con=DATABASE_CONNECTION.getConnection();
+                PreparedStatement ps=con.prepareStatement(sql);
+               
+                ResultSet rs=ps.executeQuery();
+                t2.removeAllItems();
+                t2.addItem("-- Select --");
+                while(rs.next()){
+                   String na= rs.getString("emp_fname")+" "+  rs.getString("emp_lname");
+                    
+                    String aa[]={
+                        na
+                      } ;
+
+                    //    System.out.println(Arrays.toString(aa).replace("[", "").replace("]", ""));
+                    t2.addItem(Arrays.toString(aa).replace("[", "").replace("]", ""));
+                    //   t2.setSelectedItem(null);
+                }
+
+            }   catch (SQLException ex) {
+                System.out.println("1"+ex);
+            }
+  }
+    
+    public void  relode(String a){
+       
+       if(a.equals("oky")){
+           System.out.println("haha"+a);
+            serlist();
+       }
+   }
+    public void tabledepp() {
+    try {
+        
+             //Data fetch from database
+            String sql = "Select * From emp ";
+            Connection con=DATABASE_CONNECTION.getConnection();
+            PreparedStatement ps=con.prepareStatement(sql);
+            ResultSet rs=ps.executeQuery();
+           DefaultTableModel model =(DefaultTableModel)tabledepp.getModel(); 
+           model.setRowCount(0);
+           while (rs.next())
+           {
+               String name = rs.getString("emp_fname")+" "+rs.getString("emp_lname");
+               Object o []={
+                   rs.getString("emp_id"),name,rs.getString("emp_address") };
+               model.addRow(o);
+               
+           }
+            }catch(Exception e){
+            System.out.println("error"+e);
+        }
+     }
+    
+    public void updateuepp(){
+       
+       try {
+        
+             //Data fetch from database
+            String sql = "Select * From emp Where emp_id = '"+Eppuepp+"'";
+            Connection con=DATABASE_CONNECTION.getConnection();
+            PreparedStatement ps=con.prepareStatement(sql);
+          //  ps.setString(1,"ERP_E1002");
+            ResultSet rs=ps.executeQuery();
+            if(rs.next()){
+                String emp_id =rs.getString("emp_id");
+                String f_name =rs.getString("emp_fname");
+                // System.out.println("EMpppppp "+f_name);
+                String l_name =rs.getString("emp_lname");
+                // System.out.println("pppnnn "+l_name);
+                String Phone =rs.getString("emp_phone");
+                 
+                String Email =rs.getString("emp_email");
+               // System.out.println("emlllll "+l_name);
+                String Address =rs.getString("emp_address");
+                
+                firstnameuepp.setText(f_name);
+                
+                lastnameuepp.setText(l_name);
+                
+                phone3uepp.setText(Phone);
+                  Emp_iduepp.setText(emp_id);
+                emailuepp.setText(Email);
+               addressuepp.setText(Address);
+                
+                
+               // JOptionPane.showMessageDialog(this, "Product Found");
+                
+               
+                rs.close();
+                ps.close();
+            }else{
+               new Warning("Enter Correct Employee Id").setVisible(true);
+               // System.out.println("Enter Correct Employee Id");
+            }
+        }catch(Exception e){
+            System.out.println("error"+e);
+        }
+           
+    }
+     void id_createcee(){
+        Emp_idcee.setEditable(false);
+         try{
+            Connection con=DATABASE_CONNECTION.getConnection();
+            PreparedStatement ps=con.prepareStatement("select * from id_store");         
+            ResultSet rs=ps.executeQuery();
+            if(rs.next()){
+              //  mng_Id=rs.getString("MNG_ID");
+               // System.out.println("MANAGER ID "+mng_Id);
+                emp_Idcee=rs.getString("emp_id");
+              //  System.out.println("EMPLOYEE ID "+emp_Id);
+              //  Transaction_Id=rs.getString("TRANSACTION_ID");
+              //  System.out.println("Transaction_Id "+Transaction_Id);
+             //   Product_id=rs.getString("PRODUCT_ID");
+               
+                rs.close();
+                ps.close();
+            }else{
+                JOptionPane.showMessageDialog(null, "NOTHING FOUND IN DATABASE!!!!!!");
+            }
+            con.close();
+           }
+        catch(Exception e){System.out.println(e);}
+         
+        emp_idcee = new BigInteger(emp_Idcee);
+        BigInteger nxt = new BigInteger("1");
+      //  System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!"+emp_Id);
+      //  System.out.println("#################"+emp_id);
+        emp_idcee = emp_idcee.add(nxt);
+     //   System.out.println("%%%%%%%%%%%%%%%%%%%%%%"+emp_id);
+        empcee = "ERP_E"+emp_idcee.toString();
+    //    System.out.println("%%%%%%%%%%%%%%%%%%%%%%"+emp);
+     //   System.out.println("++++++++++++++++"+emp_id);
+        Emp_idcee.setText(empcee);
+    }
+     
+     
+    public void tablesepp() {
+    try {
+        
+             //Data fetch from database
+            String sql = "Select * From emp ";
+            Connection con=DATABASE_CONNECTION.getConnection();
+            PreparedStatement ps=con.prepareStatement(sql);
+            ResultSet rs=ps.executeQuery();
+           DefaultTableModel model =(DefaultTableModel)tablesee.getModel(); 
+           model.setRowCount(0);
+           while (rs.next())
+           {
+               String name = rs.getString("emp_fname")+" "+rs.getString("emp_lname");
+               Object o []={
+                  name, rs.getString("emp_id") };
+               model.addRow(o);
+               
+           }
+            }catch(Exception e){
+            System.out.println("error"+e);
+        }
+     }
+    public void tableell() {
+    try {
+        
+             //Data fetch from database
+            String sql = "Select * From emp ";
+            Connection con=DATABASE_CONNECTION.getConnection();
+            PreparedStatement ps=con.prepareStatement(sql);
+            ResultSet rs=ps.executeQuery();
+           DefaultTableModel model =(DefaultTableModel)tableell.getModel(); 
+           model.setRowCount(0);
+           while (rs.next())
+           {
+               String name = rs.getString("emp_fname")+" "+rs.getString("emp_lname");
+               Object o []={
+                   rs.getString("emp_id"),name,rs.getString("emp_phone"),rs.getString("emp_email"),rs.getString("emp_address") };
+               model.addRow(o);
+               
+           }
+            }catch(Exception e){
+            System.out.println("error"+e);
+        }
+     }
+    public void table3() {
     try {
         
              //Data fetch from database
@@ -4339,7 +8032,7 @@ public void table3() {
                   Emp_id1.setText(emp_id);
                 email1.setText(Email);
                address1.setText(Address);
-                address2.setText(sev);
+                
                 
                // JOptionPane.showMessageDialog(this, "Product Found");
                 
@@ -4392,23 +8085,40 @@ public void table3() {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Assign;
     private javax.swing.JPanel CS;
+    private javax.swing.JPanel Co;
+    private javax.swing.JPanel Complete;
     private javax.swing.JPanel Create_Cus;
+    private javax.swing.JPanel Create_Emp;
     private javax.swing.JPanel Cus_List;
     private javax.swing.JPanel Delete_Cus;
+    private javax.swing.JPanel Delete_Emp;
     private javax.swing.JPanel ES;
     private javax.swing.JLabel Email;
     private javax.swing.JLabel Email1;
+    private javax.swing.JLabel Emailcee;
+    private javax.swing.JLabel Emailuepp;
+    private javax.swing.JPanel Emp_List;
     private javax.swing.JTextField Emp_id;
     private javax.swing.JTextField Emp_id1;
+    private javax.swing.JTextField Emp_idcee;
+    private javax.swing.JTextField Emp_iduepp;
     private javax.swing.JLabel L_name;
     private javax.swing.JLabel L_name1;
+    private javax.swing.JLabel L_namecee;
+    private javax.swing.JLabel L_nameuepp;
     private javax.swing.JPanel MP;
     private javax.swing.JLabel Phone;
     private javax.swing.JLabel Phone1;
+    private javax.swing.JLabel Phonecee;
+    private javax.swing.JLabel Phoneuepp;
     private javax.swing.JPanel SM;
     private javax.swing.JPanel Search_Cus;
+    private javax.swing.JPanel Search_Emp;
     private javax.swing.JPanel Update_Cus;
+    private javax.swing.JPanel Update_Emp;
+    private javax.swing.JPanel Working_list;
     private javax.swing.JPanel Ws;
     private javax.swing.JLabel a1;
     private javax.swing.JLabel a2;
@@ -4417,51 +8127,138 @@ public void table3() {
     private javax.swing.JLabel a5;
     private javax.swing.JLabel a6;
     private javax.swing.JLabel aaaa;
-    private javax.swing.JLabel aaaa1;
-    private javax.swing.JLabel adddddd;
+    private javax.swing.JLabel aaaacee;
+    private javax.swing.JLabel aaaauepp;
     private javax.swing.JTextArea address;
     private javax.swing.JTextArea address1;
-    private javax.swing.JTextArea address2;
+    private javax.swing.JTextArea addresscee;
+    private javax.swing.JTextArea addressuepp;
     private javax.swing.JLabel addrr;
     private javax.swing.JLabel adi;
     private javax.swing.JLabel adn;
+    private javax.swing.JTextPane ascad;
+    private javax.swing.JLabel asceml;
+    private javax.swing.JLabel ascn;
+    private javax.swing.JLabel ascph;
+    private javax.swing.JTextPane ascsd;
     private javax.swing.JPanel body;
     private javax.swing.JPanel body12;
-    private javax.swing.JPanel body13;
-    private javax.swing.JPanel body14;
-    private javax.swing.JPanel body15;
-    private javax.swing.JPanel body16;
-    private javax.swing.JPanel body17;
-    private javax.swing.JPanel body18;
-    private javax.swing.JPanel body19;
-    private javax.swing.JPanel body20;
+    private javax.swing.JPanel body21;
+    private javax.swing.JPanel body22;
+    private javax.swing.JPanel body23;
+    private java.awt.Button button1;
     private javax.swing.JPanel crt_emp;
     private javax.swing.JPanel crt_emp1;
     private javax.swing.JPanel crt_emp2;
+    private javax.swing.JPanel crt_emp3;
+    private javax.swing.JPanel crt_emp4;
+    private javax.swing.JPanel crt_emp5;
+    private javax.swing.JTextPane csad;
+    private javax.swing.JLabel csci;
+    private javax.swing.JLabel cscn;
+    private javax.swing.JTextField cscost;
+    private javax.swing.JLabel cscp;
+    private com.toedter.calendar.JDateChooser csdd;
+    private javax.swing.JLabel csei;
+    private javax.swing.JLabel cseml;
+    private javax.swing.JLabel csen;
+    private javax.swing.JTextPane csmet;
+    private javax.swing.JTextPane cssd;
+    private javax.swing.JTextField cstt;
     private javax.swing.JLabel dd;
     private javax.swing.JLabel dd1;
+    private com.toedter.calendar.JDateChooser ddt;
     private javax.swing.JLabel eid11;
+    private javax.swing.JLabel eiddepp;
     private javax.swing.JTextField email;
     private javax.swing.JTextField email1;
+    private javax.swing.JTextField emailcee;
+    private javax.swing.JTextField emailuepp;
     private javax.swing.JLabel enn;
+    private javax.swing.JLabel enndepp;
     private javax.swing.JLabel fName;
     private javax.swing.JLabel fName1;
+    private javax.swing.JLabel fName1344;
+    private javax.swing.JLabel fName1345;
+    private javax.swing.JLabel fName1depp;
+    private javax.swing.JLabel fName1uepp;
     private javax.swing.JLabel fName2;
     private javax.swing.JLabel fName3;
     private javax.swing.JLabel fName4;
     private javax.swing.JLabel fName5;
     private javax.swing.JLabel fName6;
+    private javax.swing.JLabel fName9;
+    private javax.swing.JLabel fNamecee;
+    private javax.swing.JLabel fNamesepp;
+    private javax.swing.JLabel fNameuepp;
     private javax.swing.JTextField firstname;
     private javax.swing.JTextField firstname1;
+    private javax.swing.JTextField firstnamecee;
+    private javax.swing.JTextField firstnameuepp;
     private javax.swing.JPanel head;
+    private java.awt.Label hidetext;
     private javax.swing.JPanel home;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel100;
+    private javax.swing.JLabel jLabel101;
+    private javax.swing.JLabel jLabel102;
+    private javax.swing.JLabel jLabel103;
+    private javax.swing.JLabel jLabel104;
+    private javax.swing.JLabel jLabel105;
+    private javax.swing.JLabel jLabel106;
+    private javax.swing.JLabel jLabel107;
+    private javax.swing.JLabel jLabel108;
+    private javax.swing.JLabel jLabel109;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel110;
+    private javax.swing.JLabel jLabel111;
+    private javax.swing.JLabel jLabel112;
+    private javax.swing.JLabel jLabel113;
+    private javax.swing.JLabel jLabel114;
+    private javax.swing.JLabel jLabel115;
+    private javax.swing.JLabel jLabel116;
+    private javax.swing.JLabel jLabel117;
+    private javax.swing.JLabel jLabel118;
+    private javax.swing.JLabel jLabel119;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel120;
+    private javax.swing.JLabel jLabel121;
+    private javax.swing.JLabel jLabel122;
+    private javax.swing.JLabel jLabel123;
+    private javax.swing.JLabel jLabel124;
+    private javax.swing.JLabel jLabel125;
+    private javax.swing.JLabel jLabel126;
+    private javax.swing.JLabel jLabel127;
+    private javax.swing.JLabel jLabel128;
+    private javax.swing.JLabel jLabel129;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel130;
+    private javax.swing.JLabel jLabel131;
+    private javax.swing.JLabel jLabel132;
+    private javax.swing.JLabel jLabel133;
+    private javax.swing.JLabel jLabel134;
+    private javax.swing.JLabel jLabel135;
+    private javax.swing.JLabel jLabel136;
+    private javax.swing.JLabel jLabel137;
+    private javax.swing.JLabel jLabel138;
+    private javax.swing.JLabel jLabel139;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel140;
+    private javax.swing.JLabel jLabel141;
+    private javax.swing.JLabel jLabel142;
+    private javax.swing.JLabel jLabel145;
+    private javax.swing.JLabel jLabel146;
+    private javax.swing.JLabel jLabel148;
+    private javax.swing.JLabel jLabel149;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel150;
+    private javax.swing.JLabel jLabel151;
+    private javax.swing.JLabel jLabel153;
+    private javax.swing.JLabel jLabel154;
+    private javax.swing.JLabel jLabel156;
+    private javax.swing.JLabel jLabel157;
+    private javax.swing.JLabel jLabel158;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -4477,6 +8274,7 @@ public void table3() {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel2uepp;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
@@ -4526,7 +8324,16 @@ public void table3() {
     private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel72;
     private javax.swing.JLabel jLabel73;
+    private javax.swing.JLabel jLabel74;
+    private javax.swing.JLabel jLabel75;
+    private javax.swing.JLabel jLabel76;
+    private javax.swing.JLabel jLabel77;
+    private javax.swing.JLabel jLabel78;
+    private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel80;
+    private javax.swing.JLabel jLabel81;
+    private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel83;
     private javax.swing.JLabel jLabel84;
     private javax.swing.JLabel jLabel85;
@@ -4544,6 +8351,7 @@ public void table3() {
     private javax.swing.JLabel jLabel96;
     private javax.swing.JLabel jLabel97;
     private javax.swing.JLabel jLabel98;
+    private javax.swing.JLabel jLabel99;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -4576,7 +8384,11 @@ public void table3() {
     private javax.swing.JPanel jPanel36;
     private javax.swing.JPanel jPanel37;
     private javax.swing.JPanel jPanel38;
+    private javax.swing.JPanel jPanel39;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel40;
+    private javax.swing.JPanel jPanel41;
+    private javax.swing.JPanel jPanel42;
     private javax.swing.JPanel jPanel43;
     private javax.swing.JPanel jPanel44;
     private javax.swing.JPanel jPanel45;
@@ -4586,14 +8398,51 @@ public void table3() {
     private javax.swing.JPanel jPanel49;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel50;
+    private javax.swing.JPanel jPanel51;
+    private javax.swing.JPanel jPanel52;
+    private javax.swing.JPanel jPanel53;
+    private javax.swing.JPanel jPanel54;
+    private javax.swing.JPanel jPanel55;
+    private javax.swing.JPanel jPanel56;
+    private javax.swing.JPanel jPanel57;
+    private javax.swing.JPanel jPanel58;
+    private javax.swing.JPanel jPanel59;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel60;
+    private javax.swing.JPanel jPanel61;
+    private javax.swing.JPanel jPanel62;
+    private javax.swing.JPanel jPanel63;
+    private javax.swing.JPanel jPanel64;
+    private javax.swing.JPanel jPanel65;
+    private javax.swing.JPanel jPanel66;
+    private javax.swing.JPanel jPanel67;
+    private javax.swing.JPanel jPanel68;
+    private javax.swing.JPanel jPanel69;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel70;
+    private javax.swing.JPanel jPanel71;
+    private javax.swing.JPanel jPanel72;
+    private javax.swing.JPanel jPanel73;
+    private javax.swing.JPanel jPanel74;
+    private javax.swing.JPanel jPanel75;
+    private javax.swing.JPanel jPanel76;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane13;
+    private javax.swing.JScrollPane jScrollPane14;
+    private javax.swing.JScrollPane jScrollPane15;
+    private javax.swing.JScrollPane jScrollPane16;
+    private javax.swing.JScrollPane jScrollPane17;
+    private javax.swing.JScrollPane jScrollPane18;
+    private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane20;
+    private javax.swing.JScrollPane jScrollPane21;
+    private javax.swing.JScrollPane jScrollPane22;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
@@ -4609,11 +8458,19 @@ public void table3() {
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField lastname;
     private javax.swing.JTextField lastname1;
+    private javax.swing.JTextField lastnamecee;
+    private javax.swing.JTextField lastnameuepp;
     private javax.swing.JPanel menu;
     private javax.swing.JTextField mng_id;
     private javax.swing.JTextField mng_id1;
+    private javax.swing.JTextField mng_id2;
+    private javax.swing.JTextField mng_id3;
+    private javax.swing.JTextField mng_id4;
     private javax.swing.JTextField mng_name;
     private javax.swing.JTextField mng_name1;
+    private javax.swing.JTextField mng_name2;
+    private javax.swing.JTextField mng_name3;
+    private javax.swing.JTextField mng_name4;
     private javax.swing.JPanel p1;
     private javax.swing.JPanel p2;
     private javax.swing.JPanel p3;
@@ -4622,17 +8479,34 @@ public void table3() {
     private javax.swing.JPanel p6;
     private javax.swing.JPanel p7;
     private javax.swing.JTextField phone3;
+    private javax.swing.JTextField phone3cee;
+    private javax.swing.JTextField phone3uepp;
     private javax.swing.JTextField phone4;
-    private javax.swing.JTextArea sddz;
     private javax.swing.JTextField serch;
     private javax.swing.JTextField serch1;
     private javax.swing.JTextField serch2;
     private javax.swing.JTextField serch3;
+    private javax.swing.JTextField serchdepp;
+    private javax.swing.JTextField serchell;
+    private javax.swing.JTextField serchell1;
+    private javax.swing.JTextField serchsee;
+    private javax.swing.JTextField serchuepp;
+    private javax.swing.JComboBox<String> stawll;
+    private javax.swing.JComboBox<String> t2;
+    private javax.swing.JComboBox<String> t3;
     private javax.swing.JTable table;
     private javax.swing.JTable table1;
+    private javax.swing.JTable table1see;
     private javax.swing.JTable table2;
+    private javax.swing.JTable tabledepp;
+    private javax.swing.JTable tableell;
     private javax.swing.JTable tablesc;
+    private javax.swing.JTable tablesee;
+    private javax.swing.JTable tablewll;
+    private javax.swing.JTextField td;
+    private com.raven.swing.TimePicker tpic;
     private javax.swing.JLabel tt;
     private javax.swing.JTextPane ttf;
+    private javax.swing.JTextPane ttfsee;
     // End of variables declaration//GEN-END:variables
 }

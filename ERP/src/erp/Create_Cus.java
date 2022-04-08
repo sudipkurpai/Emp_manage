@@ -406,7 +406,7 @@ String cus;
            // JOptionPane.showMessageDialog(this, "");
             new Warning("Fill up all field first").setVisible(true);
         }else{
-            int i = ADD_NEW_EMP_DATAOBEJECT.create_cus (fName, lName, mail, ph,empp, add,sd);
+            int i = ADD_NEW_EMP_DATAOBEJECT.create_cus (fName, lName, mail, ph,empp, add);
             
             
             int j = ID_STORE_FETCH.cus_id(cus_id.toString());

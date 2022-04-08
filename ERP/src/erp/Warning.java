@@ -24,7 +24,7 @@ String w;
         initComponents();
         
         w = msg;
-         tt.setText(msg);
+         tt.setText("<html><p align= center>"+msg+"</p></html>");
     }
     
     public void msg(String msg) {

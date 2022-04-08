@@ -22,9 +22,9 @@ public class Search_Emp extends javax.swing.JPanel {
      */
     public Search_Emp() {
         initComponents();
-        ttf.setEditable(false);
-        table();
-        fName1.setVisible(false);
+        ttfsee.setEditable(false);
+        tablesepp();
+        fNamesepp.setVisible(false);
     }
 
     /**
@@ -38,16 +38,16 @@ public class Search_Emp extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        table1 = new javax.swing.JTable();
+        table1see = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        table = new javax.swing.JTable();
+        tablesee = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
-        serch = new javax.swing.JTextField();
+        serchsee = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        fName1 = new javax.swing.JLabel();
+        fNamesepp = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        ttf = new javax.swing.JTextPane();
+        ttfsee = new javax.swing.JTextPane();
         fName2 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -55,10 +55,10 @@ public class Search_Emp extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(47, 68, 187));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        table1.setBackground(new java.awt.Color(255, 255, 255));
-        table1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        table1.setForeground(new java.awt.Color(0, 0, 0));
-        table1.setModel(new javax.swing.table.DefaultTableModel(
+        table1see.setBackground(new java.awt.Color(255, 255, 255));
+        table1see.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        table1see.setForeground(new java.awt.Color(0, 0, 0));
+        table1see.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -74,19 +74,19 @@ public class Search_Emp extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        table1.addMouseListener(new java.awt.event.MouseAdapter() {
+        table1see.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                table1MouseClicked(evt);
+                table1seeMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(table1);
+        jScrollPane1.setViewportView(table1see);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 182, 670, 170));
 
-        table.setBackground(new java.awt.Color(255, 255, 255));
-        table.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        table.setForeground(new java.awt.Color(0, 0, 0));
-        table.setModel(new javax.swing.table.DefaultTableModel(
+        tablesee.setBackground(new java.awt.Color(255, 255, 255));
+        tablesee.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tablesee.setForeground(new java.awt.Color(0, 0, 0));
+        tablesee.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -102,33 +102,33 @@ public class Search_Emp extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        table.addMouseListener(new java.awt.event.MouseAdapter() {
+        tablesee.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tableMouseClicked(evt);
+                tableseeMouseClicked(evt);
             }
         });
-        jScrollPane2.setViewportView(table);
+        jScrollPane2.setViewportView(tablesee);
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 182, 360, 500));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        serch.setBackground(new java.awt.Color(255, 255, 255));
-        serch.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
-        serch.setForeground(new java.awt.Color(128, 128, 128));
-        serch.setText("Serch Employee by Employee ID");
-        serch.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
-        serch.addFocusListener(new java.awt.event.FocusAdapter() {
+        serchsee.setBackground(new java.awt.Color(255, 255, 255));
+        serchsee.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        serchsee.setForeground(new java.awt.Color(128, 128, 128));
+        serchsee.setText("Serch Employee by Employee ID");
+        serchsee.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
+        serchsee.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                serchFocusGained(evt);
+                serchseeFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                serchFocusLost(evt);
+                serchseeFocusLost(evt);
             }
         });
-        serch.addKeyListener(new java.awt.event.KeyAdapter() {
+        serchsee.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                serchKeyReleased(evt);
+                serchseeKeyReleased(evt);
             }
         });
 
@@ -140,10 +140,10 @@ public class Search_Emp extends javax.swing.JPanel {
             }
         });
 
-        fName1.setFont(new java.awt.Font("Consolas", 1, 21)); // NOI18N
-        fName1.setForeground(new java.awt.Color(128, 128, 128));
-        fName1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        fName1.setText("Serch Employee by Employee ID");
+        fNamesepp.setFont(new java.awt.Font("Consolas", 1, 21)); // NOI18N
+        fNamesepp.setForeground(new java.awt.Color(128, 128, 128));
+        fNamesepp.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        fNamesepp.setText("Serch Employee by Employee ID");
 
         jLabel1.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
@@ -154,17 +154,18 @@ public class Search_Emp extends javax.swing.JPanel {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(fName1, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(serch, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(638, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(22, 22, 22)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(fNamesepp, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(serchsee, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, 0)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -172,23 +173,23 @@ public class Search_Emp extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                .addComponent(fName1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(fNamesepp, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(serch, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(serchsee, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24))
         );
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 12, 1050, 150));
 
-        ttf.setBackground(new java.awt.Color(255, 255, 255));
-        ttf.setBorder(null);
-        ttf.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        ttf.setForeground(new java.awt.Color(0, 0, 0));
-        jScrollPane3.setViewportView(ttf);
+        ttfsee.setBackground(new java.awt.Color(255, 255, 255));
+        ttfsee.setBorder(null);
+        ttfsee.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        ttfsee.setForeground(new java.awt.Color(0, 0, 0));
+        jScrollPane3.setViewportView(ttfsee);
 
         jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 400, 670, 220));
 
@@ -234,7 +235,7 @@ public class Search_Emp extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    public void table() {
+    public void tablesepp() {
     try {
         
              //Data fetch from database
@@ -242,7 +243,7 @@ public class Search_Emp extends javax.swing.JPanel {
             Connection con=DATABASE_CONNECTION.getConnection();
             PreparedStatement ps=con.prepareStatement(sql);
             ResultSet rs=ps.executeQuery();
-           DefaultTableModel model =(DefaultTableModel)table.getModel(); 
+           DefaultTableModel model =(DefaultTableModel)tablesee.getModel(); 
            model.setRowCount(0);
            while (rs.next())
            {
@@ -257,24 +258,24 @@ public class Search_Emp extends javax.swing.JPanel {
         }
      }
     
-    private void serchFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serchFocusGained
-        if(serch.getText().equals("Serch Employee by Employee ID")){
-            fName1.setVisible(true);
-            serch.setText("");
-            serch.setForeground(new Color(000,000,000));
+    private void serchseeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serchseeFocusGained
+        if(serchsee.getText().equals("Serch Employee by Employee ID")){
+            fNamesepp.setVisible(true);
+            serchsee.setText("");
+            serchsee.setForeground(new Color(000,000,000));
         }
-    }//GEN-LAST:event_serchFocusGained
+    }//GEN-LAST:event_serchseeFocusGained
 
-    private void serchFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serchFocusLost
+    private void serchseeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serchseeFocusLost
         // TODO add your handling code here:
-        if(serch.getText().equals("")){
-            fName1.setVisible(false);
-            serch.setText("Serch Employee by Employee ID");
-            serch.setForeground(new Color(128,128,128));
+        if(serchsee.getText().equals("")){
+            fNamesepp.setVisible(false);
+            serchsee.setText("Serch Employee by Employee ID");
+            serchsee.setForeground(new Color(128,128,128));
         }else{
-            fName1.setVisible(true);
+            fNamesepp.setVisible(true);
         }
-    }//GEN-LAST:event_serchFocusLost
+    }//GEN-LAST:event_serchseeFocusLost
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         // TODO add your handling code here:
@@ -322,10 +323,10 @@ public class Search_Emp extends javax.swing.JPanel {
 //        }
     }//GEN-LAST:event_jLabel2MouseClicked
 
-    private void serchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_serchKeyReleased
+    private void serchseeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_serchseeKeyReleased
         // TODO add your handling code here:
         
-        String product_idee = serch.getText();
+        String product_idee = serchsee.getText();
         try {
 
             //Data fetch from database
@@ -334,7 +335,7 @@ public class Search_Emp extends javax.swing.JPanel {
             PreparedStatement ps=con.prepareStatement(sql);
             // ps.setString(1,product_idee);
             ResultSet rs=ps.executeQuery();
-            DefaultTableModel model =(DefaultTableModel)table.getModel();
+            DefaultTableModel model =(DefaultTableModel)tablesee.getModel();
             model.setRowCount(0);
             if(rs.next()){
                 do
@@ -353,13 +354,13 @@ public class Search_Emp extends javax.swing.JPanel {
         }catch(Exception e){
             System.out.println("error"+e);
         }
-    }//GEN-LAST:event_serchKeyReleased
+    }//GEN-LAST:event_serchseeKeyReleased
 
-    private void tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableMouseClicked
+    private void tableseeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableseeMouseClicked
         // TODO add your handling code here:
         
-         int i = table.getSelectedRow();
-        DefaultTableModel model=(DefaultTableModel)table.getModel();
+         int i = tablesee.getSelectedRow();
+        DefaultTableModel model=(DefaultTableModel)tablesee.getModel();
        // String aa=model.getValueAt(i,0).toString();
         String bb=model.getValueAt(i,1).toString();
        // System.out.println("id"+bb +" name"+aa);
@@ -370,7 +371,7 @@ public class Search_Emp extends javax.swing.JPanel {
             Connection con=DATABASE_CONNECTION.getConnection();
             PreparedStatement ps=con.prepareStatement(sql);
             ResultSet rs=ps.executeQuery();
-           DefaultTableModel model1 =(DefaultTableModel)table1.getModel(); 
+           DefaultTableModel model1 =(DefaultTableModel)table1see.getModel(); 
            model1.setRowCount(0);
            if (rs.next()){
                do{
@@ -391,13 +392,13 @@ public class Search_Emp extends javax.swing.JPanel {
         }
        
        
-    }//GEN-LAST:event_tableMouseClicked
+    }//GEN-LAST:event_tableseeMouseClicked
 
-    private void table1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table1MouseClicked
+    private void table1seeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table1seeMouseClicked
         // TODO add your handling code here:
         
-         int i = table1.getSelectedRow();
-        DefaultTableModel model=(DefaultTableModel)table1.getModel();
+         int i = table1see.getSelectedRow();
+        DefaultTableModel model=(DefaultTableModel)table1see.getModel();
        // String aa=model.getValueAt(i,0).toString();
         String bb=model.getValueAt(i,0).toString();
        // System.out.println("id"+bb +" name"+aa);
@@ -414,7 +415,7 @@ public class Search_Emp extends javax.swing.JPanel {
               // String name = rs.getString("emp_id")+" "+rs.getString("emp_lname");
                
                   String ttf1= rs.getString("service_dtl");
-                  ttf.setText(ttf1);
+                  ttfsee.setText(ttf1);
               
                
            }
@@ -423,12 +424,12 @@ public class Search_Emp extends javax.swing.JPanel {
         }
         
         
-    }//GEN-LAST:event_table1MouseClicked
+    }//GEN-LAST:event_table1seeMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel fName1;
     private javax.swing.JLabel fName2;
+    private javax.swing.JLabel fNamesepp;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
@@ -438,9 +439,9 @@ public class Search_Emp extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextField serch;
-    private javax.swing.JTable table;
-    private javax.swing.JTable table1;
-    private javax.swing.JTextPane ttf;
+    private javax.swing.JTextField serchsee;
+    private javax.swing.JTable table1see;
+    private javax.swing.JTable tablesee;
+    private javax.swing.JTextPane ttfsee;
     // End of variables declaration//GEN-END:variables
 }

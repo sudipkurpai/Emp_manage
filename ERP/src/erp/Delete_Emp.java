@@ -24,10 +24,10 @@ public class Delete_Emp extends javax.swing.JPanel {
     public Delete_Emp() {
 //        
         initComponents();
-        eid.setVisible(false);
-        enn.setVisible(false);
-        table();
-        fName1.setVisible(false);
+        eiddepp.setVisible(false);
+        enndepp.setVisible(false);
+        tabledepp();
+        fName1depp.setVisible(false);
     }
 
     /**
@@ -44,7 +44,7 @@ public class Delete_Emp extends javax.swing.JPanel {
         crt_emp = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        table = new javax.swing.JTable();
+        tabledepp = new javax.swing.JTable();
         jLabel23 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
@@ -53,11 +53,11 @@ public class Delete_Emp extends javax.swing.JPanel {
         jLabel27 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        serch = new javax.swing.JTextField();
-        fName1 = new javax.swing.JLabel();
+        serchdepp = new javax.swing.JTextField();
+        fName1depp = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        eid = new javax.swing.JLabel();
-        enn = new javax.swing.JLabel();
+        eiddepp = new javax.swing.JLabel();
+        enndepp = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -93,10 +93,10 @@ public class Delete_Emp extends javax.swing.JPanel {
 
         jPanel2.add(crt_emp, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 570, 50));
 
-        table.setBackground(new java.awt.Color(255, 255, 255));
-        table.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        table.setForeground(new java.awt.Color(47, 68, 187));
-        table.setModel(new javax.swing.table.DefaultTableModel(
+        tabledepp.setBackground(new java.awt.Color(255, 255, 255));
+        tabledepp.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        tabledepp.setForeground(new java.awt.Color(47, 68, 187));
+        tabledepp.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -112,12 +112,12 @@ public class Delete_Emp extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        table.addMouseListener(new java.awt.event.MouseAdapter() {
+        tabledepp.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tableMouseClicked(evt);
+                tabledeppMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(table);
+        jScrollPane1.setViewportView(tabledepp);
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 570, 340));
 
@@ -168,35 +168,37 @@ public class Delete_Emp extends javax.swing.JPanel {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Delete Employee !");
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 400, -1));
 
-        serch.setBackground(new java.awt.Color(255, 255, 255));
-        serch.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
-        serch.setForeground(new java.awt.Color(128, 128, 128));
-        serch.setText("Serch Employee by Employee ID");
-        serch.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
-        serch.addFocusListener(new java.awt.event.FocusAdapter() {
+        serchdepp.setBackground(new java.awt.Color(255, 255, 255));
+        serchdepp.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        serchdepp.setForeground(new java.awt.Color(128, 128, 128));
+        serchdepp.setText("Serch Employee by Employee ID");
+        serchdepp.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
+        serchdepp.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                serchFocusGained(evt);
+                serchdeppFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                serchFocusLost(evt);
+                serchdeppFocusLost(evt);
             }
         });
-        serch.addKeyListener(new java.awt.event.KeyAdapter() {
+        serchdepp.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                serchKeyReleased(evt);
+                serchdeppKeyReleased(evt);
             }
         });
-        jPanel3.add(serch, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 320, 30));
+        jPanel3.add(serchdepp, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 320, 30));
 
-        fName1.setFont(new java.awt.Font("Consolas", 1, 21)); // NOI18N
-        fName1.setForeground(new java.awt.Color(128, 128, 128));
-        fName1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        fName1.setText("Serch Employee by Employee ID");
-        jPanel3.add(fName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 390, 30));
+        fName1depp.setFont(new java.awt.Font("Consolas", 1, 21)); // NOI18N
+        fName1depp.setForeground(new java.awt.Color(128, 128, 128));
+        fName1depp.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        fName1depp.setText("Serch Employee by Employee ID");
+        jPanel3.add(fName1depp, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 390, 30));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/magnifying-glass.png"))); // NOI18N
         jLabel2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
@@ -208,8 +210,8 @@ public class Delete_Emp extends javax.swing.JPanel {
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 80, 46, 40));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, 610, 140));
-        jPanel1.add(eid, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 620, -1, -1));
-        jPanel1.add(enn, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 630, -1, -1));
+        jPanel1.add(eiddepp, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 620, -1, -1));
+        jPanel1.add(enndepp, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 630, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -225,7 +227,7 @@ public class Delete_Emp extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-     public void table() {
+     public void tabledepp() {
     try {
         
              //Data fetch from database
@@ -233,7 +235,7 @@ public class Delete_Emp extends javax.swing.JPanel {
             Connection con=DATABASE_CONNECTION.getConnection();
             PreparedStatement ps=con.prepareStatement(sql);
             ResultSet rs=ps.executeQuery();
-           DefaultTableModel model =(DefaultTableModel)table.getModel(); 
+           DefaultTableModel model =(DefaultTableModel)tabledepp.getModel(); 
            model.setRowCount(0);
            while (rs.next())
            {
@@ -250,14 +252,14 @@ public class Delete_Emp extends javax.swing.JPanel {
     
     private void jLabel28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel28MouseClicked
         // TODO add your handling code here:
-        String pnn=enn.getText();
-        String rea=eid.getText();
+        String pnn=enndepp.getText();
+        String rea=eiddepp.getText();
         if (rea.equals("")){
           
             new Warning("Click Table row To Delete").setVisible(true);
            // JOptionPane.showMessageDialog(this, "Click Table row To Delete");
         }else {
-              eid.setText("");
+              eiddepp.setText("");
            int Yes = JOptionPane.showConfirmDialog(null, "Are Your Sure Want to Remove Employee "+pnn+" ?");
         if(Yes == 0){
                
@@ -274,7 +276,7 @@ public class Delete_Emp extends javax.swing.JPanel {
                     ps.close();
                     con.close();
                    
-                    table(); 
+                    tabledepp(); 
                     Succes su = new Succes();
                     su.ot("Delete Employee Succesfully");
                     su.setVisible(true);
@@ -296,29 +298,29 @@ public class Delete_Emp extends javax.swing.JPanel {
         
     }//GEN-LAST:event_jLabel28MouseClicked
 
-    private void serchFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serchFocusGained
-        if(serch.getText().equals("Serch Employee by Employee ID")){
-            fName1.setVisible(true);
-            serch.setText("");
-            serch.setForeground(new Color(000,000,000));
+    private void serchdeppFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serchdeppFocusGained
+        if(serchdepp.getText().equals("Serch Employee by Employee ID")){
+            fName1depp.setVisible(true);
+            serchdepp.setText("");
+            serchdepp.setForeground(new Color(000,000,000));
         }
-    }//GEN-LAST:event_serchFocusGained
+    }//GEN-LAST:event_serchdeppFocusGained
 
-    private void serchFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serchFocusLost
+    private void serchdeppFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serchdeppFocusLost
         // TODO add your handling code here:
-        if(serch.getText().equals("")){
-            fName1.setVisible(false);
-            serch.setText("Serch Employee by Employee ID");
-            serch.setForeground(new Color(128,128,128));
+        if(serchdepp.getText().equals("")){
+            fName1depp.setVisible(false);
+            serchdepp.setText("Serch Employee by Employee ID");
+            serchdepp.setForeground(new Color(128,128,128));
         }else{
-            fName1.setVisible(true);
+            fName1depp.setVisible(true);
         }
-    }//GEN-LAST:event_serchFocusLost
+    }//GEN-LAST:event_serchdeppFocusLost
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         // TODO add your handling code here:
 
-        String em_id = serch.getText();
+        String em_id = serchdepp.getText();
         try {
 
             //Data fetch from database
@@ -354,9 +356,9 @@ public class Delete_Emp extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jLabel2MouseClicked
 
-    private void serchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_serchKeyReleased
+    private void serchdeppKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_serchdeppKeyReleased
         // TODO add your handling code here:
-        String product_idee = serch.getText();
+        String product_idee = serchdepp.getText();
       try {
         
              //Data fetch from database
@@ -365,7 +367,7 @@ public class Delete_Emp extends javax.swing.JPanel {
             PreparedStatement ps=con.prepareStatement(sql);
            // ps.setString(1,product_idee);
             ResultSet rs=ps.executeQuery();
-           DefaultTableModel model =(DefaultTableModel)table.getModel(); 
+           DefaultTableModel model =(DefaultTableModel)tabledepp.getModel(); 
            model.setRowCount(0);
            if(rs.next()){
                do
@@ -385,25 +387,25 @@ public class Delete_Emp extends javax.swing.JPanel {
             }catch(Exception e){
             System.out.println("error"+e);
         }
-    }//GEN-LAST:event_serchKeyReleased
+    }//GEN-LAST:event_serchdeppKeyReleased
 
-    private void tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableMouseClicked
+    private void tabledeppMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabledeppMouseClicked
         // TODO add your handling code here:
-        int i = table.getSelectedRow();
-        DefaultTableModel model=(DefaultTableModel)table.getModel();
+        int i = tabledepp.getSelectedRow();
+        DefaultTableModel model=(DefaultTableModel)tabledepp.getModel();
         String bb=model.getValueAt(i,0).toString();
         String aa= model.getValueAt(i,1).toString();
         System.out.println("id"+bb +" name"+aa);
-        enn.setText(aa);
-        eid.setText(bb);
-    }//GEN-LAST:event_tableMouseClicked
+        enndepp.setText(aa);
+        eiddepp.setText(bb);
+    }//GEN-LAST:event_tabledeppMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel crt_emp;
-    private javax.swing.JLabel eid;
-    private javax.swing.JLabel enn;
-    private javax.swing.JLabel fName1;
+    private javax.swing.JLabel eiddepp;
+    private javax.swing.JLabel enndepp;
+    private javax.swing.JLabel fName1depp;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel23;
@@ -417,7 +419,7 @@ public class Delete_Emp extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField mng_id;
     private javax.swing.JTextField mng_name;
-    private javax.swing.JTextField serch;
-    private javax.swing.JTable table;
+    private javax.swing.JTextField serchdepp;
+    private javax.swing.JTable tabledepp;
     // End of variables declaration//GEN-END:variables
 }

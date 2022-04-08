@@ -17,25 +17,25 @@ import javax.swing.JOptionPane;
  * @author Sudip_Maiti
  */
 public class Create_Emp extends javax.swing.JPanel {
-String emp_Id;
-String emp;
- BigInteger emp_id =null;
+String emp_Idcee;
+String empcee;
+ BigInteger emp_idcee =null;
     /**
      * Creates new form Create_Emp
      */
     public Create_Emp() {
         initComponents();
-        id_create();
+        id_createcee();
         
-          fName.setVisible(false);
-        L_name.setVisible(false);
-        Phone.setVisible(false);
-        Email.setVisible(false);
+          fNamecee.setVisible(false);
+        L_namecee.setVisible(false);
+        Phonecee.setVisible(false);
+        Emailcee.setVisible(false);
       
         mng_name.setEditable(false);
         mng_id.setEditable(false);
-        Emp_id.setEditable(false);
-         aaaa.setVisible(false);
+        Emp_idcee.setEditable(false);
+         aaaacee.setVisible(false);
     }
 
     /**
@@ -50,21 +50,21 @@ String emp;
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        fName = new javax.swing.JLabel();
-        Phone = new javax.swing.JLabel();
-        Email = new javax.swing.JLabel();
+        fNamecee = new javax.swing.JLabel();
+        Phonecee = new javax.swing.JLabel();
+        Emailcee = new javax.swing.JLabel();
         crt_emp = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
-        L_name = new javax.swing.JLabel();
+        L_namecee = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
-        aaaa = new javax.swing.JLabel();
-        firstname = new javax.swing.JTextField();
-        lastname = new javax.swing.JTextField();
-        email = new javax.swing.JTextField();
-        phone3 = new javax.swing.JTextField();
-        Emp_id = new javax.swing.JTextField();
+        aaaacee = new javax.swing.JLabel();
+        firstnamecee = new javax.swing.JTextField();
+        lastnamecee = new javax.swing.JTextField();
+        emailcee = new javax.swing.JTextField();
+        phone3cee = new javax.swing.JTextField();
+        Emp_idcee = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        address = new javax.swing.JTextArea();
+        addresscee = new javax.swing.JTextArea();
         jLabel23 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
@@ -86,23 +86,23 @@ String emp;
         jLabel1.setText("Create New Employee !");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 30, 400, -1));
 
-        fName.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        fName.setForeground(new java.awt.Color(128, 128, 128));
-        fName.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        fName.setText("First Name");
-        jPanel2.add(fName, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 140, 20));
+        fNamecee.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        fNamecee.setForeground(new java.awt.Color(128, 128, 128));
+        fNamecee.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        fNamecee.setText("First Name");
+        jPanel2.add(fNamecee, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 140, 20));
 
-        Phone.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        Phone.setForeground(new java.awt.Color(128, 128, 128));
-        Phone.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Phone.setText("Phone");
-        jPanel2.add(Phone, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 260, 20));
+        Phonecee.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        Phonecee.setForeground(new java.awt.Color(128, 128, 128));
+        Phonecee.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Phonecee.setText("Phone");
+        jPanel2.add(Phonecee, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 260, 20));
 
-        Email.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        Email.setForeground(new java.awt.Color(128, 128, 128));
-        Email.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        Email.setText("Email");
-        jPanel2.add(Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, 280, 20));
+        Emailcee.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        Emailcee.setForeground(new java.awt.Color(128, 128, 128));
+        Emailcee.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Emailcee.setText("Email");
+        jPanel2.add(Emailcee, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, 280, 20));
 
         crt_emp.setBackground(new java.awt.Color(0, 102, 255));
         crt_emp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 255)));
@@ -130,11 +130,11 @@ String emp;
 
         jPanel2.add(crt_emp, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, 560, 50));
 
-        L_name.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        L_name.setForeground(new java.awt.Color(128, 128, 128));
-        L_name.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        L_name.setText("Last Name");
-        jPanel2.add(L_name, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 220, 20));
+        L_namecee.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        L_namecee.setForeground(new java.awt.Color(128, 128, 128));
+        L_namecee.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        L_namecee.setText("Last Name");
+        jPanel2.add(L_namecee, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 220, 20));
 
         jLabel26.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(128, 128, 128));
@@ -142,113 +142,113 @@ String emp;
         jLabel26.setText("Employee ID");
         jPanel2.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 90, 20));
 
-        aaaa.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        aaaa.setForeground(new java.awt.Color(128, 128, 128));
-        aaaa.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        aaaa.setText("Address");
-        jPanel2.add(aaaa, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 70, 20));
+        aaaacee.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        aaaacee.setForeground(new java.awt.Color(128, 128, 128));
+        aaaacee.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        aaaacee.setText("Address");
+        jPanel2.add(aaaacee, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 70, 20));
 
-        firstname.setBackground(new java.awt.Color(255, 255, 255));
-        firstname.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        firstname.setForeground(new java.awt.Color(128, 128, 128));
-        firstname.setText("First Name");
-        firstname.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 153, 204)));
-        firstname.addFocusListener(new java.awt.event.FocusAdapter() {
+        firstnamecee.setBackground(new java.awt.Color(255, 255, 255));
+        firstnamecee.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        firstnamecee.setForeground(new java.awt.Color(128, 128, 128));
+        firstnamecee.setText("First Name");
+        firstnamecee.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 153, 204)));
+        firstnamecee.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                firstnameFocusGained(evt);
+                firstnameceeFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                firstnameFocusLost(evt);
+                firstnameceeFocusLost(evt);
             }
         });
-        firstname.addActionListener(new java.awt.event.ActionListener() {
+        firstnamecee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                firstnameActionPerformed(evt);
+                firstnameceeActionPerformed(evt);
             }
         });
-        jPanel2.add(firstname, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 260, 30));
+        jPanel2.add(firstnamecee, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 260, 30));
 
-        lastname.setBackground(new java.awt.Color(255, 255, 255));
-        lastname.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        lastname.setForeground(new java.awt.Color(128, 128, 128));
-        lastname.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        lastname.setText("Last Name");
-        lastname.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 153, 204)));
-        lastname.addFocusListener(new java.awt.event.FocusAdapter() {
+        lastnamecee.setBackground(new java.awt.Color(255, 255, 255));
+        lastnamecee.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        lastnamecee.setForeground(new java.awt.Color(128, 128, 128));
+        lastnamecee.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        lastnamecee.setText("Last Name");
+        lastnamecee.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 153, 204)));
+        lastnamecee.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                lastnameFocusGained(evt);
+                lastnameceeFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                lastnameFocusLost(evt);
+                lastnameceeFocusLost(evt);
             }
         });
-        lastname.addActionListener(new java.awt.event.ActionListener() {
+        lastnamecee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lastnameActionPerformed(evt);
+                lastnameceeActionPerformed(evt);
             }
         });
-        jPanel2.add(lastname, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 280, 30));
+        jPanel2.add(lastnamecee, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 280, 30));
 
-        email.setBackground(new java.awt.Color(255, 255, 255));
-        email.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        email.setForeground(new java.awt.Color(128, 128, 128));
-        email.setText("Email");
-        email.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 153, 204)));
-        email.addFocusListener(new java.awt.event.FocusAdapter() {
+        emailcee.setBackground(new java.awt.Color(255, 255, 255));
+        emailcee.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        emailcee.setForeground(new java.awt.Color(128, 128, 128));
+        emailcee.setText("Email");
+        emailcee.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 153, 204)));
+        emailcee.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                emailFocusGained(evt);
+                emailceeFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                emailFocusLost(evt);
+                emailceeFocusLost(evt);
             }
         });
-        jPanel2.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 180, 280, 30));
+        jPanel2.add(emailcee, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 180, 280, 30));
 
-        phone3.setBackground(new java.awt.Color(255, 255, 255));
-        phone3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        phone3.setForeground(new java.awt.Color(128, 128, 128));
-        phone3.setText("Phone");
-        phone3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 153, 204)));
-        phone3.addFocusListener(new java.awt.event.FocusAdapter() {
+        phone3cee.setBackground(new java.awt.Color(255, 255, 255));
+        phone3cee.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        phone3cee.setForeground(new java.awt.Color(128, 128, 128));
+        phone3cee.setText("Phone");
+        phone3cee.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 153, 204)));
+        phone3cee.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                phone3FocusGained(evt);
+                phone3ceeFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                phone3FocusLost(evt);
+                phone3ceeFocusLost(evt);
             }
         });
-        jPanel2.add(phone3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 260, 30));
+        jPanel2.add(phone3cee, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 260, 30));
 
-        Emp_id.setBackground(new java.awt.Color(255, 255, 255));
-        Emp_id.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
-        Emp_id.setForeground(new java.awt.Color(0, 0, 0));
-        Emp_id.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        Emp_id.setText("123456798");
-        Emp_id.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 153, 204)));
-        Emp_id.addActionListener(new java.awt.event.ActionListener() {
+        Emp_idcee.setBackground(new java.awt.Color(255, 255, 255));
+        Emp_idcee.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
+        Emp_idcee.setForeground(new java.awt.Color(0, 0, 0));
+        Emp_idcee.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        Emp_idcee.setText("123456798");
+        Emp_idcee.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 153, 204)));
+        Emp_idcee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Emp_idActionPerformed(evt);
+                Emp_idceeActionPerformed(evt);
             }
         });
-        jPanel2.add(Emp_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 260, 30));
+        jPanel2.add(Emp_idcee, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 260, 30));
 
-        address.setBackground(new java.awt.Color(255, 255, 255));
-        address.setColumns(10);
-        address.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        address.setForeground(new java.awt.Color(0, 0, 0));
-        address.setRows(5);
-        address.setText("Address");
-        address.setBorder(null);
-        address.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        address.addFocusListener(new java.awt.event.FocusAdapter() {
+        addresscee.setBackground(new java.awt.Color(255, 255, 255));
+        addresscee.setColumns(10);
+        addresscee.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        addresscee.setForeground(new java.awt.Color(0, 0, 0));
+        addresscee.setRows(5);
+        addresscee.setText("Address");
+        addresscee.setBorder(null);
+        addresscee.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        addresscee.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                addressFocusGained(evt);
+                addressceeFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                addressFocusLost(evt);
+                addressceeFocusLost(evt);
             }
         });
-        jScrollPane1.setViewportView(address);
+        jScrollPane1.setViewportView(addresscee);
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 560, -1));
 
@@ -302,8 +302,8 @@ String emp;
                 .addGap(0, 51, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
- void id_create(){
-        Emp_id.setEditable(false);
+ void id_createcee(){
+        Emp_idcee.setEditable(false);
          try{
             Connection con=DATABASE_CONNECTION.getConnection();
             PreparedStatement ps=con.prepareStatement("select * from id_store");         
@@ -311,7 +311,7 @@ String emp;
             if(rs.next()){
               //  mng_Id=rs.getString("MNG_ID");
                // System.out.println("MANAGER ID "+mng_Id);
-                emp_Id=rs.getString("emp_id");
+                emp_Idcee=rs.getString("emp_id");
               //  System.out.println("EMPLOYEE ID "+emp_Id);
               //  Transaction_Id=rs.getString("TRANSACTION_ID");
               //  System.out.println("Transaction_Id "+Transaction_Id);
@@ -326,26 +326,26 @@ String emp;
            }
         catch(Exception e){System.out.println(e);}
          
-        emp_id = new BigInteger(emp_Id);
+        emp_idcee = new BigInteger(emp_Idcee);
         BigInteger nxt = new BigInteger("1");
       //  System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!"+emp_Id);
       //  System.out.println("#################"+emp_id);
-        emp_id = emp_id.add(nxt);
+        emp_idcee = emp_idcee.add(nxt);
      //   System.out.println("%%%%%%%%%%%%%%%%%%%%%%"+emp_id);
-        emp = "ERP_E"+emp_id.toString();
+        empcee = "ERP_E"+emp_idcee.toString();
     //    System.out.println("%%%%%%%%%%%%%%%%%%%%%%"+emp);
      //   System.out.println("++++++++++++++++"+emp_id);
-        Emp_id.setText(emp);
+        Emp_idcee.setText(empcee);
     }
     private void jLabel28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel28MouseClicked
         // TODO add your handling code here:
-        String fName = firstname.getText();
-        String lName = lastname.getText();
-        String ph = phone3.getText();
-        String mail = email.getText();
+        String fName = firstnamecee.getText();
+        String lName = lastnamecee.getText();
+        String ph = phone3cee.getText();
+        String mail = emailcee.getText();
 
-        String add = address.getText();
-        String empp=Emp_id.getText();
+        String add = addresscee.getText();
+        String empp=Emp_idcee.getText();
 
         if(fName.equals("First Name")||lName.equals("Last Name")||ph.equals("Phone")||mail.equals("Email")||add.equals("Address")||fName.equals("")||lName.equals("")||ph.equals("")||mail.equals("")||add.equals("")){
             // JOptionPane.showMessageDialog(this, "");
@@ -353,19 +353,19 @@ String emp;
         }else{
             int i = ADD_NEW_EMP_DATAOBEJECT.create_emp(fName, lName, mail, ph,empp, add);
 
-            int j = ID_STORE_FETCH.insert_id(emp_id.toString());
+            int j = ID_STORE_FETCH.insert_id(emp_idcee.toString());
             if(i>0 || j>0){
                 System.out.println("Data inserted");
                 Succes su= new Succes();
                 su.ot("Employee Created Succesfully");
                 su.setVisible(true);
 
-                firstname.setText("");
-                lastname.setText("");
-                phone3.setText("");
-                email.setText("");
+                firstnamecee.setText("");
+                lastnamecee.setText("");
+                phone3cee.setText("");
+                emailcee.setText("");
 
-                address.setText("");
+                addresscee.setText("");
 
             }else{
                 //  System.out.println("Data NOT inserted");
@@ -376,130 +376,130 @@ String emp;
 
     }//GEN-LAST:event_jLabel28MouseClicked
 
-    private void firstnameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_firstnameFocusGained
+    private void firstnameceeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_firstnameceeFocusGained
         // TODO add your handling code here:
-        if(firstname.getText().equals("First Name")){
-            fName.setVisible(true);
-            firstname.setText("");
-            firstname.setForeground(new Color(000,000,000));
+        if(firstnamecee.getText().equals("First Name")){
+            fNamecee.setVisible(true);
+            firstnamecee.setText("");
+            firstnamecee.setForeground(new Color(000,000,000));
         }
-    }//GEN-LAST:event_firstnameFocusGained
+    }//GEN-LAST:event_firstnameceeFocusGained
 
-    private void firstnameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_firstnameFocusLost
+    private void firstnameceeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_firstnameceeFocusLost
         // TODO add your handling code here:
-        if(firstname.getText().equals("")){
-            fName.setVisible(false);
-            firstname.setText("First Name");
-            firstname.setForeground(new Color(128,128,128));
+        if(firstnamecee.getText().equals("")){
+            fNamecee.setVisible(false);
+            firstnamecee.setText("First Name");
+            firstnamecee.setForeground(new Color(128,128,128));
         }else{
-            fName.setVisible(true);
+            fNamecee.setVisible(true);
         }
-    }//GEN-LAST:event_firstnameFocusLost
+    }//GEN-LAST:event_firstnameceeFocusLost
 
-    private void firstnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstnameActionPerformed
+    private void firstnameceeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstnameceeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_firstnameActionPerformed
+    }//GEN-LAST:event_firstnameceeActionPerformed
 
-    private void lastnameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_lastnameFocusGained
+    private void lastnameceeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_lastnameceeFocusGained
         // TODO add your handling code here:
-        if(lastname.getText().equals("Last Name")){
-            L_name.setVisible(true);
-            lastname.setText("");
-            lastname.setForeground(new Color(000,000,000));
+        if(lastnamecee.getText().equals("Last Name")){
+            L_namecee.setVisible(true);
+            lastnamecee.setText("");
+            lastnamecee.setForeground(new Color(000,000,000));
         }
-    }//GEN-LAST:event_lastnameFocusGained
+    }//GEN-LAST:event_lastnameceeFocusGained
 
-    private void lastnameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_lastnameFocusLost
+    private void lastnameceeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_lastnameceeFocusLost
         // TODO add your handling code here:
-        if(lastname.getText().equals("")){
-            L_name.setVisible(false);
-            lastname.setText("Last Name");
-            lastname.setForeground(new Color(128,128,128));
+        if(lastnamecee.getText().equals("")){
+            L_namecee.setVisible(false);
+            lastnamecee.setText("Last Name");
+            lastnamecee.setForeground(new Color(128,128,128));
         }else{
-            L_name.setVisible(true);
+            L_namecee.setVisible(true);
         }
-    }//GEN-LAST:event_lastnameFocusLost
+    }//GEN-LAST:event_lastnameceeFocusLost
 
-    private void lastnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastnameActionPerformed
+    private void lastnameceeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastnameceeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_lastnameActionPerformed
+    }//GEN-LAST:event_lastnameceeActionPerformed
 
-    private void emailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFocusGained
+    private void emailceeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailceeFocusGained
         // TODO add your handling code here:
-        if(email.getText().equals("Email")){
-            Email.setVisible(true);
-            email.setText("");
-            email.setForeground(new Color(000,000,000));
+        if(emailcee.getText().equals("Email")){
+            Emailcee.setVisible(true);
+            emailcee.setText("");
+            emailcee.setForeground(new Color(000,000,000));
         }
-    }//GEN-LAST:event_emailFocusGained
+    }//GEN-LAST:event_emailceeFocusGained
 
-    private void emailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailFocusLost
+    private void emailceeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailceeFocusLost
         // TODO add your handling code here:
-        if(email.getText().equals("")){
-            Email.setVisible(false);
-            email.setText("Email");
-            email.setForeground(new Color(128,128,128));
+        if(emailcee.getText().equals("")){
+            Emailcee.setVisible(false);
+            emailcee.setText("Email");
+            emailcee.setForeground(new Color(128,128,128));
         }else{
-            Email.setVisible(true);
+            Emailcee.setVisible(true);
         }
-    }//GEN-LAST:event_emailFocusLost
+    }//GEN-LAST:event_emailceeFocusLost
 
-    private void phone3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phone3FocusGained
+    private void phone3ceeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phone3ceeFocusGained
         // TODO add your handling code here:
-        if(phone3.getText().equals("Phone")){
-            Phone.setVisible(true);
-            phone3.setText("");
-            phone3.setForeground(new Color(000,000,000));
+        if(phone3cee.getText().equals("Phone")){
+            Phonecee.setVisible(true);
+            phone3cee.setText("");
+            phone3cee.setForeground(new Color(000,000,000));
         }
-    }//GEN-LAST:event_phone3FocusGained
+    }//GEN-LAST:event_phone3ceeFocusGained
 
-    private void phone3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phone3FocusLost
+    private void phone3ceeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phone3ceeFocusLost
         // TODO add your handling code here:
-        if(phone3.getText().equals("")){
-            Phone.setVisible(false);
-            phone3.setText("Phone");
-            phone3.setForeground(new Color(128,128,128));
+        if(phone3cee.getText().equals("")){
+            Phonecee.setVisible(false);
+            phone3cee.setText("Phone");
+            phone3cee.setForeground(new Color(128,128,128));
         }else{
-            Phone.setVisible(true);
+            Phonecee.setVisible(true);
         }
-    }//GEN-LAST:event_phone3FocusLost
+    }//GEN-LAST:event_phone3ceeFocusLost
 
-    private void Emp_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Emp_idActionPerformed
+    private void Emp_idceeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Emp_idceeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Emp_idActionPerformed
+    }//GEN-LAST:event_Emp_idceeActionPerformed
 
-    private void addressFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_addressFocusGained
+    private void addressceeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_addressceeFocusGained
         // TODO add your handling code here:
-        if(address.getText().equals("Address")){
-            aaaa.setVisible(true);
-            address.setText("");
-            address.setForeground(new Color(000,000,000));
+        if(addresscee.getText().equals("Address")){
+            aaaacee.setVisible(true);
+            addresscee.setText("");
+            addresscee.setForeground(new Color(000,000,000));
         }
-    }//GEN-LAST:event_addressFocusGained
+    }//GEN-LAST:event_addressceeFocusGained
 
-    private void addressFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_addressFocusLost
+    private void addressceeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_addressceeFocusLost
         // TODO add your handling code here:
-        if(address.getText().equals("")){
-            aaaa.setVisible(false);
-            address.setText("Address");
-            address.setForeground(new Color(128,128,128));
+        if(addresscee.getText().equals("")){
+            aaaacee.setVisible(false);
+            addresscee.setText("Address");
+            addresscee.setForeground(new Color(128,128,128));
         }else{
-            aaaa.setVisible(true);
+            aaaacee.setVisible(true);
         }
-    }//GEN-LAST:event_addressFocusLost
+    }//GEN-LAST:event_addressceeFocusLost
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Email;
-    private javax.swing.JTextField Emp_id;
-    private javax.swing.JLabel L_name;
-    private javax.swing.JLabel Phone;
-    private javax.swing.JLabel aaaa;
-    private javax.swing.JTextArea address;
+    private javax.swing.JLabel Emailcee;
+    private javax.swing.JTextField Emp_idcee;
+    private javax.swing.JLabel L_namecee;
+    private javax.swing.JLabel Phonecee;
+    private javax.swing.JLabel aaaacee;
+    private javax.swing.JTextArea addresscee;
     private javax.swing.JPanel crt_emp;
-    private javax.swing.JTextField email;
-    private javax.swing.JLabel fName;
-    private javax.swing.JTextField firstname;
+    private javax.swing.JTextField emailcee;
+    private javax.swing.JLabel fNamecee;
+    private javax.swing.JTextField firstnamecee;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel25;
@@ -509,9 +509,9 @@ String emp;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField lastname;
+    private javax.swing.JTextField lastnamecee;
     private javax.swing.JTextField mng_id;
     private javax.swing.JTextField mng_name;
-    private javax.swing.JTextField phone3;
+    private javax.swing.JTextField phone3cee;
     // End of variables declaration//GEN-END:variables
 }

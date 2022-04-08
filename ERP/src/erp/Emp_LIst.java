@@ -24,8 +24,8 @@ public class Emp_LIst extends javax.swing.JPanel {
      */
     public Emp_LIst() {
         initComponents();
-        fName1.setVisible(false);
-        table();
+        fName1344.setVisible(false);
+        tableell();
     }
 
     /**
@@ -39,7 +39,7 @@ public class Emp_LIst extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        table = new javax.swing.JTable();
+        tableell = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
@@ -48,14 +48,14 @@ public class Emp_LIst extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        serch = new javax.swing.JTextField();
+        serchell = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        fName1 = new javax.swing.JLabel();
+        fName1344 = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        table.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        table.setModel(new javax.swing.table.DefaultTableModel(
+        tableell.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        tableell.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -71,7 +71,7 @@ public class Emp_LIst extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(table);
+        jScrollPane1.setViewportView(tableell);
 
         jPanel4.setBackground(new java.awt.Color(0, 153, 0));
 
@@ -150,22 +150,22 @@ public class Emp_LIst extends javax.swing.JPanel {
             .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
         );
 
-        serch.setBackground(new java.awt.Color(255, 255, 255));
-        serch.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
-        serch.setForeground(new java.awt.Color(47, 68, 187));
-        serch.setText("Serch Employee by Employee ID");
-        serch.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
-        serch.addFocusListener(new java.awt.event.FocusAdapter() {
+        serchell.setBackground(new java.awt.Color(255, 255, 255));
+        serchell.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        serchell.setForeground(new java.awt.Color(47, 68, 187));
+        serchell.setText("Serch Employee by Employee ID");
+        serchell.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
+        serchell.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                serchFocusGained(evt);
+                serchellFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                serchFocusLost(evt);
+                serchellFocusLost(evt);
             }
         });
-        serch.addKeyListener(new java.awt.event.KeyAdapter() {
+        serchell.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                serchKeyReleased(evt);
+                serchellKeyReleased(evt);
             }
         });
 
@@ -177,10 +177,10 @@ public class Emp_LIst extends javax.swing.JPanel {
             }
         });
 
-        fName1.setFont(new java.awt.Font("Consolas", 1, 21)); // NOI18N
-        fName1.setForeground(new java.awt.Color(47, 68, 187));
-        fName1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        fName1.setText("Serch Employee by Employee ID");
+        fName1344.setFont(new java.awt.Font("Consolas", 1, 21)); // NOI18N
+        fName1344.setForeground(new java.awt.Color(47, 68, 187));
+        fName1344.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        fName1344.setText("Serch Employee by Employee ID");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -196,15 +196,15 @@ public class Emp_LIst extends javax.swing.JPanel {
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 413, Short.MAX_VALUE))
+                        .addGap(0, 313, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(fName1, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(fName1344, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(serch, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(serchell, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, 0)
                                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -214,8 +214,8 @@ public class Emp_LIst extends javax.swing.JPanel {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(30, Short.MAX_VALUE)
-                .addComponent(fName1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(61, Short.MAX_VALUE)
+                .addComponent(fName1344, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -223,10 +223,10 @@ public class Emp_LIst extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGap(10, 10, 10)
-                            .addComponent(serch, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(serchell, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -247,28 +247,28 @@ public class Emp_LIst extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void serchFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serchFocusGained
-        if(serch.getText().equals("Serch Employee by Employee ID")){
-            fName1.setVisible(true);
-            serch.setText("");
-            serch.setForeground(new Color(000,000,000));
+    private void serchellFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serchellFocusGained
+        if(serchell.getText().equals("Serch Employee by Employee ID")){
+            fName1344.setVisible(true);
+            serchell.setText("");
+            serchell.setForeground(new Color(000,000,000));
         }
-    }//GEN-LAST:event_serchFocusGained
+    }//GEN-LAST:event_serchellFocusGained
 
-    private void serchFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serchFocusLost
+    private void serchellFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serchellFocusLost
         // TODO add your handling code here:
-        if(serch.getText().equals("")){
-            fName1.setVisible(false);
-            serch.setText("Serch Employee by Employee ID");
-            serch.setForeground( Color.decode("#2f44bb"));
+        if(serchell.getText().equals("")){
+            fName1344.setVisible(false);
+            serchell.setText("Serch Employee by Employee ID");
+            serchell.setForeground( Color.decode("#2f44bb"));
         }else{
-            fName1.setVisible(true);
+            fName1344.setVisible(true);
         }
-    }//GEN-LAST:event_serchFocusLost
+    }//GEN-LAST:event_serchellFocusLost
 
-    private void serchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_serchKeyReleased
+    private void serchellKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_serchellKeyReleased
         // TODO add your handling code here:
-        String product_idee = serch.getText();
+        String product_idee = serchell.getText();
         try {
 
             //Data fetch from database
@@ -277,7 +277,7 @@ public class Emp_LIst extends javax.swing.JPanel {
             PreparedStatement ps=con.prepareStatement(sql);
             // ps.setString(1,product_idee);
             ResultSet rs=ps.executeQuery();
-            DefaultTableModel model =(DefaultTableModel)table.getModel();
+            DefaultTableModel model =(DefaultTableModel)tableell.getModel();
             model.setRowCount(0);
             if(rs.next()){
                 do
@@ -296,12 +296,12 @@ public class Emp_LIst extends javax.swing.JPanel {
         }catch(Exception e){
             System.out.println("error"+e);
         }
-    }//GEN-LAST:event_serchKeyReleased
+    }//GEN-LAST:event_serchellKeyReleased
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         // TODO add your handling code here:
 
-        String em_id = serch.getText();
+        String em_id = serchell.getText();
         try {
 
             //Data fetch from database
@@ -342,9 +342,7 @@ public class Emp_LIst extends javax.swing.JPanel {
         
     }//GEN-LAST:event_jLabel5MouseClicked
  
-    
-   
-    public void table() {
+    public void tableell() {
     try {
         
              //Data fetch from database
@@ -352,7 +350,7 @@ public class Emp_LIst extends javax.swing.JPanel {
             Connection con=DATABASE_CONNECTION.getConnection();
             PreparedStatement ps=con.prepareStatement(sql);
             ResultSet rs=ps.executeQuery();
-           DefaultTableModel model =(DefaultTableModel)table.getModel(); 
+           DefaultTableModel model =(DefaultTableModel)tableell.getModel(); 
            model.setRowCount(0);
            while (rs.next())
            {
@@ -366,9 +364,11 @@ public class Emp_LIst extends javax.swing.JPanel {
             System.out.println("error"+e);
         }
      }
+   
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel fName1;
+    private javax.swing.JLabel fName1344;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -380,7 +380,7 @@ public class Emp_LIst extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField serch;
-    private javax.swing.JTable table;
+    private javax.swing.JTextField serchell;
+    private javax.swing.JTable tableell;
     // End of variables declaration//GEN-END:variables
 }
