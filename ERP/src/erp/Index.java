@@ -2,6 +2,7 @@ package erp;
 
 
 import java.awt.Color;
+import java.awt.Font;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,9 +14,14 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.Timer;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -65,17 +71,12 @@ String empcee;
      */
     public Index() {
         initComponents();
+
+   
+        
          time();
         date();
-         tpic.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("hii"+tpic.getSelectedTime());
-            td.setText(tpic.getSelectedTime());
-            
-            }
-             
-         });
+        
          fName.setVisible(false);
         L_name.setVisible(false);
         Phone.setVisible(false);
@@ -129,7 +130,20 @@ String empcee;
         p6.setBackground(Color.decode("#333333"));
         p7.setBackground(Color.decode("#333333"));
                 
+ DefaultTableCellRenderer MyHeaderRender = new DefaultTableCellRenderer();
+    MyHeaderRender.setBackground(Color.decode("#F10086"));
+    MyHeaderRender.setForeground(Color.decode("#FCE7FC"));
+    int i=0;
+    int j= jTable1.getColumnCount();
+    
 
+    for(i=0;i<j;i++){
+       
+    jTable1.getTableHeader().getColumnModel().getColumn(i).setHeaderRenderer(MyHeaderRender);
+    jTable1.getTableHeader().getColumnModel().getColumn(i).setHeaderRenderer(MyHeaderRender);
+
+    
+    }
         
         
     // this.setExtendedState(JFrame.MAXIMIZED_BOTH); 
@@ -983,6 +997,8 @@ String empcee;
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTable1.setSelectionForeground(new java.awt.Color(51, 153, 255));
+        jTable1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
@@ -1027,6 +1043,7 @@ String empcee;
 
         jLabel49.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/editt.png"))); // NOI18N
 
+        jTable2.setBackground(new java.awt.Color(255, 51, 51));
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -1083,24 +1100,23 @@ String empcee;
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(887, 887, 887))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35)
-                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(50, 50, 50)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40)
-                        .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(76, 76, 76))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(35, 35, 35)
+                                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(50, 50, 50)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(40, 40, 40)
+                                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4640,7 +4656,6 @@ String empcee;
         csmet.setBorder(null);
         csmet.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         csmet.setForeground(new java.awt.Color(0, 0, 0));
-        csmet.setText("xyz xyz xyz");
         jScrollPane21.setViewportView(csmet);
 
         jPanel76.setBackground(new java.awt.Color(0, 102, 51));
@@ -7517,7 +7532,15 @@ public void serlist(){
 
     private void jPanel65MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel65MouseClicked
         // TODO add your handling code here:
-        
+         tpic.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //System.out.println("hii"+tpic.getSelectedTime());
+            td.setText(tpic.getSelectedTime());
+            
+            }
+             
+         });
         String rea=hidetext.getText();
         if (rea.equals("")){
           
@@ -7665,6 +7688,12 @@ public void serlist(){
                 PreparedStatement ps=con.prepareStatement("UPDATE `emp_works` SET `emp_id`='"+adr2+"',`emp_name`='"+adr+"',`date`='"+Ddt+"',`time`='"+tta+"',`status`='assign' where serv_id ='"+gserv+"'");
                 i=ps.executeUpdate();
                 con.close();
+                if(i>0){
+                    Succes su =new Succes();
+                    su.ot("Service Assign Succesfull");
+                    su.setVisible(true);
+                }
+                
             }catch(Exception e){
                 System.out.println(e);
             }
@@ -7687,7 +7716,10 @@ public void serlist(){
      SimpleDateFormat s = new SimpleDateFormat("dd-MM-yyyy");
         String Ddt =  s.format(csdd.getDate());
         String cst= cstt.getText();
-        
+        String eid= csei.getText();
+        String en=csen.getText();
+        String  cscos=cscost.getText();
+    //    String metr = 
         if(cst.equals("")){
             System.out.println("ddat");
         }else{
@@ -7697,15 +7729,39 @@ public void serlist(){
                 PreparedStatement ps=con.prepareStatement("UPDATE `emp_works` SET `date`='"+Ddt+"',`time`='"+cst+"',`status`='Complete' where serv_id ='"+gserv+"'");
                 i=ps.executeUpdate();
                 con.close();
+                
+               
+                PreparedStatement ps1=con.prepareStatement("INSERT INTO `comp_service`(`serv_id`, `date`, `time`, `emp_id`, `emp_name`, `cous_id`, `cous_name`, `cous_ph`, `cous_mail`, `cous_addr`, `serv_desc`, `cost`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]','[value-9]','[value-10]','[value-11]','[value-12]')");
+                i=ps1.executeUpdate();
+                con.close();
+                
+                
+                
+                
             }catch(Exception e){
                 System.out.println(e);
             }
-
+if(i>0){
+                    Succes su =new Succes();
+                    su.ot("Service Assign Succesfull");
+                    su.setVisible(true);
+                }
         }
     }//GEN-LAST:event_jPanel76MouseClicked
 
     private void jPanel66MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel66MouseClicked
         // TODO add your handling code here:
+        csad.setEditable(false);
+        cssd.setEditable(false);
+         tpic.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //System.out.println("hii"+tpic.getSelectedTime());
+            cstt.setText(tpic.getSelectedTime());
+            
+            }
+             
+         });
         String rea=hidetext.getText();
         if (rea.equals("")){
           
@@ -8048,11 +8104,27 @@ public void serlist(){
         }
       }
 
+      public void call(){
+//          JTableHeader header = jTable1.getTableHeader();
+//    header.setBackground(Color.MAGENTA);
+//    header.setForeground(Color.red);
+    
+      Font font = new Font("Verdana", Font.BOLD, 15);
+      jTable1.setFont(font);
+      jTable1.setRowHeight(30);
+      jTable1.setBackground(Color.blue);
+      jTable1.setForeground(Color.white);
+      JTableHeader tableHeader = jTable1.getTableHeader();
+      tableHeader.setBackground(Color.MAGENTA);
+      tableHeader.setForeground(Color.RED);
+    
+      }
    
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -8079,9 +8151,12 @@ public void serlist(){
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                
                 new Index().setVisible(true);
+               
             }
         });
+         
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
