@@ -42,6 +42,7 @@ import javax.swing.table.JTableHeader;
 public class Index extends javax.swing.JFrame {
     String gcusid;
     String gserv;
+    String gcuid;
 String cus_Id;
 String cus;
  BigInteger cus_id =null;
@@ -60,6 +61,7 @@ String empcee;
     eml=email;
     adn.setText(name);
     adi.setText(eid);
+     hidetext00.setVisible(false);
 }  
     
     String Epp="";
@@ -124,7 +126,7 @@ String empcee;
         Create_Emp.setVisible(false);
         Update_Emp.setVisible(false);
         Working_list.setVisible(false);
-        body21.setVisible(false);
+        Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -418,6 +420,7 @@ String empcee;
         jLabel24 = new javax.swing.JLabel();
         fName1 = new javax.swing.JLabel();
         jLabel143 = new javax.swing.JLabel();
+        hidetext00 = new javax.swing.JLabel();
         jPanel25 = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
         jPanel26 = new javax.swing.JPanel();
@@ -534,6 +537,8 @@ String empcee;
         fName1344 = new javax.swing.JLabel();
         jPanel77 = new javax.swing.JPanel();
         jLabel159 = new javax.swing.JLabel();
+        hidetext01 = new javax.swing.JLabel();
+        hidetext02 = new javax.swing.JLabel();
         Search_Emp = new javax.swing.JPanel();
         jPanel53 = new javax.swing.JPanel();
         jScrollPane16 = new javax.swing.JScrollPane();
@@ -652,9 +657,9 @@ String empcee;
         jPanel68 = new javax.swing.JPanel();
         jLabel125 = new javax.swing.JLabel();
         button1 = new java.awt.Button();
-        hidetext = new java.awt.Label();
         jPanel82 = new javax.swing.JPanel();
         jLabel164 = new javax.swing.JLabel();
+        hidetext = new javax.swing.JLabel();
         Assign = new javax.swing.JPanel();
         jPanel67 = new javax.swing.JPanel();
         jLabel124 = new javax.swing.JLabel();
@@ -744,7 +749,22 @@ String empcee;
         jLabel170 = new javax.swing.JLabel();
         jPanel88 = new javax.swing.JPanel();
         jLabel171 = new javax.swing.JLabel();
-        body21 = new javax.swing.JPanel();
+        Update_Service = new javax.swing.JPanel();
+        jPanel89 = new javax.swing.JPanel();
+        jLabel172 = new javax.swing.JLabel();
+        jLabel173 = new javax.swing.JLabel();
+        jLabel174 = new javax.swing.JLabel();
+        cid = new javax.swing.JLabel();
+        cna = new javax.swing.JLabel();
+        sid = new javax.swing.JLabel();
+        jScrollPane25 = new javax.swing.JScrollPane();
+        ttx = new javax.swing.JTextArea();
+        jLabel175 = new javax.swing.JLabel();
+        jLabel176 = new javax.swing.JLabel();
+        jPanel90 = new javax.swing.JPanel();
+        jLabel177 = new javax.swing.JLabel();
+        jPanel91 = new javax.swing.JPanel();
+        jLabel178 = new javax.swing.JLabel();
         body22 = new javax.swing.JPanel();
         body23 = new javax.swing.JPanel();
         body24 = new javax.swing.JPanel();
@@ -1975,6 +1995,11 @@ String empcee;
                 return canEdit [columnIndex];
             }
         });
+        tablesc.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablescMouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(tablesc);
 
         jPanel27.setBackground(new java.awt.Color(0, 153, 51));
@@ -1986,11 +2011,6 @@ String empcee;
         jLabel23.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel23MouseClicked(evt);
-            }
-        });
-        jLabel23.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jLabel23KeyPressed(evt);
             }
         });
 
@@ -2053,16 +2073,16 @@ String empcee;
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(jPanel12Layout.createSequentialGroup()
-                            .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(fName1, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jPanel12Layout.createSequentialGroup()
-                                    .addComponent(serch, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(0, 0, 0)
-                                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(24, 24, 24)))
+                            .addComponent(serch, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(0, 0, 0)
+                            .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 1151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 1151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel12Layout.createSequentialGroup()
+                            .addComponent(fName1, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(228, 228, 228)
+                            .addComponent(hidetext00)))
                     .addComponent(jLabel143))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -2070,8 +2090,13 @@ String empcee;
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel12Layout.createSequentialGroup()
                 .addComponent(jLabel143, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(fName1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(fName1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(hidetext00)))
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel12Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2087,6 +2112,11 @@ String empcee;
         );
 
         jPanel25.setBackground(new java.awt.Color(255, 0, 51));
+        jPanel25.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel25MouseClicked(evt);
+            }
+        });
 
         jLabel21.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(255, 255, 255));
@@ -2123,6 +2153,11 @@ String empcee;
         );
 
         jPanel13.setBackground(new java.awt.Color(0, 153, 0));
+        jPanel13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel13MouseClicked(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -3121,11 +3156,21 @@ String empcee;
                 return canEdit [columnIndex];
             }
         });
+        tableell.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableellMouseClicked(evt);
+            }
+        });
         jScrollPane12.setViewportView(tableell);
 
         jPanel39.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 160, 1070, 570));
 
         jPanel40.setBackground(new java.awt.Color(0, 153, 0));
+        jPanel40.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel40MouseClicked(evt);
+            }
+        });
 
         jLabel74.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel74.setForeground(new java.awt.Color(255, 255, 255));
@@ -3146,6 +3191,11 @@ String empcee;
         jPanel39.add(jPanel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(394, 748, -1, -1));
 
         jPanel5.setBackground(new java.awt.Color(255, 0, 51));
+        jPanel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel5MouseClicked(evt);
+            }
+        });
 
         jLabel75.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel75.setForeground(new java.awt.Color(255, 255, 255));
@@ -3186,6 +3236,11 @@ String empcee;
         jPanel39.add(jPanel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(602, 748, -1, -1));
 
         jPanel7.setBackground(new java.awt.Color(0, 153, 51));
+        jPanel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel7MouseClicked(evt);
+            }
+        });
 
         jLabel77.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
         jLabel77.setForeground(new java.awt.Color(255, 255, 255));
@@ -3268,6 +3323,8 @@ String empcee;
         );
 
         jPanel39.add(jPanel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
+        jPanel39.add(hidetext01, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 20, -1, -1));
+        jPanel39.add(hidetext02, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 60, -1, -1));
 
         javax.swing.GroupLayout Emp_ListLayout = new javax.swing.GroupLayout(Emp_List);
         Emp_List.setLayout(Emp_ListLayout);
@@ -4464,8 +4521,8 @@ String empcee;
             jPanel61Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel61Layout.createSequentialGroup()
                 .addComponent(jPanel82, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(430, 430, 430)
-                .addComponent(hidetext, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(534, 534, 534)
+                .addComponent(hidetext))
             .addGroup(jPanel61Layout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addComponent(fName1345, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -4500,9 +4557,9 @@ String empcee;
             .addGroup(jPanel61Layout.createSequentialGroup()
                 .addGroup(jPanel61Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel82, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel61Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(hidetext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel61Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(hidetext)))
                 .addComponent(fName1345, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addGroup(jPanel61Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4938,7 +4995,7 @@ String empcee;
             }
         });
 
-        jLabel141.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user (1).png"))); // NOI18N
+        jLabel141.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/clock (1).png"))); // NOI18N
         jLabel141.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel141MouseClicked(evt);
@@ -5411,20 +5468,164 @@ String empcee;
 
         body.add(New_service, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
 
-        body21.setBackground(new java.awt.Color(204, 0, 51));
+        Update_Service.setBackground(new java.awt.Color(204, 0, 51));
 
-        javax.swing.GroupLayout body21Layout = new javax.swing.GroupLayout(body21);
-        body21.setLayout(body21Layout);
-        body21Layout.setHorizontalGroup(
-            body21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1190, Short.MAX_VALUE)
+        jPanel89.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel89.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(0, 204, 102)));
+
+        jLabel172.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
+        jLabel172.setForeground(new java.awt.Color(0, 0, 204));
+        jLabel172.setText("Customer Id :");
+
+        jLabel173.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
+        jLabel173.setForeground(new java.awt.Color(0, 0, 204));
+        jLabel173.setText("Service Id :");
+
+        jLabel174.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
+        jLabel174.setForeground(new java.awt.Color(0, 0, 204));
+        jLabel174.setText("Customer Name :");
+
+        cid.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
+        cid.setForeground(new java.awt.Color(0, 0, 204));
+
+        cna.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
+        cna.setForeground(new java.awt.Color(0, 0, 204));
+
+        sid.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
+        sid.setForeground(new java.awt.Color(0, 0, 204));
+
+        ttx.setBackground(new java.awt.Color(255, 255, 255));
+        ttx.setColumns(20);
+        ttx.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        ttx.setForeground(new java.awt.Color(0, 0, 0));
+        ttx.setRows(5);
+        ttx.setBorder(null);
+        jScrollPane25.setViewportView(ttx);
+
+        jLabel175.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
+        jLabel175.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel175.setText("Update Service !");
+
+        jLabel176.setFont(new java.awt.Font("Ebrima", 1, 16)); // NOI18N
+        jLabel176.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel176.setText(" Service Details :");
+
+        jPanel90.setBackground(new java.awt.Color(47, 68, 187));
+        jPanel90.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel90MouseClicked(evt);
+            }
+        });
+
+        jLabel177.setFont(new java.awt.Font("Bahnschrift", 1, 24)); // NOI18N
+        jLabel177.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel177.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel177.setText("Update");
+
+        javax.swing.GroupLayout jPanel90Layout = new javax.swing.GroupLayout(jPanel90);
+        jPanel90.setLayout(jPanel90Layout);
+        jPanel90Layout.setHorizontalGroup(
+            jPanel90Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel177, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        body21Layout.setVerticalGroup(
-            body21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 809, Short.MAX_VALUE)
+        jPanel90Layout.setVerticalGroup(
+            jPanel90Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel177, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)
         );
 
-        body.add(body21, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+        jPanel91.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel178.setForeground(new java.awt.Color(0, 255, 204));
+        jLabel178.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel178.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/previous.png"))); // NOI18N
+        jLabel178.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel178MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel91Layout = new javax.swing.GroupLayout(jPanel91);
+        jPanel91.setLayout(jPanel91Layout);
+        jPanel91Layout.setHorizontalGroup(
+            jPanel91Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel178, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+        jPanel91Layout.setVerticalGroup(
+            jPanel91Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel178, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel89Layout = new javax.swing.GroupLayout(jPanel89);
+        jPanel89.setLayout(jPanel89Layout);
+        jPanel89Layout.setHorizontalGroup(
+            jPanel89Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel89Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel89Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel89Layout.createSequentialGroup()
+                        .addComponent(jLabel172)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cid, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(24, 24, 24)
+                        .addComponent(jLabel174)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cna, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel89Layout.createSequentialGroup()
+                        .addGroup(jPanel89Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane25, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1164, Short.MAX_VALUE)
+                            .addComponent(jPanel90, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel89Layout.createSequentialGroup()
+                                .addGroup(jPanel89Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel89Layout.createSequentialGroup()
+                                        .addComponent(jLabel173, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(sid, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel176, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel175, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())))
+            .addGroup(jPanel89Layout.createSequentialGroup()
+                .addComponent(jPanel91, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel89Layout.setVerticalGroup(
+            jPanel89Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel89Layout.createSequentialGroup()
+                .addComponent(jPanel91, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel175)
+                .addGap(20, 20, 20)
+                .addGroup(jPanel89Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel173, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sid, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel89Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cid, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel89Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel172, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel174, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cna, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(38, 38, 38)
+                .addComponent(jLabel176)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel90, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(318, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout Update_ServiceLayout = new javax.swing.GroupLayout(Update_Service);
+        Update_Service.setLayout(Update_ServiceLayout);
+        Update_ServiceLayout.setHorizontalGroup(
+            Update_ServiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel89, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        Update_ServiceLayout.setVerticalGroup(
+            Update_ServiceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel89, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        body.add(Update_Service, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
 
         body22.setBackground(new java.awt.Color(204, 0, 51));
 
@@ -5777,7 +5978,7 @@ String empcee;
         Create_Emp.setVisible(false);
         Update_Emp.setVisible(false);
         Working_list.setVisible(false);
-         body21.setVisible(false);
+         Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -5797,7 +5998,7 @@ String empcee;
         body38.setVisible(false);
         body39.setVisible(false);
         body40.setVisible(false);
-         body21.setVisible(false);
+         Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -5864,7 +6065,7 @@ String empcee;
         Create_Emp.setVisible(false);
        Update_Emp.setVisible(false);
         Working_list.setVisible(false);
-         body21.setVisible(false);
+         Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -5923,7 +6124,7 @@ String empcee;
         Create_Emp.setVisible(false);
        Update_Emp.setVisible(false);
         Working_list.setVisible(false);
-         body21.setVisible(false);
+         Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -5981,7 +6182,7 @@ String empcee;
         Create_Emp.setVisible(false);
        Update_Emp.setVisible(false);
         Working_list.setVisible(false);
-         body21.setVisible(false);
+         Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -6039,7 +6240,7 @@ String empcee;
         Create_Emp.setVisible(false);
        Update_Emp.setVisible(false);
         Working_list.setVisible(false);
-         body21.setVisible(false);
+         Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -6096,7 +6297,7 @@ String empcee;
         Create_Emp.setVisible(false);
        Update_Emp.setVisible(false);
         Working_list.setVisible(false);
-         body21.setVisible(false);
+         Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -6120,7 +6321,7 @@ String empcee;
 
     private void p7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p7MouseClicked
         // TODO add your handling code here:
-         body21.setVisible(false);
+         Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -6179,18 +6380,58 @@ String empcee;
     }//GEN-LAST:event_p7MouseClicked
 
     private void jLabel23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel23MouseClicked
-        // TODO add your handling code here:
-        //  this.showForm(new Add_Employee());
-
-        //        main.showForm(new Working_list());
-        //        main.setVisible(true);
+        id_create();
+        a1.setVisible(false);
+        a2.setVisible(false);
+        a3.setVisible(false);
+        a4.setVisible(false);
+        a5.setVisible(false);
+        a6.setVisible(false);
+        
+         home.setVisible(false);
+        ES.setVisible(false);
+        CS.setVisible(false);
+        Ws.setVisible(false);
+        SM.setVisible(false);
+        MP.setVisible(false);
+        
+        Search_Cus.setVisible(false);
+        Create_Cus.setVisible(true);
+        Update_Cus.setVisible(false);
+        Delete_Cus.setVisible(false);
+        New_service.setVisible(false);
+        Assign.setVisible(false);
+       
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
+        Cus_List.setVisible(false);
+         Update_Service.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
 
     }//GEN-LAST:event_jLabel23MouseClicked
-
-    private void jLabel23KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLabel23KeyPressed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_jLabel23KeyPressed
 
     private void serchFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serchFocusGained
         if(serch.getText().equals("Serch Customer by Customer ID")){
@@ -6282,6 +6523,7 @@ String empcee;
 
     private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
         // TODO add your handling code here:
+         hidetext00.setVisible(false);
        fName1.setVisible(false);
         table();
         
@@ -6314,7 +6556,7 @@ String empcee;
        Update_Emp.setVisible(false);
         Working_list.setVisible(false);
 
-               body21.setVisible(false);
+               Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -6535,7 +6777,7 @@ String empcee;
         Delete_Cus.setVisible(false);
         New_service.setVisible(false);
         Assign.setVisible(false);
-      body21.setVisible(false);
+      Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -6606,7 +6848,7 @@ String empcee;
        Update_Emp.setVisible(false);
         Working_list.setVisible(false);
         Cus_List.setVisible(false);
-         body21.setVisible(false);
+         Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -7037,7 +7279,7 @@ String empcee;
        Update_Emp.setVisible(false);
         Working_list.setVisible(false);
         Cus_List.setVisible(false);
-         body21.setVisible(false);
+         Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -7252,7 +7494,7 @@ String empcee;
        Update_Emp.setVisible(false);
         Working_list.setVisible(false);
         Cus_List.setVisible(false);
-         body21.setVisible(false);
+         Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -7275,9 +7517,68 @@ String empcee;
     }//GEN-LAST:event_jPanel17MouseClicked
 
     private void jLabel77MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel77MouseClicked
-        // TODO add your handling code here:
-        //  this.showForm(new Add_Employee());
-
+   a1.setVisible(false);
+        a2.setVisible(false);
+        a3.setVisible(false);
+        a4.setVisible(false);
+        a5.setVisible(false);
+        a6.setVisible(false);
+        
+         home.setVisible(false);
+        ES.setVisible(false);
+        CS.setVisible(false);
+        Ws.setVisible(false);
+        SM.setVisible(false);
+        MP.setVisible(false);
+        
+        Search_Cus.setVisible(false);
+        Create_Cus.setVisible(false);
+        Update_Cus.setVisible(false);
+        Delete_Cus.setVisible(false);
+        New_service.setVisible(false);
+        
+        Assign.setVisible(false);
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(true);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
+        Cus_List.setVisible(false);
+        
+        
+        id_createcee();
+        
+          fNamecee.setVisible(false);
+        L_namecee.setVisible(false);
+        Phonecee.setVisible(false);
+        Emailcee.setVisible(false);
+      
+        mng_name.setEditable(false);
+        mng_id.setEditable(false);
+        Emp_idcee.setEditable(false);
+         aaaacee.setVisible(false);
+          Update_Service.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
     }//GEN-LAST:event_jLabel77MouseClicked
 
     private void serchellFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serchellFocusGained
@@ -7402,7 +7703,7 @@ String empcee;
        Update_Emp.setVisible(false);
         Working_list.setVisible(false);
         Cus_List.setVisible(false);
-         body21.setVisible(false);
+         Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -7623,7 +7924,7 @@ String empcee;
        Update_Emp.setVisible(false);
         Working_list.setVisible(false);
         Cus_List.setVisible(false);
-         body21.setVisible(false);
+         Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -7840,7 +8141,7 @@ String empcee;
         mng_id.setEditable(false);
         Emp_idcee.setEditable(false);
          aaaacee.setVisible(false);
-          body21.setVisible(false);
+          Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -8106,7 +8407,7 @@ String empcee;
        Update_Emp.setVisible(true);
         Working_list.setVisible(false);
         Cus_List.setVisible(false);
-         body21.setVisible(false);
+         Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -8310,7 +8611,7 @@ String empcee;
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(false);
         New_service.setVisible(false);
-         body21.setVisible(false);
+         Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -8494,7 +8795,7 @@ public void serlist(){
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(false);
         New_service.setVisible(false);
-         body21.setVisible(false);
+         Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -8557,7 +8858,7 @@ public void serlist(){
         Create_Emp.setVisible(false);
         Update_Emp.setVisible(false);
         Working_list.setVisible(false);
-        body21.setVisible(false);
+        Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -8617,11 +8918,79 @@ public void serlist(){
             new Warning("Click Table row To Update Service").setVisible(true);
            // JOptionPane.showMessageDialog(this, "Click Table row To Delete");
         }else {
-            Update_popup up = new Update_popup();
-            up.getstr(rea);
-            up.setVisible(true);
-              hidetext.setText("");
-              
+       a1.setVisible(false);
+        a2.setVisible(false);
+        a3.setVisible(false);
+        a4.setVisible(false);
+        a5.setVisible(false);
+        a6.setVisible(false);
+        
+         home.setVisible(false);
+        ES.setVisible(false);
+        CS.setVisible(false);
+        Ws.setVisible(false);
+        SM.setVisible(false);
+        MP.setVisible(false);
+        
+        Search_Cus.setVisible(false);
+        Create_Cus.setVisible(false);
+        Update_Cus.setVisible(false);
+        Delete_Cus.setVisible(false);
+        New_service.setVisible(false);
+        
+        Assign.setVisible(false);
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
+        Cus_List.setVisible(false);
+         Update_Service.setVisible(true);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);     
+           
+           
+  
+         try {
+        
+             //Data fetch from database
+            String sql = "Select * From emp_works where serv_id='"+rea+"'";
+            Connection con=DATABASE_CONNECTION.getConnection();
+            PreparedStatement ps=con.prepareStatement(sql);
+            ResultSet rs=ps.executeQuery();
+           
+          
+           if(rs.next())
+           {
+               sid.setText(rs.getString("serv_id"));
+               cna.setText(rs.getString("cous_name"));
+              cid.setText(rs.getString("cous_id"));
+              ttx.setText(rs.getString("service_dtl"));
+               
+           }
+            }catch(Exception e){
+            System.out.println("error"+e);
+        }
+       hidetext.setText("");
               
         }
     }//GEN-LAST:event_jPanel68MouseClicked
@@ -8769,7 +9138,7 @@ public void serlist(){
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(false);
         New_service.setVisible(false);
-         body21.setVisible(false);
+         Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -9046,7 +9415,7 @@ if(i>0 && j>0){
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(false);
         New_service.setVisible(false);
-         body21.setVisible(false);
+         Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -9156,7 +9525,7 @@ if(i>0 && j>0){
         Create_Emp.setVisible(false);
        Update_Emp.setVisible(false);
         Working_list.setVisible(false);
-         body21.setVisible(false);
+         Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -9216,7 +9585,7 @@ if(i>0 && j>0){
         Create_Emp.setVisible(false);
        Update_Emp.setVisible(false);
         Working_list.setVisible(false);
-         body21.setVisible(false);
+         Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -9275,7 +9644,7 @@ if(i>0 && j>0){
         Create_Emp.setVisible(false);
        Update_Emp.setVisible(false);
         Working_list.setVisible(false);
-         body21.setVisible(false);
+         Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -9334,7 +9703,7 @@ if(i>0 && j>0){
         Create_Emp.setVisible(false);
        Update_Emp.setVisible(false);
         Working_list.setVisible(false);
-         body21.setVisible(false);
+         Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -9393,7 +9762,7 @@ if(i>0 && j>0){
         Create_Emp.setVisible(false);
        Update_Emp.setVisible(false);
         Working_list.setVisible(false);
-         body21.setVisible(false);
+         Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -9452,7 +9821,7 @@ if(i>0 && j>0){
         Create_Emp.setVisible(false);
        Update_Emp.setVisible(false);
         Working_list.setVisible(false);
-         body21.setVisible(false);
+         Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -9511,7 +9880,7 @@ if(i>0 && j>0){
         Create_Emp.setVisible(false);
        Update_Emp.setVisible(false);
         Working_list.setVisible(false);
-         body21.setVisible(false);
+         Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -9570,7 +9939,7 @@ if(i>0 && j>0){
         Create_Emp.setVisible(false);
        Update_Emp.setVisible(false);
         Working_list.setVisible(false);
-         body21.setVisible(false);
+         Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -9629,7 +9998,7 @@ if(i>0 && j>0){
         Create_Emp.setVisible(false);
        Update_Emp.setVisible(false);
         Working_list.setVisible(false);
-         body21.setVisible(false);
+         Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -9688,7 +10057,7 @@ if(i>0 && j>0){
         Create_Emp.setVisible(false);
        Update_Emp.setVisible(false);
         Working_list.setVisible(false);
-         body21.setVisible(false);
+         Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -9751,7 +10120,7 @@ if(i>0 && j>0){
         Create_Emp.setVisible(false);
        Update_Emp.setVisible(false);
         Working_list.setVisible(false);
-         body21.setVisible(false);
+         Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -9807,7 +10176,7 @@ if(i>0 && j>0){
        Update_Emp.setVisible(false);
         Working_list.setVisible(true);
         Cus_List.setVisible(false);
-         body21.setVisible(false);
+         Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -9863,7 +10232,7 @@ if(i>0 && j>0){
        Update_Emp.setVisible(false);
         Working_list.setVisible(true);
         Cus_List.setVisible(false);
-         body21.setVisible(false);
+         Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -10097,7 +10466,7 @@ if(i>0 && j>0){
        Update_Emp.setVisible(false);
         Working_list.setVisible(true);
         Cus_List.setVisible(false);
-         body21.setVisible(false);
+         Update_Service.setVisible(false);
         body22.setVisible(false);
         body23.setVisible(false);
         body24.setVisible(false);
@@ -10118,6 +10487,316 @@ if(i>0 && j>0){
         body39.setVisible(false);
         body40.setVisible(false);
     }//GEN-LAST:event_jLabel171MouseClicked
+
+    private void jPanel90MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel90MouseClicked
+        // TODO add your handling code here:
+        String data = ttx.getText();
+        if(data.equals("")){
+            new Warning("Please Insert Service Details!").setVisible(true);
+        }else{
+            try{
+                Connection con = DATABASE_CONNECTION.getConnection();
+                PreparedStatement ps = con.prepareStatement("Update emp_works set service_dtl= '"+data+"' where serv_id= '"+gserv+"' ");
+                if(ps.executeUpdate()>0){
+                    Succes su = new Succes();
+                    su.ot("Service Update Succesfully!");
+                    su.setVisible(true);
+                    
+                }
+
+            }catch(Exception e){
+                System.out.println("error"+e);
+            }
+        }
+    }//GEN-LAST:event_jPanel90MouseClicked
+
+    private void jLabel178MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel178MouseClicked
+        // TODO add your handling code here:
+             a1.setVisible(false);
+        a2.setVisible(false);
+        a3.setVisible(false);
+        a4.setVisible(false);
+        a5.setVisible(false);
+        a6.setVisible(false);
+        
+        home.setVisible(false);
+        ES.setVisible(false);
+        CS.setVisible(false);
+        Ws.setVisible(false);
+        SM.setVisible(false);
+        MP.setVisible(false);
+        
+        Search_Cus.setVisible(false);
+        Create_Cus.setVisible(false);
+        Update_Cus.setVisible(false);
+        Delete_Cus.setVisible(false);
+        New_service.setVisible(false);
+        
+        Assign.setVisible(false);
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(true);
+        Cus_List.setVisible(false);
+         Update_Service.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
+    }//GEN-LAST:event_jLabel178MouseClicked
+
+    private void tablescMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablescMouseClicked
+        // TODO add your handling code here:
+        hidetext00.setVisible(false);
+         int i = tablesc.getSelectedRow();
+        DefaultTableModel model=(DefaultTableModel) tablesc.getModel();
+        String bb=model.getValueAt(i,0).toString();
+       String aa=model.getValueAt(i,1).toString();
+      //  System.out.println("id"+bb +" name"+aa);
+        hidetext00.setText(bb); 
+        gcuid=aa;
+       
+       
+    }//GEN-LAST:event_tablescMouseClicked
+
+    private void jPanel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel13MouseClicked
+        // TODO add your handling code here:
+        String h23=  hidetext00.getText();
+        if(h23.isEmpty()){
+            new Warning("Click Table Row First").setVisible(true);
+        }else{
+         emp_id(h23);
+         
+           fName5.setVisible(false);
+
+         fName4.setVisible(false);
+        L_name1.setVisible(false);
+        Phone1.setVisible(false);
+        Email1.setVisible(false);
+       
+               aaaa.setVisible(false);
+
+        Emp_id1.setEditable(false);
+        
+        
+       
+        
+        
+       a1.setVisible(false);
+        a2.setVisible(false);
+        a3.setVisible(false);
+        a4.setVisible(false);
+        a5.setVisible(false);
+        a6.setVisible(false);
+        
+         home.setVisible(false);
+        ES.setVisible(false);
+        CS.setVisible(false);
+        Ws.setVisible(false);
+        SM.setVisible(false);
+        MP.setVisible(false);
+        
+        Search_Cus.setVisible(false);
+        Create_Cus.setVisible(false);
+        Update_Cus.setVisible(true);
+        Delete_Cus.setVisible(false);
+        New_service.setVisible(false);
+        Assign.setVisible(false);
+      
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
+        Cus_List.setVisible(false);
+         Update_Service.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
+        hidetext00.setText("");
+        //System.out.println("empp"+Epp);
+        if(Epp!=""){
+        update();
+        }
+         
+        }
+    }//GEN-LAST:event_jPanel13MouseClicked
+
+    private void jPanel25MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel25MouseClicked
+        // TODO add your handling code here:
+         String h23=  hidetext00.getText();
+        if(h23.isEmpty()){
+            new Warning("Click Table Row First").setVisible(true);
+        }else{
+       int Yes = JOptionPane.showConfirmDialog(null, "Are Your Sure Want to Remove Customer "+gcuid+" ?");
+            if(Yes == 0){
+
+                try{
+
+                    String sql="delete from cus where cus_id = '"+h23+"'";
+                    Connection con=DATABASE_CONNECTION.getConnection();
+                    PreparedStatement ps=con.prepareStatement(sql);
+                    ps.execute();
+                    // ResultSet rs=ps.executeQuery();
+                    // ps.setString(1,idd);
+
+                    ps.close();
+                    con.close();
+
+                    table();
+                    Succes su = new Succes();
+                    su.ot("Delete Customer Succesfully");
+                    su.setVisible(true);
+                    //  JOptionPane.showMessageDialog(this, "Delete Product Succesfully");
+
+                }catch(Exception exe){
+                    System.out.println("exxxx"+exe);
+
+                }
+            }else{
+                int No = 0;
+                if(No==0){
+
+                }
+            }
+        }
+    }//GEN-LAST:event_jPanel25MouseClicked
+
+    private void tableellMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableellMouseClicked
+        // TODO add your handling code here:
+        
+          hidetext01.setVisible(false);
+                    hidetext02.setVisible(false);
+
+         int i = tablesc.getSelectedRow();
+        DefaultTableModel model=(DefaultTableModel) tablesc.getModel();
+        String bb=model.getValueAt(i,0).toString();
+       String aa=model.getValueAt(i,1).toString();
+      //  System.out.println("id"+bb +" name"+aa);
+        hidetext01.setText(bb); 
+          hidetext02.setText(aa);
+    }//GEN-LAST:event_tableellMouseClicked
+
+    private void jPanel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel7MouseClicked
+
+    private void jPanel40MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel40MouseClicked
+        // TODO add your handling code here:
+          String h23=  hidetext01.getText();
+        if(h23.isEmpty()){
+            new Warning("Click Table Row First").setVisible(true);
+        }else{
+         emp_uepp(h23);
+        
+          a1.setVisible(false);
+        a2.setVisible(false);
+        a3.setVisible(false);
+        a4.setVisible(false);
+        a5.setVisible(false);
+        a6.setVisible(false);
+        
+         home.setVisible(false);
+        ES.setVisible(false);
+        CS.setVisible(false);
+        Ws.setVisible(false);
+        SM.setVisible(false);
+        MP.setVisible(false);
+        
+        Search_Cus.setVisible(false);
+        Create_Cus.setVisible(false);
+        Update_Cus.setVisible(false);
+        Delete_Cus.setVisible(false);
+        New_service.setVisible(false);
+        
+        Assign.setVisible(false);
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(true);
+        Working_list.setVisible(false);
+        Cus_List.setVisible(false);
+         Update_Service.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
+        fNameuepp.setVisible(false);
+        L_nameuepp.setVisible(false);
+        Phoneuepp.setVisible(false);
+        Emailuepp.setVisible(false);
+       aaaauepp.setVisible(false);
+       
+        Emp_iduepp.setEditable(false);
+        
+        
+        
+        
+        fName1uepp.setVisible(false);
+        //System.out.println("empp"+Epp);
+        if(Eppuepp!=""){
+        updateuepp();
+        }
+        }
+    }//GEN-LAST:event_jPanel40MouseClicked
+
+    private void jPanel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jPanel5MouseClicked
   public void drop_down(){
        try {
 
@@ -10345,7 +11024,7 @@ if(i>0 && j>0){
                 String Email =rs.getString("cus_eml");
                // System.out.println("emlllll "+l_name);
                 String Address =rs.getString("cus_adde");
-                  String sev =rs.getString("cus_servic");
+                 
                 firstname1.setText(f_name);
                 
                 lastname1.setText(l_name);
@@ -10460,6 +11139,7 @@ if(i>0 && j>0){
     private javax.swing.JPanel Search_Emp;
     private javax.swing.JPanel Update_Cus;
     private javax.swing.JPanel Update_Emp;
+    private javax.swing.JPanel Update_Service;
     private javax.swing.JPanel Working_list;
     private javax.swing.JPanel Ws;
     private javax.swing.JLabel a1;
@@ -10484,7 +11164,6 @@ if(i>0 && j>0){
     private javax.swing.JLabel ascph;
     private javax.swing.JTextPane ascsd;
     private javax.swing.JPanel body;
-    private javax.swing.JPanel body21;
     private javax.swing.JPanel body22;
     private javax.swing.JPanel body23;
     private javax.swing.JPanel body24;
@@ -10505,6 +11184,8 @@ if(i>0 && j>0){
     private javax.swing.JPanel body39;
     private javax.swing.JPanel body40;
     private java.awt.Button button1;
+    private javax.swing.JLabel cid;
+    private javax.swing.JLabel cna;
     private javax.swing.JPanel crt_emp;
     private javax.swing.JPanel crt_emp1;
     private javax.swing.JPanel crt_emp2;
@@ -10555,7 +11236,10 @@ if(i>0 && j>0){
     private javax.swing.JTextField firstnamecee;
     private javax.swing.JTextField firstnameuepp;
     private javax.swing.JPanel head;
-    private java.awt.Label hidetext;
+    private javax.swing.JLabel hidetext;
+    private javax.swing.JLabel hidetext00;
+    private javax.swing.JLabel hidetext01;
+    private javax.swing.JLabel hidetext02;
     private javax.swing.JLabel hil;
     private javax.swing.JLabel hlnn;
     private javax.swing.JPanel home;
@@ -10640,6 +11324,13 @@ if(i>0 && j>0){
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel170;
     private javax.swing.JLabel jLabel171;
+    private javax.swing.JLabel jLabel172;
+    private javax.swing.JLabel jLabel173;
+    private javax.swing.JLabel jLabel174;
+    private javax.swing.JLabel jLabel175;
+    private javax.swing.JLabel jLabel176;
+    private javax.swing.JLabel jLabel177;
+    private javax.swing.JLabel jLabel178;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
@@ -10818,7 +11509,10 @@ if(i>0 && j>0){
     private javax.swing.JPanel jPanel86;
     private javax.swing.JPanel jPanel87;
     private javax.swing.JPanel jPanel88;
+    private javax.swing.JPanel jPanel89;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JPanel jPanel90;
+    private javax.swing.JPanel jPanel91;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
@@ -10836,6 +11530,7 @@ if(i>0 && j>0){
     private javax.swing.JScrollPane jScrollPane22;
     private javax.swing.JScrollPane jScrollPane23;
     private javax.swing.JScrollPane jScrollPane24;
+    private javax.swing.JScrollPane jScrollPane25;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
@@ -10885,6 +11580,7 @@ if(i>0 && j>0){
     private javax.swing.JTextField serchell1;
     private javax.swing.JTextField serchsee;
     private javax.swing.JTextField serchuepp;
+    private javax.swing.JLabel sid;
     private javax.swing.JComboBox<String> stawll;
     private javax.swing.JComboBox<String> t2;
     private javax.swing.JComboBox<String> t3;
@@ -10904,5 +11600,6 @@ if(i>0 && j>0){
     private javax.swing.JTextPane ttf;
     private javax.swing.JTextPane ttf1;
     private javax.swing.JTextPane ttfsee;
+    private javax.swing.JTextArea ttx;
     // End of variables declaration//GEN-END:variables
 }
