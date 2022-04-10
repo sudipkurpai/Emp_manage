@@ -1,6 +1,7 @@
 package erp;
 
 
+import com.sun.corba.se.impl.protocol.giopmsgheaders.RequestMessage_1_2;
 import java.awt.Color;
 import java.awt.Font;
 
@@ -11,9 +12,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
@@ -109,7 +115,7 @@ String empcee;
         Create_Cus.setVisible(false);
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(false);
-        body12.setVisible(false);
+        New_service.setVisible(false);
         Assign.setVisible(false);
         Emp_List.setVisible(false);
         Search_Emp.setVisible(false);
@@ -118,9 +124,26 @@ String empcee;
         Create_Emp.setVisible(false);
         Update_Emp.setVisible(false);
         Working_list.setVisible(false);
-         body21.setVisible(false);
-         body22.setVisible(false);
-          body23.setVisible(false);
+        body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
         
         p1.setBackground(Color.decode("#03A9DD"));
         p2.setBackground(Color.decode("#333333"));
@@ -394,6 +417,7 @@ String empcee;
         serch = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
         fName1 = new javax.swing.JLabel();
+        jLabel143 = new javax.swing.JLabel();
         jPanel25 = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
         jPanel26 = new javax.swing.JPanel();
@@ -411,6 +435,7 @@ String empcee;
         jLabel50 = new javax.swing.JLabel();
         fName2 = new javax.swing.JLabel();
         jLabel51 = new javax.swing.JLabel();
+        jLabel144 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
         ttf = new javax.swing.JTextPane();
         fName3 = new javax.swing.JLabel();
@@ -440,6 +465,7 @@ String empcee;
         jLabel57 = new javax.swing.JLabel();
         mng_id = new javax.swing.JTextField();
         jLabel58 = new javax.swing.JLabel();
+        jLabel147 = new javax.swing.JLabel();
         Update_Cus = new javax.swing.JPanel();
         jPanel33 = new javax.swing.JPanel();
         jPanel34 = new javax.swing.JPanel();
@@ -467,6 +493,8 @@ String empcee;
         serch2 = new javax.swing.JTextField();
         fName5 = new javax.swing.JLabel();
         jLabel66 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel152 = new javax.swing.JLabel();
         Delete_Cus = new javax.swing.JPanel();
         jPanel36 = new javax.swing.JPanel();
         jPanel37 = new javax.swing.JPanel();
@@ -487,6 +515,8 @@ String empcee;
         jLabel73 = new javax.swing.JLabel();
         eid11 = new javax.swing.JLabel();
         enn = new javax.swing.JLabel();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel155 = new javax.swing.JLabel();
         Emp_List = new javax.swing.JPanel();
         jPanel39 = new javax.swing.JPanel();
         jScrollPane12 = new javax.swing.JScrollPane();
@@ -502,6 +532,8 @@ String empcee;
         serchell = new javax.swing.JTextField();
         jLabel78 = new javax.swing.JLabel();
         fName1344 = new javax.swing.JLabel();
+        jPanel77 = new javax.swing.JPanel();
+        jLabel159 = new javax.swing.JLabel();
         Search_Emp = new javax.swing.JPanel();
         jPanel53 = new javax.swing.JPanel();
         jScrollPane16 = new javax.swing.JScrollPane();
@@ -518,6 +550,8 @@ String empcee;
         fName9 = new javax.swing.JLabel();
         jPanel55 = new javax.swing.JPanel();
         jLabel100 = new javax.swing.JLabel();
+        jPanel78 = new javax.swing.JPanel();
+        jLabel160 = new javax.swing.JLabel();
         Create_Emp = new javax.swing.JPanel();
         jPanel42 = new javax.swing.JPanel();
         jPanel51 = new javax.swing.JPanel();
@@ -542,6 +576,8 @@ String empcee;
         jLabel103 = new javax.swing.JLabel();
         mng_id2 = new javax.swing.JTextField();
         mng_name2 = new javax.swing.JTextField();
+        jPanel79 = new javax.swing.JPanel();
+        jLabel161 = new javax.swing.JLabel();
         Update_Emp = new javax.swing.JPanel();
         jPanel52 = new javax.swing.JPanel();
         jPanel56 = new javax.swing.JPanel();
@@ -571,6 +607,8 @@ String empcee;
         serchuepp = new javax.swing.JTextField();
         fName1uepp = new javax.swing.JLabel();
         jLabel2uepp = new javax.swing.JLabel();
+        jPanel80 = new javax.swing.JPanel();
+        jLabel162 = new javax.swing.JLabel();
         Delete_Emp = new javax.swing.JPanel();
         jPanel58 = new javax.swing.JPanel();
         jPanel59 = new javax.swing.JPanel();
@@ -591,6 +629,8 @@ String empcee;
         jLabel117 = new javax.swing.JLabel();
         eiddepp = new javax.swing.JLabel();
         enndepp = new javax.swing.JLabel();
+        jPanel81 = new javax.swing.JPanel();
+        jLabel163 = new javax.swing.JLabel();
         Working_list = new javax.swing.JPanel();
         jPanel61 = new javax.swing.JPanel();
         jScrollPane19 = new javax.swing.JScrollPane();
@@ -613,12 +653,16 @@ String empcee;
         jLabel125 = new javax.swing.JLabel();
         button1 = new java.awt.Button();
         hidetext = new java.awt.Label();
+        jPanel82 = new javax.swing.JPanel();
+        jLabel164 = new javax.swing.JLabel();
         Assign = new javax.swing.JPanel();
         jPanel67 = new javax.swing.JPanel();
         jLabel124 = new javax.swing.JLabel();
         jLabel126 = new javax.swing.JLabel();
         jPanel69 = new javax.swing.JPanel();
         jLabel127 = new javax.swing.JLabel();
+        jPanel83 = new javax.swing.JPanel();
+        jLabel165 = new javax.swing.JLabel();
         t2 = new javax.swing.JComboBox<>();
         jLabel128 = new javax.swing.JLabel();
         jPanel70 = new javax.swing.JPanel();
@@ -650,6 +694,8 @@ String empcee;
         jLabel135 = new javax.swing.JLabel();
         jPanel74 = new javax.swing.JPanel();
         jLabel140 = new javax.swing.JLabel();
+        jPanel84 = new javax.swing.JPanel();
+        jLabel166 = new javax.swing.JLabel();
         jPanel75 = new javax.swing.JPanel();
         cstt = new javax.swing.JTextField();
         jLabel141 = new javax.swing.JLabel();
@@ -680,10 +726,44 @@ String empcee;
         jLabel158 = new javax.swing.JLabel();
         csci = new javax.swing.JLabel();
         cscost = new javax.swing.JTextField();
-        body12 = new javax.swing.JPanel();
-        body23 = new javax.swing.JPanel();
-        body22 = new javax.swing.JPanel();
+        New_service = new javax.swing.JPanel();
+        jPanel85 = new javax.swing.JPanel();
+        jScrollPane23 = new javax.swing.JScrollPane();
+        table3 = new javax.swing.JTable();
+        serch4 = new javax.swing.JTextField();
+        jLabel167 = new javax.swing.JLabel();
+        fName7 = new javax.swing.JLabel();
+        jScrollPane24 = new javax.swing.JScrollPane();
+        ttf1 = new javax.swing.JTextPane();
+        hil = new javax.swing.JLabel();
+        jPanel86 = new javax.swing.JPanel();
+        jLabel169 = new javax.swing.JLabel();
+        hlnn = new javax.swing.JLabel();
+        jPanel87 = new javax.swing.JPanel();
+        jLabel168 = new javax.swing.JLabel();
+        jLabel170 = new javax.swing.JLabel();
+        jPanel88 = new javax.swing.JPanel();
+        jLabel171 = new javax.swing.JLabel();
         body21 = new javax.swing.JPanel();
+        body22 = new javax.swing.JPanel();
+        body23 = new javax.swing.JPanel();
+        body24 = new javax.swing.JPanel();
+        body25 = new javax.swing.JPanel();
+        body26 = new javax.swing.JPanel();
+        body27 = new javax.swing.JPanel();
+        body28 = new javax.swing.JPanel();
+        body29 = new javax.swing.JPanel();
+        body30 = new javax.swing.JPanel();
+        body31 = new javax.swing.JPanel();
+        body32 = new javax.swing.JPanel();
+        body33 = new javax.swing.JPanel();
+        body34 = new javax.swing.JPanel();
+        body35 = new javax.swing.JPanel();
+        body36 = new javax.swing.JPanel();
+        body37 = new javax.swing.JPanel();
+        body38 = new javax.swing.JPanel();
+        body39 = new javax.swing.JPanel();
+        body40 = new javax.swing.JPanel();
 
         tpic.setForeground(new java.awt.Color(0, 125, 254));
 
@@ -1957,6 +2037,13 @@ String empcee;
         fName1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         fName1.setText("Serch Customer by Customer ID");
 
+        jLabel143.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/previous.png"))); // NOI18N
+        jLabel143.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel143MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
@@ -1964,21 +2051,26 @@ String empcee;
             .addGroup(jPanel12Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(fName1, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel12Layout.createSequentialGroup()
-                            .addComponent(serch, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(0, 0, 0)
-                            .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel12Layout.createSequentialGroup()
+                            .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(fName1, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel12Layout.createSequentialGroup()
+                                    .addComponent(serch, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(0, 0, 0)
+                                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(24, 24, 24)))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 1151, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 1151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel143))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel12Layout.createSequentialGroup()
-                .addGap(42, 42, 42)
+                .addComponent(jLabel143, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
                 .addComponent(fName1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel12Layout.createSequentialGroup()
@@ -1990,7 +2082,7 @@ String empcee;
                             .addComponent(serch, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 585, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 557, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -2071,7 +2163,7 @@ String empcee;
                     .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(114, Short.MAX_VALUE))
+                .addContainerGap(112, Short.MAX_VALUE))
         );
 
         body.add(Cus_List, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
@@ -2107,7 +2199,7 @@ String empcee;
         });
         jScrollPane4.setViewportView(table1);
 
-        jPanel28.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 200, 770, 170));
+        jPanel28.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 240, 700, 130));
 
         table2.setBackground(new java.awt.Color(255, 255, 255));
         table2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -2135,9 +2227,10 @@ String empcee;
         });
         jScrollPane5.setViewportView(table2);
 
-        jPanel28.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 360, 500));
+        jPanel28.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 360, 460));
 
         jPanel29.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel29.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         serch1.setBackground(new java.awt.Color(255, 255, 255));
         serch1.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
@@ -2162,6 +2255,7 @@ String empcee;
                 serch1KeyReleased(evt);
             }
         });
+        jPanel29.add(serch1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 320, 30));
 
         jLabel50.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/magnifying-glass.png"))); // NOI18N
         jLabel50.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
@@ -2170,51 +2264,28 @@ String empcee;
                 jLabel50MouseClicked(evt);
             }
         });
+        jPanel29.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, 46, 40));
 
         fName2.setFont(new java.awt.Font("Consolas", 1, 21)); // NOI18N
         fName2.setForeground(new java.awt.Color(128, 128, 128));
         fName2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         fName2.setText("Serch Customer by Customer ID");
+        jPanel29.add(fName2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 390, 30));
 
         jLabel51.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
         jLabel51.setForeground(new java.awt.Color(0, 0, 0));
         jLabel51.setText("Search Customer !");
+        jPanel29.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 400, -1));
 
-        javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
-        jPanel29.setLayout(jPanel29Layout);
-        jPanel29Layout.setHorizontalGroup(
-            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel29Layout.createSequentialGroup()
-                .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel29Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(fName2, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel29Layout.createSequentialGroup()
-                                .addComponent(serch1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0)
-                                .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel29Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel29Layout.setVerticalGroup(
-            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel29Layout.createSequentialGroup()
-                .addComponent(jLabel51)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                .addComponent(fName2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel29Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(serch1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24))
-        );
+        jLabel144.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/previous.png"))); // NOI18N
+        jLabel144.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel144MouseClicked(evt);
+            }
+        });
+        jPanel29.add(jLabel144, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 0, -1, 42));
 
-        jPanel28.add(jPanel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 1150, 150));
+        jPanel28.add(jPanel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 1080, 190));
 
         ttf.setBackground(new java.awt.Color(255, 255, 255));
         ttf.setBorder(null);
@@ -2222,7 +2293,7 @@ String empcee;
         ttf.setForeground(new java.awt.Color(0, 0, 0));
         jScrollPane6.setViewportView(ttf);
 
-        jPanel28.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 420, 770, 220));
+        jPanel28.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 420, 700, 220));
 
         fName3.setFont(new java.awt.Font("Consolas", 1, 21)); // NOI18N
         fName3.setForeground(new java.awt.Color(255, 255, 255));
@@ -2241,14 +2312,14 @@ String empcee;
         jPanel30.setLayout(jPanel30Layout);
         jPanel30Layout.setHorizontalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel52, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 770, Short.MAX_VALUE)
+            .addComponent(jLabel52, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
         );
         jPanel30Layout.setVerticalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel52, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
         );
 
-        jPanel28.add(jPanel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 660, 770, -1));
+        jPanel28.add(jPanel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 660, 700, -1));
 
         javax.swing.GroupLayout Search_CusLayout = new javax.swing.GroupLayout(Search_Cus);
         Search_Cus.setLayout(Search_CusLayout);
@@ -2256,7 +2327,9 @@ String empcee;
             Search_CusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1190, Short.MAX_VALUE)
             .addGroup(Search_CusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel28, javax.swing.GroupLayout.DEFAULT_SIZE, 1190, Short.MAX_VALUE))
+                .addGroup(Search_CusLayout.createSequentialGroup()
+                    .addComponent(jPanel28, javax.swing.GroupLayout.PREFERRED_SIZE, 1143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         Search_CusLayout.setVerticalGroup(
             Search_CusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2278,6 +2351,7 @@ String empcee;
         jPanel32.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel53.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
+        jLabel53.setForeground(new java.awt.Color(0, 0, 0));
         jLabel53.setText("Create New Customer !");
         jPanel32.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 30, 400, -1));
 
@@ -2520,25 +2594,35 @@ String empcee;
                     .addGap(0, 187, Short.MAX_VALUE)))
         );
 
+        jLabel147.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/previous.png"))); // NOI18N
+        jLabel147.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel147MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout Create_CusLayout = new javax.swing.GroupLayout(Create_Cus);
         Create_Cus.setLayout(Create_CusLayout);
         Create_CusLayout.setHorizontalGroup(
             Create_CusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1190, Short.MAX_VALUE)
-            .addGroup(Create_CusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(Create_CusLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(Create_CusLayout.createSequentialGroup()
+                .addGroup(Create_CusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Create_CusLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel147))
+                    .addGroup(Create_CusLayout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(jPanel31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
         Create_CusLayout.setVerticalGroup(
             Create_CusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 809, Short.MAX_VALUE)
-            .addGroup(Create_CusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(Create_CusLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(Create_CusLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel147)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 49, Short.MAX_VALUE))
         );
 
         body.add(Create_Cus, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
@@ -2721,11 +2805,11 @@ String empcee;
         jLabel61.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel61.setText("Welcome !");
         jLabel61.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
-        jPanel33.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 290, 70));
+        jPanel33.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 290, 70));
 
         jLabel62.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel62.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/update-business-user.png"))); // NOI18N
-        jPanel33.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 420, 310));
+        jPanel33.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 420, 310));
 
         jLabel63.setBackground(new java.awt.Color(255, 255, 255));
         jLabel63.setFont(new java.awt.Font("Georgia", 1, 30)); // NOI18N
@@ -2781,6 +2865,30 @@ String empcee;
         jPanel35.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 80, 46, 40));
 
         jPanel33.add(jPanel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, 610, 140));
+
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel152.setForeground(new java.awt.Color(0, 255, 204));
+        jLabel152.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel152.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/previous.png"))); // NOI18N
+        jLabel152.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel152MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel152, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel152, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        jPanel33.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
 
         javax.swing.GroupLayout Update_CusLayout = new javax.swing.GroupLayout(Update_Cus);
         Update_Cus.setLayout(Update_CusLayout);
@@ -2867,7 +2975,7 @@ String empcee;
         jLabel68.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel68.setText("Welcome !");
         jLabel68.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
-        jPanel36.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 290, 70));
+        jPanel36.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 290, 70));
 
         jLabel69.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel69.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/delete-user.png"))); // NOI18N
@@ -2954,6 +3062,30 @@ String empcee;
         jPanel36.add(eid11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 620, -1, -1));
         jPanel36.add(enn, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 630, -1, -1));
 
+        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel155.setForeground(new java.awt.Color(0, 255, 204));
+        jLabel155.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel155.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/previous.png"))); // NOI18N
+        jLabel155.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel155MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel155, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel155, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        jPanel36.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
+
         javax.swing.GroupLayout Delete_CusLayout = new javax.swing.GroupLayout(Delete_Cus);
         Delete_Cus.setLayout(Delete_CusLayout);
         Delete_CusLayout.setHorizontalGroup(
@@ -2991,7 +3123,7 @@ String empcee;
         });
         jScrollPane12.setViewportView(tableell);
 
-        jPanel39.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 96, 1070, 634));
+        jPanel39.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 160, 1070, 570));
 
         jPanel40.setBackground(new java.awt.Color(0, 153, 0));
 
@@ -3076,7 +3208,7 @@ String empcee;
             .addComponent(jLabel77, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
         );
 
-        jPanel39.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 46, -1, -1));
+        jPanel39.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 110, -1, -1));
 
         serchell.setBackground(new java.awt.Color(255, 255, 255));
         serchell.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
@@ -3096,7 +3228,7 @@ String empcee;
                 serchellKeyReleased(evt);
             }
         });
-        jPanel39.add(serchell, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 54, 320, 30));
+        jPanel39.add(serchell, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 320, 30));
 
         jLabel78.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/magnifying-glass.png"))); // NOI18N
         jLabel78.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
@@ -3105,13 +3237,37 @@ String empcee;
                 jLabel78MouseClicked(evt);
             }
         });
-        jPanel39.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 44, 46, 40));
+        jPanel39.add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 46, 40));
 
         fName1344.setFont(new java.awt.Font("Consolas", 1, 21)); // NOI18N
         fName1344.setForeground(new java.awt.Color(47, 68, 187));
         fName1344.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         fName1344.setText("Serch Employee by Employee ID");
-        jPanel39.add(fName1344, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, 390, 30));
+        jPanel39.add(fName1344, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 390, 30));
+
+        jPanel77.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel159.setForeground(new java.awt.Color(0, 255, 204));
+        jLabel159.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel159.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/previous.png"))); // NOI18N
+        jLabel159.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel159MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel77Layout = new javax.swing.GroupLayout(jPanel77);
+        jPanel77.setLayout(jPanel77Layout);
+        jPanel77Layout.setHorizontalGroup(
+            jPanel77Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel159, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+        jPanel77Layout.setVerticalGroup(
+            jPanel77Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel159, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        jPanel39.add(jPanel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
 
         javax.swing.GroupLayout Emp_ListLayout = new javax.swing.GroupLayout(Emp_List);
         Emp_List.setLayout(Emp_ListLayout);
@@ -3157,7 +3313,7 @@ String empcee;
         });
         jScrollPane16.setViewportView(table1see);
 
-        jPanel53.add(jScrollPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 182, 770, 170));
+        jPanel53.add(jScrollPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 222, 770, 120));
 
         tablesee.setBackground(new java.awt.Color(255, 255, 255));
         tablesee.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -3185,7 +3341,7 @@ String empcee;
         });
         jScrollPane17.setViewportView(tablesee);
 
-        jPanel53.add(jScrollPane17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 182, 360, 500));
+        jPanel53.add(jScrollPane17, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 222, 360, 460));
 
         jPanel54.setBackground(new java.awt.Color(255, 255, 255));
         jPanel54.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(47, 68, 187)));
@@ -3249,7 +3405,7 @@ String empcee;
             jPanel54Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel54Layout.createSequentialGroup()
                 .addComponent(jLabel99)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(fNamesepp, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel54Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3260,7 +3416,7 @@ String empcee;
                 .addGap(24, 24, 24))
         );
 
-        jPanel53.add(jPanel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 12, 1150, 150));
+        jPanel53.add(jPanel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 1150, 150));
 
         ttfsee.setBackground(new java.awt.Color(255, 255, 255));
         ttfsee.setBorder(null);
@@ -3271,7 +3427,7 @@ String empcee;
         jPanel53.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 400, 770, 220));
 
         fName9.setFont(new java.awt.Font("Consolas", 1, 21)); // NOI18N
-        fName9.setForeground(new java.awt.Color(255, 255, 255));
+        fName9.setForeground(new java.awt.Color(0, 0, 0));
         fName9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         fName9.setText(" Service Details");
         jPanel53.add(fName9, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 360, 390, 30));
@@ -3295,6 +3451,30 @@ String empcee;
         );
 
         jPanel53.add(jPanel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 640, 770, -1));
+
+        jPanel78.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel160.setForeground(new java.awt.Color(0, 255, 204));
+        jLabel160.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel160.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/previous.png"))); // NOI18N
+        jLabel160.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel160MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel78Layout = new javax.swing.GroupLayout(jPanel78);
+        jPanel78.setLayout(jPanel78Layout);
+        jPanel78Layout.setHorizontalGroup(
+            jPanel78Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel160, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+        jPanel78Layout.setVerticalGroup(
+            jPanel78Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel160, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        jPanel53.add(jPanel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
 
         javax.swing.GroupLayout Search_EmpLayout = new javax.swing.GroupLayout(Search_Emp);
         Search_Emp.setLayout(Search_EmpLayout);
@@ -3530,6 +3710,30 @@ String empcee;
         mng_name2.setToolTipText("");
         mng_name2.setBorder(null);
         jPanel42.add(mng_name2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 290, 40));
+
+        jPanel79.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel161.setForeground(new java.awt.Color(0, 255, 204));
+        jLabel161.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel161.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/previous.png"))); // NOI18N
+        jLabel161.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel161MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel79Layout = new javax.swing.GroupLayout(jPanel79);
+        jPanel79.setLayout(jPanel79Layout);
+        jPanel79Layout.setHorizontalGroup(
+            jPanel79Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel161, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+        jPanel79Layout.setVerticalGroup(
+            jPanel79Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel161, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        jPanel42.add(jPanel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
 
         javax.swing.GroupLayout Create_EmpLayout = new javax.swing.GroupLayout(Create_Emp);
         Create_Emp.setLayout(Create_EmpLayout);
@@ -3796,6 +4000,30 @@ String empcee;
 
         jPanel52.add(jPanel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, 610, 140));
 
+        jPanel80.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel162.setForeground(new java.awt.Color(0, 255, 204));
+        jLabel162.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel162.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/previous.png"))); // NOI18N
+        jLabel162.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel162MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel80Layout = new javax.swing.GroupLayout(jPanel80);
+        jPanel80.setLayout(jPanel80Layout);
+        jPanel80Layout.setHorizontalGroup(
+            jPanel80Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel162, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+        jPanel80Layout.setVerticalGroup(
+            jPanel80Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel162, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        jPanel52.add(jPanel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
+
         javax.swing.GroupLayout Update_EmpLayout = new javax.swing.GroupLayout(Update_Emp);
         Update_Emp.setLayout(Update_EmpLayout);
         Update_EmpLayout.setHorizontalGroup(
@@ -3963,6 +4191,30 @@ String empcee;
         jPanel58.add(eiddepp, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 620, -1, -1));
         jPanel58.add(enndepp, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 630, -1, -1));
 
+        jPanel81.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel163.setForeground(new java.awt.Color(0, 255, 204));
+        jLabel163.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel163.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/previous.png"))); // NOI18N
+        jLabel163.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel163MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel81Layout = new javax.swing.GroupLayout(jPanel81);
+        jPanel81.setLayout(jPanel81Layout);
+        jPanel81Layout.setHorizontalGroup(
+            jPanel81Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel163, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+        jPanel81Layout.setVerticalGroup(
+            jPanel81Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel163, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        jPanel58.add(jPanel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
+
         javax.swing.GroupLayout Delete_EmpLayout = new javax.swing.GroupLayout(Delete_Emp);
         Delete_Emp.setLayout(Delete_EmpLayout);
         Delete_EmpLayout.setHorizontalGroup(
@@ -3979,7 +4231,6 @@ String empcee;
         Working_list.setBackground(new java.awt.Color(204, 0, 51));
 
         jPanel61.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel61.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tablewll.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         tablewll.setModel(new javax.swing.table.DefaultTableModel(
@@ -4005,8 +4256,6 @@ String empcee;
         });
         jScrollPane19.setViewportView(tablewll);
 
-        jPanel61.add(jScrollPane19, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 100, 1130, 590));
-
         jPanel62.setBackground(new java.awt.Color(0, 153, 0));
         jPanel62.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -4023,14 +4272,12 @@ String empcee;
         jPanel62.setLayout(jPanel62Layout);
         jPanel62Layout.setHorizontalGroup(
             jPanel62Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel118, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+            .addComponent(jLabel118, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
         );
         jPanel62Layout.setVerticalGroup(
             jPanel62Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel118, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
         );
-
-        jPanel61.add(jPanel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 720, -1, -1));
 
         jPanel63.setBackground(new java.awt.Color(255, 0, 51));
         jPanel63.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -4048,14 +4295,12 @@ String empcee;
         jPanel63.setLayout(jPanel63Layout);
         jPanel63Layout.setHorizontalGroup(
             jPanel63Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel119, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+            .addComponent(jLabel119, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
         jPanel63Layout.setVerticalGroup(
             jPanel63Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel119, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
         );
-
-        jPanel61.add(jPanel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 720, -1, -1));
 
         jPanel64.setBackground(new java.awt.Color(0, 125, 254));
 
@@ -4068,18 +4313,20 @@ String empcee;
         jPanel64.setLayout(jPanel64Layout);
         jPanel64Layout.setHorizontalGroup(
             jPanel64Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel120, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+            .addComponent(jLabel120, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
         );
         jPanel64Layout.setVerticalGroup(
             jPanel64Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel120, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
         );
 
-        jPanel61.add(jPanel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 720, -1, -1));
-
         stawll.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select --", "Pending", "Active", "Complete" }));
         stawll.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 125, 254)));
-        jPanel61.add(stawll, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 50, 210, 38));
+        stawll.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                stawllActionPerformed(evt);
+            }
+        });
 
         jPanel65.setBackground(new java.awt.Color(0, 0, 255));
         jPanel65.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -4097,14 +4344,12 @@ String empcee;
         jPanel65.setLayout(jPanel65Layout);
         jPanel65Layout.setHorizontalGroup(
             jPanel65Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel121, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+            .addComponent(jLabel121, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
         jPanel65Layout.setVerticalGroup(
             jPanel65Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel121, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
         );
-
-        jPanel61.add(jPanel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 720, -1, -1));
 
         jPanel66.setBackground(new java.awt.Color(153, 0, 204));
         jPanel66.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -4122,14 +4367,12 @@ String empcee;
         jPanel66.setLayout(jPanel66Layout);
         jPanel66Layout.setHorizontalGroup(
             jPanel66Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel122, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+            .addComponent(jLabel122, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
         );
         jPanel66Layout.setVerticalGroup(
             jPanel66Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel122, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
         );
-
-        jPanel61.add(jPanel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 720, -1, -1));
 
         serchell1.setBackground(new java.awt.Color(255, 255, 255));
         serchell1.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
@@ -4149,7 +4392,6 @@ String empcee;
                 serchell1KeyReleased(evt);
             }
         });
-        jPanel61.add(serchell1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 58, 320, 30));
 
         jLabel123.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/magnifying-glass.png"))); // NOI18N
         jLabel123.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
@@ -4158,13 +4400,11 @@ String empcee;
                 jLabel123MouseClicked(evt);
             }
         });
-        jPanel61.add(jLabel123, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 48, 46, 40));
 
         fName1345.setFont(new java.awt.Font("Consolas", 1, 21)); // NOI18N
         fName1345.setForeground(new java.awt.Color(47, 68, 187));
         fName1345.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         fName1345.setText("Serch Customer by Customer ID");
-        jPanel61.add(fName1345, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, 390, 30));
 
         jPanel68.setBackground(new java.awt.Color(0, 153, 0));
         jPanel68.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -4182,14 +4422,12 @@ String empcee;
         jPanel68.setLayout(jPanel68Layout);
         jPanel68Layout.setHorizontalGroup(
             jPanel68Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel125, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
+            .addComponent(jLabel125, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
         );
         jPanel68Layout.setVerticalGroup(
             jPanel68Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel125, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
         );
-
-        jPanel61.add(jPanel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 720, -1, -1));
 
         button1.setLabel("button1");
         button1.addActionListener(new java.awt.event.ActionListener() {
@@ -4197,8 +4435,96 @@ String empcee;
                 button1ActionPerformed(evt);
             }
         });
-        jPanel61.add(button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 740, -1, -1));
-        jPanel61.add(hidetext, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 30, 70, -1));
+
+        jPanel82.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel164.setForeground(new java.awt.Color(0, 255, 204));
+        jLabel164.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel164.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/previous.png"))); // NOI18N
+        jLabel164.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel164MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel82Layout = new javax.swing.GroupLayout(jPanel82);
+        jPanel82.setLayout(jPanel82Layout);
+        jPanel82Layout.setHorizontalGroup(
+            jPanel82Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel164, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+        jPanel82Layout.setVerticalGroup(
+            jPanel82Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel164, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel61Layout = new javax.swing.GroupLayout(jPanel61);
+        jPanel61.setLayout(jPanel61Layout);
+        jPanel61Layout.setHorizontalGroup(
+            jPanel61Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel61Layout.createSequentialGroup()
+                .addComponent(jPanel82, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(430, 430, 430)
+                .addComponent(hidetext, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel61Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(fName1345, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel61Layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(serchell1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jLabel123, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(554, 554, 554)
+                .addComponent(stawll, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel61Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 1130, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel61Layout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(jPanel62, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60)
+                .addComponent(jPanel68, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70)
+                .addComponent(jPanel63, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(jPanel65, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70)
+                .addComponent(jPanel66, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70)
+                .addComponent(jPanel64, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel61Layout.setVerticalGroup(
+            jPanel61Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel61Layout.createSequentialGroup()
+                .addGroup(jPanel61Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel82, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel61Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(hidetext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(fName1345, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addGroup(jPanel61Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel61Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(serchell1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel123, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(stawll, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addGroup(jPanel61Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel62, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel68, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel63, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel65, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel66, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel64, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel61Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+        );
 
         javax.swing.GroupLayout Working_listLayout = new javax.swing.GroupLayout(Working_list);
         Working_list.setLayout(Working_listLayout);
@@ -4212,7 +4538,7 @@ String empcee;
             Working_listLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 803, Short.MAX_VALUE)
             .addGroup(Working_listLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel61, javax.swing.GroupLayout.DEFAULT_SIZE, 803, Short.MAX_VALUE))
+                .addComponent(jPanel61, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         body.add(Working_list, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
@@ -4237,21 +4563,47 @@ String empcee;
         jLabel127.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel127.setText("Assign For Service");
 
+        jPanel83.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel165.setForeground(new java.awt.Color(0, 255, 204));
+        jLabel165.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel165.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/previous.png"))); // NOI18N
+        jLabel165.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel165MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel83Layout = new javax.swing.GroupLayout(jPanel83);
+        jPanel83.setLayout(jPanel83Layout);
+        jPanel83Layout.setHorizontalGroup(
+            jPanel83Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel165, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+        );
+        jPanel83Layout.setVerticalGroup(
+            jPanel83Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel165, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout jPanel69Layout = new javax.swing.GroupLayout(jPanel69);
         jPanel69.setLayout(jPanel69Layout);
         jPanel69Layout.setHorizontalGroup(
             jPanel69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel69Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel83, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jLabel127, javax.swing.GroupLayout.DEFAULT_SIZE, 1190, Short.MAX_VALUE))
         );
         jPanel69Layout.setVerticalGroup(
             jPanel69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 71, Short.MAX_VALUE)
+            .addGroup(jPanel69Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel83, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
             .addGroup(jPanel69Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel69Layout.createSequentialGroup()
-                    .addComponent(jLabel127, javax.swing.GroupLayout.DEFAULT_SIZE, 59, Short.MAX_VALUE)
-                    .addContainerGap()))
+                .addComponent(jLabel127, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE))
         );
 
         t2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -4279,7 +4631,7 @@ String empcee;
             }
         });
 
-        jLabel129.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/user (1).png"))); // NOI18N
+        jLabel129.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/clock (1).png"))); // NOI18N
         jLabel129.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel129MouseClicked(evt);
@@ -4293,8 +4645,8 @@ String empcee;
             .addGroup(jPanel70Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(td, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4)
-                .addComponent(jLabel129, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel129, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel70Layout.setVerticalGroup(
@@ -4390,7 +4742,7 @@ String empcee;
             .addComponent(jLabel139, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
         );
 
-        ddt.setDateFormatString("dd-MM-yyyy");
+        ddt.setDateFormatString("dd-MMM-yyyy");
 
         t3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         t3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Emp Name --", " " }));
@@ -4469,7 +4821,7 @@ String empcee;
                         .addComponent(jLabel131)
                         .addGap(4, 4, 4)
                         .addComponent(t3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addGroup(jPanel67Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel130)
                     .addComponent(jLabel133)
@@ -4511,7 +4863,7 @@ String empcee;
         jPanel73.setBackground(new java.awt.Color(255, 255, 255));
 
         csdd.setForeground(new java.awt.Color(0, 125, 254));
-        csdd.setDateFormatString("dd-MM-yyyy");
+        csdd.setDateFormatString("dd-MMM-yyyy");
         csdd.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
 
         jLabel132.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
@@ -4530,17 +4882,45 @@ String empcee;
         jLabel140.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel140.setText("Complete Service");
 
+        jPanel84.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel166.setForeground(new java.awt.Color(0, 255, 204));
+        jLabel166.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel166.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/previous.png"))); // NOI18N
+        jLabel166.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel166MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel84Layout = new javax.swing.GroupLayout(jPanel84);
+        jPanel84.setLayout(jPanel84Layout);
+        jPanel84Layout.setHorizontalGroup(
+            jPanel84Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel166, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+        jPanel84Layout.setVerticalGroup(
+            jPanel84Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel166, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout jPanel74Layout = new javax.swing.GroupLayout(jPanel74);
         jPanel74.setLayout(jPanel74Layout);
         jPanel74Layout.setHorizontalGroup(
             jPanel74Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1190, Short.MAX_VALUE)
+            .addGroup(jPanel74Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel84, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(1128, Short.MAX_VALUE))
             .addGroup(jPanel74Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jLabel140, javax.swing.GroupLayout.DEFAULT_SIZE, 1190, Short.MAX_VALUE))
         );
         jPanel74Layout.setVerticalGroup(
             jPanel74Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 71, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel74Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel84, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
             .addGroup(jPanel74Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jLabel140, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE))
         );
@@ -4855,35 +5235,196 @@ String empcee;
 
         body.add(Complete, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
 
-        body12.setBackground(new java.awt.Color(204, 0, 51));
+        New_service.setBackground(new java.awt.Color(204, 0, 51));
 
-        javax.swing.GroupLayout body12Layout = new javax.swing.GroupLayout(body12);
-        body12.setLayout(body12Layout);
-        body12Layout.setHorizontalGroup(
-            body12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanel85.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel85.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        table3.setBackground(new java.awt.Color(255, 255, 255));
+        table3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        table3.setForeground(new java.awt.Color(0, 0, 0));
+        table3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Cus Name", "Cus Id"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        table3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                table3MouseClicked(evt);
+            }
+        });
+        jScrollPane23.setViewportView(table3);
+
+        jPanel85.add(jScrollPane23, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 550, 270));
+
+        serch4.setBackground(new java.awt.Color(255, 255, 255));
+        serch4.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
+        serch4.setForeground(new java.awt.Color(128, 128, 128));
+        serch4.setText("Serch Customer by Customer ID");
+        serch4.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
+        serch4.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                serch4FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                serch4FocusLost(evt);
+            }
+        });
+        serch4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                serch4KeyReleased(evt);
+            }
+        });
+        jPanel85.add(serch4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 320, 30));
+
+        jLabel167.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/magnifying-glass.png"))); // NOI18N
+        jLabel167.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(47, 68, 187)));
+        jLabel167.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel167MouseClicked(evt);
+            }
+        });
+        jPanel85.add(jLabel167, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, 46, 40));
+
+        fName7.setFont(new java.awt.Font("Consolas", 1, 21)); // NOI18N
+        fName7.setForeground(new java.awt.Color(128, 128, 128));
+        fName7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        fName7.setText("Serch Customer by Customer ID");
+        jPanel85.add(fName7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 390, 30));
+
+        ttf1.setBackground(new java.awt.Color(255, 255, 255));
+        ttf1.setBorder(null);
+        ttf1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        ttf1.setForeground(new java.awt.Color(0, 0, 0));
+        jScrollPane24.setViewportView(ttf1);
+
+        jPanel85.add(jScrollPane24, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, 550, 220));
+        jPanel85.add(hil, new org.netbeans.lib.awtextra.AbsoluteConstraints(527, 84, -1, -1));
+
+        jPanel86.setBackground(new java.awt.Color(47, 68, 187));
+        jPanel86.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel86MouseClicked(evt);
+            }
+        });
+
+        jLabel169.setFont(new java.awt.Font("Arial", 1, 22)); // NOI18N
+        jLabel169.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel169.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel169.setText("Save");
+
+        javax.swing.GroupLayout jPanel86Layout = new javax.swing.GroupLayout(jPanel86);
+        jPanel86.setLayout(jPanel86Layout);
+        jPanel86Layout.setHorizontalGroup(
+            jPanel86Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel169, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel86Layout.setVerticalGroup(
+            jPanel86Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel169, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+        );
+
+        jPanel85.add(jPanel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 710, 550, -1));
+        jPanel85.add(hlnn, new org.netbeans.lib.awtextra.AbsoluteConstraints(527, 105, -1, -1));
+
+        jPanel87.setBackground(new java.awt.Color(47, 68, 187));
+
+        jLabel168.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel168.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
+        jLabel168.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel168.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel168.setText("Add New Service !");
+
+        jLabel170.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel170.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/wrench.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel87Layout = new javax.swing.GroupLayout(jPanel87);
+        jPanel87.setLayout(jPanel87Layout);
+        jPanel87Layout.setHorizontalGroup(
+            jPanel87Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel87Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabel168, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel87Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel170, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel87Layout.setVerticalGroup(
+            jPanel87Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel87Layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(jLabel168)
+                .addGap(192, 192, 192)
+                .addComponent(jLabel170, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(168, Short.MAX_VALUE))
+        );
+
+        jPanel85.add(jPanel87, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 0, 450, 760));
+
+        jPanel88.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel171.setForeground(new java.awt.Color(0, 255, 204));
+        jLabel171.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel171.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/previous.png"))); // NOI18N
+        jLabel171.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel171MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel88Layout = new javax.swing.GroupLayout(jPanel88);
+        jPanel88.setLayout(jPanel88Layout);
+        jPanel88Layout.setHorizontalGroup(
+            jPanel88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel171, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+        jPanel88Layout.setVerticalGroup(
+            jPanel88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel171, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        jPanel85.add(jPanel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 50));
+
+        javax.swing.GroupLayout New_serviceLayout = new javax.swing.GroupLayout(New_service);
+        New_service.setLayout(New_serviceLayout);
+        New_serviceLayout.setHorizontalGroup(
+            New_serviceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel85, javax.swing.GroupLayout.DEFAULT_SIZE, 1190, Short.MAX_VALUE)
+        );
+        New_serviceLayout.setVerticalGroup(
+            New_serviceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel85, javax.swing.GroupLayout.DEFAULT_SIZE, 777, Short.MAX_VALUE)
+        );
+
+        body.add(New_service, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+
+        body21.setBackground(new java.awt.Color(204, 0, 51));
+
+        javax.swing.GroupLayout body21Layout = new javax.swing.GroupLayout(body21);
+        body21.setLayout(body21Layout);
+        body21Layout.setHorizontalGroup(
+            body21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1190, Short.MAX_VALUE)
         );
-        body12Layout.setVerticalGroup(
-            body12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        body21Layout.setVerticalGroup(
+            body21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 809, Short.MAX_VALUE)
         );
 
-        body.add(body12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
-
-        body23.setBackground(new java.awt.Color(204, 0, 51));
-
-        javax.swing.GroupLayout body23Layout = new javax.swing.GroupLayout(body23);
-        body23.setLayout(body23Layout);
-        body23Layout.setHorizontalGroup(
-            body23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1190, Short.MAX_VALUE)
-        );
-        body23Layout.setVerticalGroup(
-            body23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 809, Short.MAX_VALUE)
-        );
-
-        body.add(body23, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+        body.add(body21, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
 
         body22.setBackground(new java.awt.Color(204, 0, 51));
 
@@ -4900,20 +5441,275 @@ String empcee;
 
         body.add(body22, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
 
-        body21.setBackground(new java.awt.Color(204, 0, 51));
+        body23.setBackground(new java.awt.Color(204, 0, 51));
 
-        javax.swing.GroupLayout body21Layout = new javax.swing.GroupLayout(body21);
-        body21.setLayout(body21Layout);
-        body21Layout.setHorizontalGroup(
-            body21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout body23Layout = new javax.swing.GroupLayout(body23);
+        body23.setLayout(body23Layout);
+        body23Layout.setHorizontalGroup(
+            body23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 1190, Short.MAX_VALUE)
         );
-        body21Layout.setVerticalGroup(
-            body21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        body23Layout.setVerticalGroup(
+            body23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 809, Short.MAX_VALUE)
         );
 
-        body.add(body21, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+        body.add(body23, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+
+        body24.setBackground(new java.awt.Color(204, 0, 51));
+
+        javax.swing.GroupLayout body24Layout = new javax.swing.GroupLayout(body24);
+        body24.setLayout(body24Layout);
+        body24Layout.setHorizontalGroup(
+            body24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1190, Short.MAX_VALUE)
+        );
+        body24Layout.setVerticalGroup(
+            body24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 809, Short.MAX_VALUE)
+        );
+
+        body.add(body24, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+
+        body25.setBackground(new java.awt.Color(204, 0, 51));
+
+        javax.swing.GroupLayout body25Layout = new javax.swing.GroupLayout(body25);
+        body25.setLayout(body25Layout);
+        body25Layout.setHorizontalGroup(
+            body25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1190, Short.MAX_VALUE)
+        );
+        body25Layout.setVerticalGroup(
+            body25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 809, Short.MAX_VALUE)
+        );
+
+        body.add(body25, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+
+        body26.setBackground(new java.awt.Color(204, 0, 51));
+
+        javax.swing.GroupLayout body26Layout = new javax.swing.GroupLayout(body26);
+        body26.setLayout(body26Layout);
+        body26Layout.setHorizontalGroup(
+            body26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1190, Short.MAX_VALUE)
+        );
+        body26Layout.setVerticalGroup(
+            body26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 809, Short.MAX_VALUE)
+        );
+
+        body.add(body26, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+
+        body27.setBackground(new java.awt.Color(204, 0, 51));
+
+        javax.swing.GroupLayout body27Layout = new javax.swing.GroupLayout(body27);
+        body27.setLayout(body27Layout);
+        body27Layout.setHorizontalGroup(
+            body27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1190, Short.MAX_VALUE)
+        );
+        body27Layout.setVerticalGroup(
+            body27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 809, Short.MAX_VALUE)
+        );
+
+        body.add(body27, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+
+        body28.setBackground(new java.awt.Color(204, 0, 51));
+
+        javax.swing.GroupLayout body28Layout = new javax.swing.GroupLayout(body28);
+        body28.setLayout(body28Layout);
+        body28Layout.setHorizontalGroup(
+            body28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1190, Short.MAX_VALUE)
+        );
+        body28Layout.setVerticalGroup(
+            body28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 809, Short.MAX_VALUE)
+        );
+
+        body.add(body28, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+
+        body29.setBackground(new java.awt.Color(204, 0, 51));
+
+        javax.swing.GroupLayout body29Layout = new javax.swing.GroupLayout(body29);
+        body29.setLayout(body29Layout);
+        body29Layout.setHorizontalGroup(
+            body29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1190, Short.MAX_VALUE)
+        );
+        body29Layout.setVerticalGroup(
+            body29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 809, Short.MAX_VALUE)
+        );
+
+        body.add(body29, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+
+        body30.setBackground(new java.awt.Color(204, 0, 51));
+
+        javax.swing.GroupLayout body30Layout = new javax.swing.GroupLayout(body30);
+        body30.setLayout(body30Layout);
+        body30Layout.setHorizontalGroup(
+            body30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1190, Short.MAX_VALUE)
+        );
+        body30Layout.setVerticalGroup(
+            body30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 809, Short.MAX_VALUE)
+        );
+
+        body.add(body30, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+
+        body31.setBackground(new java.awt.Color(204, 0, 51));
+
+        javax.swing.GroupLayout body31Layout = new javax.swing.GroupLayout(body31);
+        body31.setLayout(body31Layout);
+        body31Layout.setHorizontalGroup(
+            body31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1190, Short.MAX_VALUE)
+        );
+        body31Layout.setVerticalGroup(
+            body31Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 809, Short.MAX_VALUE)
+        );
+
+        body.add(body31, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+
+        body32.setBackground(new java.awt.Color(204, 0, 51));
+
+        javax.swing.GroupLayout body32Layout = new javax.swing.GroupLayout(body32);
+        body32.setLayout(body32Layout);
+        body32Layout.setHorizontalGroup(
+            body32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1190, Short.MAX_VALUE)
+        );
+        body32Layout.setVerticalGroup(
+            body32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 809, Short.MAX_VALUE)
+        );
+
+        body.add(body32, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+
+        body33.setBackground(new java.awt.Color(204, 0, 51));
+
+        javax.swing.GroupLayout body33Layout = new javax.swing.GroupLayout(body33);
+        body33.setLayout(body33Layout);
+        body33Layout.setHorizontalGroup(
+            body33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1190, Short.MAX_VALUE)
+        );
+        body33Layout.setVerticalGroup(
+            body33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 809, Short.MAX_VALUE)
+        );
+
+        body.add(body33, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+
+        body34.setBackground(new java.awt.Color(204, 0, 51));
+
+        javax.swing.GroupLayout body34Layout = new javax.swing.GroupLayout(body34);
+        body34.setLayout(body34Layout);
+        body34Layout.setHorizontalGroup(
+            body34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1190, Short.MAX_VALUE)
+        );
+        body34Layout.setVerticalGroup(
+            body34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 809, Short.MAX_VALUE)
+        );
+
+        body.add(body34, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+
+        body35.setBackground(new java.awt.Color(204, 0, 51));
+
+        javax.swing.GroupLayout body35Layout = new javax.swing.GroupLayout(body35);
+        body35.setLayout(body35Layout);
+        body35Layout.setHorizontalGroup(
+            body35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1190, Short.MAX_VALUE)
+        );
+        body35Layout.setVerticalGroup(
+            body35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 809, Short.MAX_VALUE)
+        );
+
+        body.add(body35, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+
+        body36.setBackground(new java.awt.Color(204, 0, 51));
+
+        javax.swing.GroupLayout body36Layout = new javax.swing.GroupLayout(body36);
+        body36.setLayout(body36Layout);
+        body36Layout.setHorizontalGroup(
+            body36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1190, Short.MAX_VALUE)
+        );
+        body36Layout.setVerticalGroup(
+            body36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 809, Short.MAX_VALUE)
+        );
+
+        body.add(body36, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+
+        body37.setBackground(new java.awt.Color(204, 0, 51));
+
+        javax.swing.GroupLayout body37Layout = new javax.swing.GroupLayout(body37);
+        body37.setLayout(body37Layout);
+        body37Layout.setHorizontalGroup(
+            body37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1190, Short.MAX_VALUE)
+        );
+        body37Layout.setVerticalGroup(
+            body37Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 809, Short.MAX_VALUE)
+        );
+
+        body.add(body37, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+
+        body38.setBackground(new java.awt.Color(204, 0, 51));
+
+        javax.swing.GroupLayout body38Layout = new javax.swing.GroupLayout(body38);
+        body38.setLayout(body38Layout);
+        body38Layout.setHorizontalGroup(
+            body38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1190, Short.MAX_VALUE)
+        );
+        body38Layout.setVerticalGroup(
+            body38Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 809, Short.MAX_VALUE)
+        );
+
+        body.add(body38, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+
+        body39.setBackground(new java.awt.Color(204, 0, 51));
+
+        javax.swing.GroupLayout body39Layout = new javax.swing.GroupLayout(body39);
+        body39.setLayout(body39Layout);
+        body39Layout.setHorizontalGroup(
+            body39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1190, Short.MAX_VALUE)
+        );
+        body39Layout.setVerticalGroup(
+            body39Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 809, Short.MAX_VALUE)
+        );
+
+        body.add(body39, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
+
+        body40.setBackground(new java.awt.Color(204, 0, 51));
+
+        javax.swing.GroupLayout body40Layout = new javax.swing.GroupLayout(body40);
+        body40.setLayout(body40Layout);
+        body40Layout.setHorizontalGroup(
+            body40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1190, Short.MAX_VALUE)
+        );
+        body40Layout.setVerticalGroup(
+            body40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 809, Short.MAX_VALUE)
+        );
+
+        body.add(body40, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, -1));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -4972,7 +5768,7 @@ String empcee;
         Create_Cus.setVisible(false);
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(false);
-        body12.setVisible(false);
+        New_service.setVisible(false);
         Assign.setVisible(false);
         Emp_List.setVisible(false);
         Search_Emp.setVisible(false);
@@ -4981,6 +5777,46 @@ String empcee;
         Create_Emp.setVisible(false);
         Update_Emp.setVisible(false);
         Working_list.setVisible(false);
+         body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
+         body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
         p1.setBackground(Color.decode("#03A9DD"));
         p2.setBackground(Color.decode("#333333"));
         p3.setBackground(Color.decode("#333333"));
@@ -5019,7 +5855,7 @@ String empcee;
         Create_Cus.setVisible(false);
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(false);
-        body12.setVisible(false);
+        New_service.setVisible(false);
         Assign.setVisible(false);
         Emp_List.setVisible(false);
         Search_Emp.setVisible(false);
@@ -5028,6 +5864,26 @@ String empcee;
         Create_Emp.setVisible(false);
        Update_Emp.setVisible(false);
         Working_list.setVisible(false);
+         body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
     }//GEN-LAST:event_p2MouseClicked
 
     private void p3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p3MouseClicked
@@ -5058,7 +5914,7 @@ String empcee;
         Create_Cus.setVisible(false);
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(false);
-        body12.setVisible(false);
+        New_service.setVisible(false);
         Assign.setVisible(false);
         Emp_List.setVisible(false);
         Search_Emp.setVisible(false);
@@ -5067,6 +5923,26 @@ String empcee;
         Create_Emp.setVisible(false);
        Update_Emp.setVisible(false);
         Working_list.setVisible(false);
+         body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
     }//GEN-LAST:event_p3MouseClicked
 
     private void p4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p4MouseClicked
@@ -5096,7 +5972,7 @@ String empcee;
         Create_Cus.setVisible(false);
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(false);
-        body12.setVisible(false);
+        New_service.setVisible(false);
         Assign.setVisible(false);
         Emp_List.setVisible(false);
         Search_Emp.setVisible(false);
@@ -5105,6 +5981,26 @@ String empcee;
         Create_Emp.setVisible(false);
        Update_Emp.setVisible(false);
         Working_list.setVisible(false);
+         body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
     }//GEN-LAST:event_p4MouseClicked
 
     private void p5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p5MouseClicked
@@ -5134,7 +6030,7 @@ String empcee;
         Create_Cus.setVisible(false);
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(false);
-        body12.setVisible(false);
+        New_service.setVisible(false);
         Assign.setVisible(false);
         Emp_List.setVisible(false);
         Search_Emp.setVisible(false);
@@ -5143,6 +6039,26 @@ String empcee;
         Create_Emp.setVisible(false);
        Update_Emp.setVisible(false);
         Working_list.setVisible(false);
+         body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
     }//GEN-LAST:event_p5MouseClicked
 
     private void p6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p6MouseClicked
@@ -5171,7 +6087,7 @@ String empcee;
         Create_Cus.setVisible(false);
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(false);
-        body12.setVisible(false);
+        New_service.setVisible(false);
         Assign.setVisible(false);
         Emp_List.setVisible(false);
         Search_Emp.setVisible(false);
@@ -5180,10 +6096,50 @@ String empcee;
         Create_Emp.setVisible(false);
        Update_Emp.setVisible(false);
         Working_list.setVisible(false);
+         body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
     }//GEN-LAST:event_p6MouseClicked
 
     private void p7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_p7MouseClicked
         // TODO add your handling code here:
+         body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
         p7.setBackground(Color.decode("#03A9DD"));
         p2.setBackground(Color.decode("#333333"));
         p3.setBackground(Color.decode("#333333"));
@@ -5209,7 +6165,7 @@ String empcee;
         Create_Cus.setVisible(false);
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(false);
-        body12.setVisible(false);
+        New_service.setVisible(false);
         Assign.setVisible(false);
         
         Emp_List.setVisible(false);
@@ -5347,7 +6303,7 @@ String empcee;
         Create_Cus.setVisible(false);
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(false);
-        body12.setVisible(false);
+        New_service.setVisible(false);
         Assign.setVisible(false);
     
         Emp_List.setVisible(false);
@@ -5358,7 +6314,26 @@ String empcee;
        Update_Emp.setVisible(false);
         Working_list.setVisible(false);
 
-              
+               body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
                 Cus_List.setVisible(true);
                 // Cus_List.setVisible(true);
                // body.setVisible(false);
@@ -5558,9 +6533,28 @@ String empcee;
         Create_Cus.setVisible(false);
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(false);
-        body12.setVisible(false);
+        New_service.setVisible(false);
         Assign.setVisible(false);
-     
+      body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
         Emp_List.setVisible(false);
         Search_Emp.setVisible(false);
        Complete.setVisible(false);
@@ -5601,7 +6595,7 @@ String empcee;
         Create_Cus.setVisible(true);
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(false);
-        body12.setVisible(false);
+        New_service.setVisible(false);
         Assign.setVisible(false);
        
         Emp_List.setVisible(false);
@@ -5612,6 +6606,26 @@ String empcee;
        Update_Emp.setVisible(false);
         Working_list.setVisible(false);
         Cus_List.setVisible(false);
+         body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
     }//GEN-LAST:event_jPanel15MouseClicked
 
     private void jLabel54MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel54MouseClicked
@@ -6012,7 +7026,7 @@ String empcee;
         Create_Cus.setVisible(false);
         Update_Cus.setVisible(true);
         Delete_Cus.setVisible(false);
-        body12.setVisible(false);
+        New_service.setVisible(false);
         Assign.setVisible(false);
       
         Emp_List.setVisible(false);
@@ -6023,7 +7037,26 @@ String empcee;
        Update_Emp.setVisible(false);
         Working_list.setVisible(false);
         Cus_List.setVisible(false);
-        
+         body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
         
         //System.out.println("empp"+Epp);
         if(Epp!=""){
@@ -6208,7 +7241,7 @@ String empcee;
         Create_Cus.setVisible(false);
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(true);
-        body12.setVisible(false);
+        New_service.setVisible(false);
         Assign.setVisible(false);
      
         Emp_List.setVisible(false);
@@ -6219,6 +7252,26 @@ String empcee;
        Update_Emp.setVisible(false);
         Working_list.setVisible(false);
         Cus_List.setVisible(false);
+         body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
     }//GEN-LAST:event_jPanel17MouseClicked
 
     private void jLabel77MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel77MouseClicked
@@ -6338,7 +7391,7 @@ String empcee;
         Create_Cus.setVisible(false);
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(false);
-        body12.setVisible(false);
+        New_service.setVisible(false);
         Assign.setVisible(false);
        
         Emp_List.setVisible(true);
@@ -6349,7 +7402,26 @@ String empcee;
        Update_Emp.setVisible(false);
         Working_list.setVisible(false);
         Cus_List.setVisible(false);
-        
+         body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
     }//GEN-LAST:event_jPanel19MouseClicked
 
     private void table1seeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table1seeMouseClicked
@@ -6540,7 +7612,7 @@ String empcee;
         Create_Cus.setVisible(false);
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(false);
-        body12.setVisible(false);
+        New_service.setVisible(false);
         
         Assign.setVisible(false);
         Emp_List.setVisible(false);
@@ -6551,6 +7623,26 @@ String empcee;
        Update_Emp.setVisible(false);
         Working_list.setVisible(false);
         Cus_List.setVisible(false);
+         body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
     }//GEN-LAST:event_jPanel20MouseClicked
 
     private void jLabel80MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel80MouseClicked
@@ -6724,7 +7816,7 @@ String empcee;
         Create_Cus.setVisible(false);
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(false);
-        body12.setVisible(false);
+        New_service.setVisible(false);
         
         Assign.setVisible(false);
         Emp_List.setVisible(false);
@@ -6748,6 +7840,26 @@ String empcee;
         mng_id.setEditable(false);
         Emp_idcee.setEditable(false);
          aaaacee.setVisible(false);
+          body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
     }//GEN-LAST:event_jPanel21MouseClicked
 
     private void jLabel104MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel104MouseClicked
@@ -6983,7 +8095,7 @@ String empcee;
         Create_Cus.setVisible(false);
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(false);
-        body12.setVisible(false);
+        New_service.setVisible(false);
         
         Assign.setVisible(false);
         Emp_List.setVisible(false);
@@ -6994,7 +8106,26 @@ String empcee;
        Update_Emp.setVisible(true);
         Working_list.setVisible(false);
         Cus_List.setVisible(false);
-        
+         body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
         fNameuepp.setVisible(false);
         L_nameuepp.setVisible(false);
         Phoneuepp.setVisible(false);
@@ -7178,7 +8309,27 @@ String empcee;
         Create_Cus.setVisible(false);
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(false);
-        body12.setVisible(false);
+        New_service.setVisible(false);
+         body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
         
         Assign.setVisible(false);
         Emp_List.setVisible(false);
@@ -7342,7 +8493,27 @@ public void serlist(){
         Create_Cus.setVisible(false);
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(false);
-        body12.setVisible(false);
+        New_service.setVisible(false);
+         body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
         
         Assign.setVisible(false);
         Emp_List.setVisible(false);
@@ -7359,7 +8530,62 @@ public void serlist(){
 
     private void jPanel62MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel62MouseClicked
         // TODO add your handling code here:
-        new Add_service_popup().setVisible(true);
+        home.setVisible(false);
+        ES.setVisible(false);
+        CS.setVisible(false);
+        Ws.setVisible(false);
+        SM.setVisible(false);
+        MP.setVisible(false);
+        a1.setVisible(false);
+        a2.setVisible(false);
+        a3.setVisible(false);
+        a4.setVisible(false);
+        a5.setVisible(false);
+        a6.setVisible(false);
+
+        Cus_List.setVisible(false);
+        Search_Cus.setVisible(false);
+        Create_Cus.setVisible(false);
+        Update_Cus.setVisible(false);
+        Delete_Cus.setVisible(false);
+        New_service.setVisible(true);
+        Assign.setVisible(false);
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+        Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+        Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
+        body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
+        
+        p1.setBackground(Color.decode("#03A9DD"));
+        p2.setBackground(Color.decode("#333333"));
+        p3.setBackground(Color.decode("#333333"));
+        p4.setBackground(Color.decode("#333333"));
+        p5.setBackground(Color.decode("#333333"));
+        p6.setBackground(Color.decode("#333333"));
+        p7.setBackground(Color.decode("#333333"));
+       
     }//GEN-LAST:event_jPanel62MouseClicked
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
@@ -7502,7 +8728,14 @@ public void serlist(){
 
     private void jPanel65MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel65MouseClicked
         // TODO add your handling code here:
-         tpic.addActionListener(new ActionListener(){
+       
+         Date d = new Date();
+       
+             
+             
+ ddt.setDate(d);
+      
+        tpic.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
                 //System.out.println("hii"+tpic.getSelectedTime());
@@ -7535,8 +8768,27 @@ public void serlist(){
         Create_Cus.setVisible(false);
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(false);
-        body12.setVisible(false);
-        
+        New_service.setVisible(false);
+         body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
         Assign.setVisible(true);
         Emp_List.setVisible(false);
         Search_Emp.setVisible(false);
@@ -7650,8 +8902,13 @@ public void serlist(){
         //System.out.println("ddatt"+ddt.getDate());
         
         if(tta.equals("")){
-            System.out.println("ddat");
+            new Warning("Selete Time").setVisible(true);
+        }else if(t2.getSelectedItem().equals("-- Select --")){
+             new Warning("Selete Employee").setVisible(true);
+        }else if(!t3.getSelectedItem().equals("-- Select --")){
+             new Warning("Selete Employee Id").setVisible(true);
         }else{
+            
                  int i=0;
             try{
                 Connection con=DATABASE_CONNECTION.getConnection();
@@ -7683,37 +8940,54 @@ public void serlist(){
 
     private void jPanel76MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel76MouseClicked
         // TODO add your handling code here:
+       
+      //  dd1.setText();
+       
+        
      SimpleDateFormat s = new SimpleDateFormat("dd-MM-yyyy");
         String Ddt =  s.format(csdd.getDate());
         String cst= cstt.getText();
-        String eid= csei.getText();
+        String eidd= csei.getText();
         String en=csen.getText();
-        String  cscos=cscost.getText();
-    //    String metr = 
+        String cscos=cscost.getText();
+        String Cssd=cssd.getText();
+        String metr = csmet.getText();
+        String cid= csci.getText();
+        String cn=cscn.getText();
+        String Phh=cscp.getText();
+        String emll= cseml.getText();
+        String ad = csad.getText();
+        
+        
+       //  Date abcd = new SimpleDateFormat("dd-MM-yyyy").parse(d).toString();
+        
         if(cst.equals("")){
-            System.out.println("ddat");
+           new Warning("Select Time").setVisible(true);
+        }else if(cscos.equals("")){
+                       new Warning("Input Cost").setVisible(true);
+
         }else{
                  int i=0;
+                 int j=0;
             try{
                 Connection con=DATABASE_CONNECTION.getConnection();
                 PreparedStatement ps=con.prepareStatement("UPDATE `emp_works` SET `date`='"+Ddt+"',`time`='"+cst+"',`status`='Complete' where serv_id ='"+gserv+"'");
                 i=ps.executeUpdate();
-                con.close();
+             
                 
                
-                PreparedStatement ps1=con.prepareStatement("INSERT INTO `comp_service`(`serv_id`, `date`, `time`, `emp_id`, `emp_name`, `cous_id`, `cous_name`, `cous_ph`, `cous_mail`, `cous_addr`, `serv_desc`, `cost`) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]','[value-9]','[value-10]','[value-11]','[value-12]')");
-                i=ps1.executeUpdate();
+                PreparedStatement ps1=con.prepareStatement("INSERT INTO `comp_service`"
+               + "(`serv_id`, `date`, `time`, `emp_id`, `emp_name`, `cous_id`, `cous_name`, `cous_ph`, `cous_mail`, `cous_addr`, `serv_desc`, `cost`, `material`) VALUES "
+                + " ('"+gserv+"','"+Ddt+"','"+cst+"','"+eidd+"','"+en+"','"+cid+"','"+cn+"','"+Phh+"','"+emll+"','"+ad+"','"+Cssd+"','"+cscos+"','"+metr+"')");
+                j=ps1.executeUpdate();
                 con.close();
-                
-                
-                
-                
+                 
             }catch(Exception e){
                 System.out.println(e);
             }
-if(i>0){
+if(i>0 && j>0){
                     Succes su =new Succes();
-                    su.ot("Service Assign Succesfull");
+                    su.ot("Service Compleated Succesfull");
                     su.setVisible(true);
                 }
         }
@@ -7721,6 +8995,9 @@ if(i>0){
 
     private void jPanel66MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel66MouseClicked
         // TODO add your handling code here:
+        Date ddd = new Date();
+        csdd.setDate(ddd);
+        
         csad.setEditable(false);
         cssd.setEditable(false);
          tpic.addActionListener(new ActionListener(){
@@ -7768,8 +9045,27 @@ if(i>0){
         Create_Cus.setVisible(false);
         Update_Cus.setVisible(false);
         Delete_Cus.setVisible(false);
-        body12.setVisible(false);
-        
+        New_service.setVisible(false);
+         body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
         Assign.setVisible(false);
         Emp_List.setVisible(false);
         Search_Emp.setVisible(false);
@@ -7822,6 +9118,1006 @@ if(i>0){
         
         
     }//GEN-LAST:event_jPanel66MouseClicked
+
+    private void jLabel143MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel143MouseClicked
+        // TODO add your handling code here:
+         a2.setVisible(true);
+        a1.setVisible(false);
+        a3.setVisible(false);
+        a4.setVisible(false);
+        a5.setVisible(false);
+        a6.setVisible(false);
+        p2.setBackground(Color.decode("#03A9DD"));
+        p1.setBackground(Color.decode("#333333"));
+        p3.setBackground(Color.decode("#333333"));
+        p4.setBackground(Color.decode("#333333"));
+        p5.setBackground(Color.decode("#333333"));
+        p6.setBackground(Color.decode("#333333"));
+        p7.setBackground(Color.decode("#333333"));
+        
+        home.setVisible(false);
+        ES.setVisible(false);
+        CS.setVisible(true);
+        Ws.setVisible(false);
+        SM.setVisible(false);
+        MP.setVisible(false);
+       
+        Cus_List.setVisible(false);
+        Search_Cus.setVisible(false);
+        Create_Cus.setVisible(false);
+        Update_Cus.setVisible(false);
+        Delete_Cus.setVisible(false);
+        New_service.setVisible(false);
+        Assign.setVisible(false);
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
+         body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
+        
+    }//GEN-LAST:event_jLabel143MouseClicked
+
+    private void jLabel144MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel144MouseClicked
+        // TODO add your handling code here:
+         a2.setVisible(true);
+        a1.setVisible(false);
+        a3.setVisible(false);
+        a4.setVisible(false);
+        a5.setVisible(false);
+        a6.setVisible(false);
+        p2.setBackground(Color.decode("#03A9DD"));
+        p1.setBackground(Color.decode("#333333"));
+        p3.setBackground(Color.decode("#333333"));
+        p4.setBackground(Color.decode("#333333"));
+        p5.setBackground(Color.decode("#333333"));
+        p6.setBackground(Color.decode("#333333"));
+        p7.setBackground(Color.decode("#333333"));
+        
+        home.setVisible(false);
+        ES.setVisible(false);
+        CS.setVisible(true);
+        Ws.setVisible(false);
+        SM.setVisible(false);
+        MP.setVisible(false);
+       
+        Cus_List.setVisible(false);
+        Search_Cus.setVisible(false);
+        Create_Cus.setVisible(false);
+        Update_Cus.setVisible(false);
+        Delete_Cus.setVisible(false);
+        New_service.setVisible(false);
+        Assign.setVisible(false);
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
+         body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
+    }//GEN-LAST:event_jLabel144MouseClicked
+
+    private void jLabel147MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel147MouseClicked
+        // TODO add your handling code here:
+         a2.setVisible(true);
+        a1.setVisible(false);
+        a3.setVisible(false);
+        a4.setVisible(false);
+        a5.setVisible(false);
+        a6.setVisible(false);
+        p2.setBackground(Color.decode("#03A9DD"));
+        p1.setBackground(Color.decode("#333333"));
+        p3.setBackground(Color.decode("#333333"));
+        p4.setBackground(Color.decode("#333333"));
+        p5.setBackground(Color.decode("#333333"));
+        p6.setBackground(Color.decode("#333333"));
+        p7.setBackground(Color.decode("#333333"));
+        
+        home.setVisible(false);
+        ES.setVisible(false);
+        CS.setVisible(true);
+        Ws.setVisible(false);
+        SM.setVisible(false);
+        MP.setVisible(false);
+       
+        Cus_List.setVisible(false);
+        Search_Cus.setVisible(false);
+        Create_Cus.setVisible(false);
+        Update_Cus.setVisible(false);
+        Delete_Cus.setVisible(false);
+        New_service.setVisible(false);
+        Assign.setVisible(false);
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
+         body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
+    }//GEN-LAST:event_jLabel147MouseClicked
+
+    private void jLabel152MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel152MouseClicked
+        // TODO add your handling code here:
+         a2.setVisible(true);
+        a1.setVisible(false);
+        a3.setVisible(false);
+        a4.setVisible(false);
+        a5.setVisible(false);
+        a6.setVisible(false);
+        p2.setBackground(Color.decode("#03A9DD"));
+        p1.setBackground(Color.decode("#333333"));
+        p3.setBackground(Color.decode("#333333"));
+        p4.setBackground(Color.decode("#333333"));
+        p5.setBackground(Color.decode("#333333"));
+        p6.setBackground(Color.decode("#333333"));
+        p7.setBackground(Color.decode("#333333"));
+        
+        home.setVisible(false);
+        ES.setVisible(false);
+        CS.setVisible(true);
+        Ws.setVisible(false);
+        SM.setVisible(false);
+        MP.setVisible(false);
+       
+        Cus_List.setVisible(false);
+        Search_Cus.setVisible(false);
+        Create_Cus.setVisible(false);
+        Update_Cus.setVisible(false);
+        Delete_Cus.setVisible(false);
+        New_service.setVisible(false);
+        Assign.setVisible(false);
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
+         body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
+    }//GEN-LAST:event_jLabel152MouseClicked
+
+    private void jLabel155MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel155MouseClicked
+        // TODO add your handling code here:
+         a2.setVisible(true);
+        a1.setVisible(false);
+        a3.setVisible(false);
+        a4.setVisible(false);
+        a5.setVisible(false);
+        a6.setVisible(false);
+        p2.setBackground(Color.decode("#03A9DD"));
+        p1.setBackground(Color.decode("#333333"));
+        p3.setBackground(Color.decode("#333333"));
+        p4.setBackground(Color.decode("#333333"));
+        p5.setBackground(Color.decode("#333333"));
+        p6.setBackground(Color.decode("#333333"));
+        p7.setBackground(Color.decode("#333333"));
+        
+        home.setVisible(false);
+        ES.setVisible(false);
+        CS.setVisible(true);
+        Ws.setVisible(false);
+        SM.setVisible(false);
+        MP.setVisible(false);
+       
+        Cus_List.setVisible(false);
+        Search_Cus.setVisible(false);
+        Create_Cus.setVisible(false);
+        Update_Cus.setVisible(false);
+        Delete_Cus.setVisible(false);
+        New_service.setVisible(false);
+        Assign.setVisible(false);
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
+         body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
+    }//GEN-LAST:event_jLabel155MouseClicked
+
+    private void jLabel159MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel159MouseClicked
+        // TODO add your handling code here:
+          a3.setVisible(true);
+        a2.setVisible(false);
+        a1.setVisible(false);
+        a4.setVisible(false);
+        a5.setVisible(false);
+        a6.setVisible(false);
+        p3.setBackground(Color.decode("#03A9DD"));
+        p2.setBackground(Color.decode("#333333"));
+        p1.setBackground(Color.decode("#333333"));
+        p4.setBackground(Color.decode("#333333"));
+        p5.setBackground(Color.decode("#333333"));
+        p6.setBackground(Color.decode("#333333"));
+        p7.setBackground(Color.decode("#333333"));
+        
+        home.setVisible(false);
+        ES.setVisible(true);
+        CS.setVisible(false);
+        Ws.setVisible(false);
+        SM.setVisible(false);
+        MP.setVisible(false);
+       
+        Cus_List.setVisible(false);
+        Search_Cus.setVisible(false);
+        Create_Cus.setVisible(false);
+        Update_Cus.setVisible(false);
+        Delete_Cus.setVisible(false);
+        New_service.setVisible(false);
+        Assign.setVisible(false);
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
+         body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
+    }//GEN-LAST:event_jLabel159MouseClicked
+
+    private void jLabel160MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel160MouseClicked
+        // TODO add your handling code here:
+          a3.setVisible(true);
+        a2.setVisible(false);
+        a1.setVisible(false);
+        a4.setVisible(false);
+        a5.setVisible(false);
+        a6.setVisible(false);
+        p3.setBackground(Color.decode("#03A9DD"));
+        p2.setBackground(Color.decode("#333333"));
+        p1.setBackground(Color.decode("#333333"));
+        p4.setBackground(Color.decode("#333333"));
+        p5.setBackground(Color.decode("#333333"));
+        p6.setBackground(Color.decode("#333333"));
+        p7.setBackground(Color.decode("#333333"));
+        
+        home.setVisible(false);
+        ES.setVisible(true);
+        CS.setVisible(false);
+        Ws.setVisible(false);
+        SM.setVisible(false);
+        MP.setVisible(false);
+       
+        Cus_List.setVisible(false);
+        Search_Cus.setVisible(false);
+        Create_Cus.setVisible(false);
+        Update_Cus.setVisible(false);
+        Delete_Cus.setVisible(false);
+        New_service.setVisible(false);
+        Assign.setVisible(false);
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
+         body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
+    }//GEN-LAST:event_jLabel160MouseClicked
+
+    private void jLabel161MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel161MouseClicked
+        // TODO add your handling code here:
+          a3.setVisible(true);
+        a2.setVisible(false);
+        a1.setVisible(false);
+        a4.setVisible(false);
+        a5.setVisible(false);
+        a6.setVisible(false);
+        p3.setBackground(Color.decode("#03A9DD"));
+        p2.setBackground(Color.decode("#333333"));
+        p1.setBackground(Color.decode("#333333"));
+        p4.setBackground(Color.decode("#333333"));
+        p5.setBackground(Color.decode("#333333"));
+        p6.setBackground(Color.decode("#333333"));
+        p7.setBackground(Color.decode("#333333"));
+        
+        home.setVisible(false);
+        ES.setVisible(true);
+        CS.setVisible(false);
+        Ws.setVisible(false);
+        SM.setVisible(false);
+        MP.setVisible(false);
+       
+        Cus_List.setVisible(false);
+        Search_Cus.setVisible(false);
+        Create_Cus.setVisible(false);
+        Update_Cus.setVisible(false);
+        Delete_Cus.setVisible(false);
+        New_service.setVisible(false);
+        Assign.setVisible(false);
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
+         body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
+    }//GEN-LAST:event_jLabel161MouseClicked
+
+    private void jLabel162MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel162MouseClicked
+        // TODO add your handling code here:
+          a3.setVisible(true);
+        a2.setVisible(false);
+        a1.setVisible(false);
+        a4.setVisible(false);
+        a5.setVisible(false);
+        a6.setVisible(false);
+        p3.setBackground(Color.decode("#03A9DD"));
+        p2.setBackground(Color.decode("#333333"));
+        p1.setBackground(Color.decode("#333333"));
+        p4.setBackground(Color.decode("#333333"));
+        p5.setBackground(Color.decode("#333333"));
+        p6.setBackground(Color.decode("#333333"));
+        p7.setBackground(Color.decode("#333333"));
+        
+        home.setVisible(false);
+        ES.setVisible(true);
+        CS.setVisible(false);
+        Ws.setVisible(false);
+        SM.setVisible(false);
+        MP.setVisible(false);
+       
+        Cus_List.setVisible(false);
+        Search_Cus.setVisible(false);
+        Create_Cus.setVisible(false);
+        Update_Cus.setVisible(false);
+        Delete_Cus.setVisible(false);
+        New_service.setVisible(false);
+        Assign.setVisible(false);
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
+         body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
+    }//GEN-LAST:event_jLabel162MouseClicked
+
+    private void jLabel163MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel163MouseClicked
+        // TODO add your handling code here:
+          a3.setVisible(true);
+        a2.setVisible(false);
+        a1.setVisible(false);
+        a4.setVisible(false);
+        a5.setVisible(false);
+        a6.setVisible(false);
+        p3.setBackground(Color.decode("#03A9DD"));
+        p2.setBackground(Color.decode("#333333"));
+        p1.setBackground(Color.decode("#333333"));
+        p4.setBackground(Color.decode("#333333"));
+        p5.setBackground(Color.decode("#333333"));
+        p6.setBackground(Color.decode("#333333"));
+        p7.setBackground(Color.decode("#333333"));
+        
+        home.setVisible(false);
+        ES.setVisible(true);
+        CS.setVisible(false);
+        Ws.setVisible(false);
+        SM.setVisible(false);
+        MP.setVisible(false);
+       
+        Cus_List.setVisible(false);
+        Search_Cus.setVisible(false);
+        Create_Cus.setVisible(false);
+        Update_Cus.setVisible(false);
+        Delete_Cus.setVisible(false);
+        New_service.setVisible(false);
+        Assign.setVisible(false);
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
+         body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
+    }//GEN-LAST:event_jLabel163MouseClicked
+
+    private void stawllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stawllActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_stawllActionPerformed
+
+    private void jLabel164MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel164MouseClicked
+        // TODO add your handling code here:
+         a2.setVisible(true);
+        a1.setVisible(false);
+        a3.setVisible(false);
+        a4.setVisible(false);
+        a5.setVisible(false);
+        a6.setVisible(false);
+        p2.setBackground(Color.decode("#03A9DD"));
+        p1.setBackground(Color.decode("#333333"));
+        p3.setBackground(Color.decode("#333333"));
+        p4.setBackground(Color.decode("#333333"));
+        p5.setBackground(Color.decode("#333333"));
+        p6.setBackground(Color.decode("#333333"));
+        p7.setBackground(Color.decode("#333333"));
+        
+        home.setVisible(false);
+        ES.setVisible(false);
+        CS.setVisible(true);
+        Ws.setVisible(false);
+        SM.setVisible(false);
+        MP.setVisible(false);
+       
+        Cus_List.setVisible(false);
+        Search_Cus.setVisible(false);
+        Create_Cus.setVisible(false);
+        Update_Cus.setVisible(false);
+        Delete_Cus.setVisible(false);
+        New_service.setVisible(false);
+        Assign.setVisible(false);
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(false);
+         body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
+    }//GEN-LAST:event_jLabel164MouseClicked
+
+    private void jLabel165MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel165MouseClicked
+        // TODO add your handling code here:
+            hidetext.setVisible(false);
+        hidetext.setText("");
+        serlist();
+         a1.setVisible(false);
+        a2.setVisible(false);
+        a3.setVisible(false);
+        a4.setVisible(false);
+        a5.setVisible(false);
+        a6.setVisible(false);
+        
+         home.setVisible(false);
+        ES.setVisible(false);
+        CS.setVisible(false);
+        Ws.setVisible(false);
+        SM.setVisible(false);
+        MP.setVisible(false);
+        
+        Search_Cus.setVisible(false);
+        Create_Cus.setVisible(false);
+        Update_Cus.setVisible(false);
+        Delete_Cus.setVisible(false);
+        New_service.setVisible(false);
+        
+        Assign.setVisible(false);
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(true);
+        Cus_List.setVisible(false);
+         body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
+    }//GEN-LAST:event_jLabel165MouseClicked
+
+    private void jLabel166MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel166MouseClicked
+        // TODO add your handling code here:
+            hidetext.setVisible(false);
+        hidetext.setText("");
+        serlist();
+         a1.setVisible(false);
+        a2.setVisible(false);
+        a3.setVisible(false);
+        a4.setVisible(false);
+        a5.setVisible(false);
+        a6.setVisible(false);
+        
+         home.setVisible(false);
+        ES.setVisible(false);
+        CS.setVisible(false);
+        Ws.setVisible(false);
+        SM.setVisible(false);
+        MP.setVisible(false);
+        
+        Search_Cus.setVisible(false);
+        Create_Cus.setVisible(false);
+        Update_Cus.setVisible(false);
+        Delete_Cus.setVisible(false);
+        New_service.setVisible(false);
+        
+        Assign.setVisible(false);
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(true);
+        Cus_List.setVisible(false);
+         body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
+    }//GEN-LAST:event_jLabel166MouseClicked
+
+    private void table3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_table3MouseClicked
+        // TODO add your handling code here:
+
+        int i = table.getSelectedRow();
+        DefaultTableModel model=(DefaultTableModel)table.getModel();
+        // String aa=model.getValueAt(i,0).toString();
+        String bb=model.getValueAt(i,1).toString();
+        //  System.out.println("id"+bb +" name");
+        try {
+
+            //Data fetch from database
+            String sql = "Select * From cus Where cus_id = '"+bb+"'";
+            Connection con=DATABASE_CONNECTION.getConnection();
+            PreparedStatement ps=con.prepareStatement(sql);
+            //  ps.setString(1,"ERP_E1002");
+            ResultSet rs=ps.executeQuery();
+            if(rs.next()){
+                String emp_id =rs.getString("cus_id");
+                String f_name =rs.getString("cus_fname");
+                // System.out.println("EMpppppp "+f_name);
+                String l_name =rs.getString("cus_lname");
+                // System.out.println("pppnnn "+l_name);
+                String namee = f_name +""+l_name;
+                hil.setText(emp_id);
+                hlnn.setText(namee);
+
+                // JOptionPane.showMessageDialog(this, "Product Found");
+
+                rs.close();
+                ps.close();
+            }else{
+                new Warning("Enter Correct Customer Id").setVisible(true);
+                // System.out.println("Enter Correct Employee Id");
+            }
+        }catch(Exception e){
+            System.out.println("error"+e);
+        }
+    }//GEN-LAST:event_table3MouseClicked
+
+    private void serch4FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serch4FocusGained
+        if(serch.getText().equals("Serch Customer by Customer ID")){
+            fName1.setVisible(true);
+            serch.setText("");
+            serch.setForeground(new Color(000,000,000));
+        }
+    }//GEN-LAST:event_serch4FocusGained
+
+    private void serch4FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_serch4FocusLost
+        // TODO add your handling code here:
+        if(serch.getText().equals("")){
+            fName1.setVisible(false);
+            serch.setText("Serch Customer by Customer ID");
+            serch.setForeground(new Color(128,128,128));
+        }else{
+            fName1.setVisible(true);
+        }
+    }//GEN-LAST:event_serch4FocusLost
+
+    private void serch4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_serch4KeyReleased
+        // TODO add your handling code here:
+
+        String product_idee = serch.getText();
+        try {
+
+            //Data fetch from database
+            String sql = "Select * From cus where cus_id like '%"+product_idee+"%' or cus_fname like '%"+product_idee+"%' or cus_lname like '%"+product_idee+"%' or cus_eml like '%"+product_idee+"%'";
+            Connection con=DATABASE_CONNECTION.getConnection();
+            PreparedStatement ps=con.prepareStatement(sql);
+            // ps.setString(1,product_idee);
+            ResultSet rs=ps.executeQuery();
+            DefaultTableModel model =(DefaultTableModel)table.getModel();
+            model.setRowCount(0);
+            if(rs.next()){
+                do
+                {
+                    String name = rs.getString("cus_fname")+" "+rs.getString("cus_lname");
+                    Object o []={
+                        name,rs.getString("cus_id") };
+                    //   JOptionPane.showMessageDialog(this, "Product Found");
+                    model.addRow(o);
+                }while (rs.next());
+            }else{
+                new Error("Customer Not Found").setVisible(true);
+                //   JOptionPane.showMessageDialog(this, "Product Not Found");
+            }
+
+        }catch(Exception e){
+            System.out.println("error"+e);
+        }
+    }//GEN-LAST:event_serch4KeyReleased
+
+    private void jLabel167MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel167MouseClicked
+        // TODO add your handling code here:
+
+        //        String em_id = serch.getText();
+        //        try {
+            //
+            //            //Data fetch from database
+            //            String sql = "Select * From emp Where emp_id = '"+em_id+"'";
+            //            Connection con=DATABASE_CONNECTION.getConnection();
+            //            PreparedStatement ps=con.prepareStatement(sql);
+            //            //  ps.setString(1,"ERP_E1002");
+            //            ResultSet rs=ps.executeQuery();
+            //            if(rs.next()){
+                //                String emp_id =rs.getString("emp_id");
+                //                String f_name =rs.getString("emp_fname");
+                //                // System.out.println("EMpppppp "+f_name);
+                //                String l_name =rs.getString("emp_lname");
+                //                // System.out.println("pppnnn "+l_name);
+                //                String Phone =rs.getString("emp_phone");
+                //
+                //                String Email =rs.getString("emp_email");
+                //                // System.out.println("emlllll "+l_name);
+                //                String Address =rs.getString("emp_address");
+                //
+                ////                firstname.setText(f_name);
+                ////
+                ////                lastname.setText(l_name);
+                ////
+                ////                phone3.setText(Phone);
+                ////                Emp_id.setText(emp_id);
+                ////                email.setText(Email);
+                ////                address.setText(Address);
+                //
+                //                // JOptionPane.showMessageDialog(this, "Product Found");
+                //
+                //                rs.close();
+                //                ps.close();
+                //            }else{
+                //                new Warning("Enter Correct Employee Id").setVisible(true);
+                //                // System.out.println("Enter Correct Employee Id");
+                //            }
+            //        }catch(Exception e){
+            //            System.out.println("error"+e);
+            //        }
+
+    }//GEN-LAST:event_jLabel167MouseClicked
+
+    private void jPanel86MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel86MouseClicked
+        // TODO add your handling code here:
+        String rea=hil.getText();
+        String cnn=hlnn.getText();
+        if (rea.equals("")){
+
+            new Warning("Click Table row To Delete").setVisible(true);
+            // JOptionPane.showMessageDialog(this, "Click Table row To Delete");
+        }else {
+            String tex= ttf.getText();
+            if(!tex.equals("")){
+
+                try{
+                    Connection con=DATABASE_CONNECTION.getConnection();
+                    //INSERT INTO `emp_works`(`serv_id`, `emp_id`,  ) VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]','[value-9]')
+                    PreparedStatement ps=con.prepareStatement("INSERT INTO emp_works (`serv_id`, `emp_id`,`emp_name`,`cous_id`, `cous_name`, `date`, `time`, `service_dtl`, `status`) VALUES ('"+Emp_idcee+"','Null','Null','"+rea+"','"+cnn+"','Null','Null','"+tex+"','new')");
+
+                    int j = ID_STORE_FETCH.serv_id( emp_idcee.toString());
+                    int i = ps.executeUpdate();
+
+                    if(i>0&&j>0){
+                        Index in = new Index();
+                        in.relode("oky");
+                        Succes su = new Succes();
+                        su.ot("Add Service Succesfully!");
+                        su.setVisible(true);
+                        this.dispose();
+                    }
+                    con.close();
+                }catch(Exception e){
+                    System.out.println(e);
+                }
+                hil.setText("");
+                hlnn.setText("");
+            }else{
+                new Warning("Input Service Decription.").setVisible(true);
+            }
+        }
+    }//GEN-LAST:event_jPanel86MouseClicked
+
+    private void jLabel171MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel171MouseClicked
+        // TODO add your handling code here:
+           hidetext.setVisible(false);
+        hidetext.setText("");
+        serlist();
+         a1.setVisible(false);
+        a2.setVisible(false);
+        a3.setVisible(false);
+        a4.setVisible(false);
+        a5.setVisible(false);
+        a6.setVisible(false);
+        
+         home.setVisible(false);
+        ES.setVisible(false);
+        CS.setVisible(false);
+        Ws.setVisible(false);
+        SM.setVisible(false);
+        MP.setVisible(false);
+        
+        Search_Cus.setVisible(false);
+        Create_Cus.setVisible(false);
+        Update_Cus.setVisible(false);
+        Delete_Cus.setVisible(false);
+        New_service.setVisible(false);
+        
+        Assign.setVisible(false);
+        Emp_List.setVisible(false);
+        Search_Emp.setVisible(false);
+       Complete.setVisible(false);
+        Delete_Emp.setVisible(false);
+        Create_Emp.setVisible(false);
+       Update_Emp.setVisible(false);
+        Working_list.setVisible(true);
+        Cus_List.setVisible(false);
+         body21.setVisible(false);
+        body22.setVisible(false);
+        body23.setVisible(false);
+        body24.setVisible(false);
+        body25.setVisible(false);
+        body26.setVisible(false);  
+        body27.setVisible(false);
+        body28.setVisible(false);
+        body29.setVisible(false);
+        body30.setVisible(false);
+        body31.setVisible(false);
+        body32.setVisible(false);
+        body33.setVisible(false);
+        body34.setVisible(false);
+        body35.setVisible(false);
+        body36.setVisible(false);
+        body37.setVisible(false);
+        body38.setVisible(false);
+        body39.setVisible(false);
+        body40.setVisible(false);
+    }//GEN-LAST:event_jLabel171MouseClicked
   public void drop_down(){
        try {
 
@@ -8154,6 +10450,7 @@ if(i>0){
     private javax.swing.JLabel L_namecee;
     private javax.swing.JLabel L_nameuepp;
     private javax.swing.JPanel MP;
+    private javax.swing.JPanel New_service;
     private javax.swing.JLabel Phone;
     private javax.swing.JLabel Phone1;
     private javax.swing.JLabel Phonecee;
@@ -8187,10 +10484,26 @@ if(i>0){
     private javax.swing.JLabel ascph;
     private javax.swing.JTextPane ascsd;
     private javax.swing.JPanel body;
-    private javax.swing.JPanel body12;
     private javax.swing.JPanel body21;
     private javax.swing.JPanel body22;
     private javax.swing.JPanel body23;
+    private javax.swing.JPanel body24;
+    private javax.swing.JPanel body25;
+    private javax.swing.JPanel body26;
+    private javax.swing.JPanel body27;
+    private javax.swing.JPanel body28;
+    private javax.swing.JPanel body29;
+    private javax.swing.JPanel body30;
+    private javax.swing.JPanel body31;
+    private javax.swing.JPanel body32;
+    private javax.swing.JPanel body33;
+    private javax.swing.JPanel body34;
+    private javax.swing.JPanel body35;
+    private javax.swing.JPanel body36;
+    private javax.swing.JPanel body37;
+    private javax.swing.JPanel body38;
+    private javax.swing.JPanel body39;
+    private javax.swing.JPanel body40;
     private java.awt.Button button1;
     private javax.swing.JPanel crt_emp;
     private javax.swing.JPanel crt_emp1;
@@ -8232,6 +10545,7 @@ if(i>0){
     private javax.swing.JLabel fName4;
     private javax.swing.JLabel fName5;
     private javax.swing.JLabel fName6;
+    private javax.swing.JLabel fName7;
     private javax.swing.JLabel fName9;
     private javax.swing.JLabel fNamecee;
     private javax.swing.JLabel fNamesepp;
@@ -8242,6 +10556,8 @@ if(i>0){
     private javax.swing.JTextField firstnameuepp;
     private javax.swing.JPanel head;
     private java.awt.Label hidetext;
+    private javax.swing.JLabel hil;
+    private javax.swing.JLabel hlnn;
     private javax.swing.JPanel home;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -8292,20 +10608,38 @@ if(i>0){
     private javax.swing.JLabel jLabel140;
     private javax.swing.JLabel jLabel141;
     private javax.swing.JLabel jLabel142;
+    private javax.swing.JLabel jLabel143;
+    private javax.swing.JLabel jLabel144;
     private javax.swing.JLabel jLabel145;
     private javax.swing.JLabel jLabel146;
+    private javax.swing.JLabel jLabel147;
     private javax.swing.JLabel jLabel148;
     private javax.swing.JLabel jLabel149;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel150;
     private javax.swing.JLabel jLabel151;
+    private javax.swing.JLabel jLabel152;
     private javax.swing.JLabel jLabel153;
     private javax.swing.JLabel jLabel154;
+    private javax.swing.JLabel jLabel155;
     private javax.swing.JLabel jLabel156;
     private javax.swing.JLabel jLabel157;
     private javax.swing.JLabel jLabel158;
+    private javax.swing.JLabel jLabel159;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel160;
+    private javax.swing.JLabel jLabel161;
+    private javax.swing.JLabel jLabel162;
+    private javax.swing.JLabel jLabel163;
+    private javax.swing.JLabel jLabel164;
+    private javax.swing.JLabel jLabel165;
+    private javax.swing.JLabel jLabel166;
+    private javax.swing.JLabel jLabel167;
+    private javax.swing.JLabel jLabel168;
+    private javax.swing.JLabel jLabel169;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel170;
+    private javax.swing.JLabel jLabel171;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
@@ -8452,6 +10786,7 @@ if(i>0){
     private javax.swing.JPanel jPanel57;
     private javax.swing.JPanel jPanel58;
     private javax.swing.JPanel jPanel59;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel60;
     private javax.swing.JPanel jPanel61;
     private javax.swing.JPanel jPanel62;
@@ -8470,7 +10805,20 @@ if(i>0){
     private javax.swing.JPanel jPanel74;
     private javax.swing.JPanel jPanel75;
     private javax.swing.JPanel jPanel76;
+    private javax.swing.JPanel jPanel77;
+    private javax.swing.JPanel jPanel78;
+    private javax.swing.JPanel jPanel79;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel80;
+    private javax.swing.JPanel jPanel81;
+    private javax.swing.JPanel jPanel82;
+    private javax.swing.JPanel jPanel83;
+    private javax.swing.JPanel jPanel84;
+    private javax.swing.JPanel jPanel85;
+    private javax.swing.JPanel jPanel86;
+    private javax.swing.JPanel jPanel87;
+    private javax.swing.JPanel jPanel88;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
@@ -8486,6 +10834,8 @@ if(i>0){
     private javax.swing.JScrollPane jScrollPane20;
     private javax.swing.JScrollPane jScrollPane21;
     private javax.swing.JScrollPane jScrollPane22;
+    private javax.swing.JScrollPane jScrollPane23;
+    private javax.swing.JScrollPane jScrollPane24;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
@@ -8529,6 +10879,7 @@ if(i>0){
     private javax.swing.JTextField serch1;
     private javax.swing.JTextField serch2;
     private javax.swing.JTextField serch3;
+    private javax.swing.JTextField serch4;
     private javax.swing.JTextField serchdepp;
     private javax.swing.JTextField serchell;
     private javax.swing.JTextField serchell1;
@@ -8541,6 +10892,7 @@ if(i>0){
     private javax.swing.JTable table1;
     private javax.swing.JTable table1see;
     private javax.swing.JTable table2;
+    private javax.swing.JTable table3;
     private javax.swing.JTable tabledepp;
     private javax.swing.JTable tableell;
     private javax.swing.JTable tablesc;
@@ -8550,6 +10902,7 @@ if(i>0){
     private com.raven.swing.TimePicker tpic;
     private javax.swing.JLabel tt;
     private javax.swing.JTextPane ttf;
+    private javax.swing.JTextPane ttf1;
     private javax.swing.JTextPane ttfsee;
     // End of variables declaration//GEN-END:variables
 }
